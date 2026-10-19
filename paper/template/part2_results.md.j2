@@ -1,0 +1,81 @@
+## 9. Quantitative Results
+
+### 9.1 Main comparison (RQ1)
+
+[[TAB:tab05_results_mc7|tab:mc7]]
+
+Table \ref{tab:mc7} reports seven-way results on the official MC-Hinglish1.0 test split. The character-n-gram TF-IDF
+SVM reaches a test macro-F1 of {{ v.mc7_test.mc7_tfidf_svm.macro_f1 }} and TF-IDF logistic regression
+{{ v.mc7_test.mc7_tfidf_lr.macro_f1 }}. The fine-tuned transformers are **lower** on test: MuRIL
+{{ v.mc7_test.mc7_muril_base.macro_f1 }} ± {{ v.mc7_test.mc7_muril_base.macro_f1_sd }}, XLM-R
+{{ v.mc7_test.mc7_xlmr_base.macro_f1 }} ± {{ v.mc7_test.mc7_xlmr_base.macro_f1_sd }}, and HingRoBERTa
+{{ v.mc7_test.mc7_hingroberta_base.macro_f1 }} ± {{ v.mc7_test.mc7_hingroberta_base.macro_f1_sd }} (mean ± s.d. over three
+seeds). The ordering holds on the {{ v.n_test_dedup }}-item de-duplicated test subset (TF-IDF SVM
+{{ v.mc7_test_dedup.mc7_tfidf_svm.macro_f1 }}; MuRIL {{ v.mc7_test_dedup.mc7_muril_base.macro_f1 }}), so it is not an
+artefact of near-duplicates. Near-duplicates favour the TF-IDF models: their macro-F1 on the 182 near-duplicate items
+({{ v.mc7_test_neardup.mc7_tfidf_svm.macro_f1 }} for the SVM) exceeds that on the de-duplicated items, whereas MuRIL scores
+{{ v.mc7_test_neardup.mc7_muril_base.macro_f1 }} on near-duplicates (Table \ref{tab:subsets}).
+
+[[TAB:tab05b_mc7_subsets|tab:subsets]]
+
+On the **validation** split, which is carved from the official training data, the picture differs. Transformers and
+TF-IDF are close: MuRIL reaches a validation macro-F1 of {{ v.mc7_val.mc7_muril_base.macro_f1 }}, TF-IDF SVM
+{{ v.mc7_val.mc7_tfidf_svm.macro_f1 }}, and XLM-R {{ v.mc7_val.mc7_xlmr_base.macro_f1 }}. The transformers therefore
+lose much more between validation and test than the linear models do.
+
+### 9.2 Train–test distribution shift
+
+[[TAB:tab03b_split_shift|tab:shift]]
+
+To explain the validation–test gap, we trained a domain classifier (TF-IDF logistic regression, 5-fold
+cross-validation) to tell training texts from test texts. It separates the official training and test splits with
+ROC-AUC {{ v.shift.train_vs_test }}, and within every class the AUC is between {{ v.shift.min_class }} and
+{{ v.shift.max_class }}. The same classifier separates training from our validation split only at chance-like levels
+(AUC {{ v.shift.train_vs_val }}; Table \ref{tab:shift}). The official test split is therefore drawn from a noticeably
+different distribution than the training split, consistent with a separately collected batch. Validation scores
+consequently overestimate performance on the official test data, more so for the fine-tuned transformers than for
+character-n-gram models. We return to possible reasons in Section 14.
+
+### 9.3 Per-class behaviour
+
+[[TAB:tab06_per_class_mc7|tab:perclass]]
+
+[[FIG:results/figures/evaluation/fig11_confusion_mc7|Confusion matrices on the official MC7 test set (counts; shading is row-normalised recall).|fig:confusion]]
+
+Target-defined classes are easiest for MuRIL: `age` (F1 {{ v.mc7_test.mc7_muril_base.per_class.age.f1 }}) and
+`religion` ({{ v.mc7_test.mc7_muril_base.per_class.religion.f1 }}). The pragmatically or lexically defined classes
+are hardest: `mockery` ({{ v.mc7_test.mc7_muril_base.per_class.mockery.f1 }}) and `offensive`
+({{ v.mc7_test.mc7_muril_base.per_class.offensive.f1 }}). Most confusions involve these two classes, for example
+offensive→gender and mockery→not_cyberbullying (Figure \ref{fig:confusion}). This pattern matches the dataset's mixed
+label semantics: an offensive remark about a woman is plausibly both "offensive" and "gender".
+
+[[FIG:results/figures/comparison/fig14_model_comparison_mc7|MC7 macro-F1 on the full official test set and on its de-duplicated subset. Transformers: mean ± s.d. over three seeds. The x-axis does not start at zero.|fig:comparison]]
+
+### 9.4 Binary task (MC2)
+
+[[TAB:tab08_results_mc2|tab:mc2]]
+
+For the derived binary task, TF-IDF SVM reaches {{ v.mc2_test.mc2_tfidf_svm.macro_f1 }} macro-F1 (ROC-AUC
+{{ v.mc2_test.mc2_tfidf_svm.roc_auc }}), against {{ v.mc2_test.mc2_muril_base.macro_f1 }} ±
+{{ v.mc2_test.mc2_muril_base.macro_f1_sd }} for MuRIL (ROC-AUC {{ v.mc2_test.mc2_muril_base.roc_auc }}) and
+{{ v.mc2_test.mc2_xlmr_base.macro_f1 }} ± {{ v.mc2_test.mc2_xlmr_base.macro_f1_sd }} for XLM-R. Sarcasm MTL gives
+{{ v.mc2_test.mc2_muril_mtl.macro_f1 }} ± {{ v.mc2_test.mc2_muril_mtl.macro_f1_sd }} (Δ vs. base, seed ensemble:
+{{ v.pt.mc2_muril_mtl_vs_mc2_muril_base.delta }}, 95% CI [{{ v.pt.mc2_muril_mtl_vs_mc2_muril_base.lo }},
+{{ v.pt.mc2_muril_mtl_vs_mc2_muril_base.hi }}]) and fusion {{ v.mc2_test.mc2_muril_fusion.macro_f1 }} ±
+{{ v.mc2_test.mc2_muril_fusion.macro_f1_sd }} (Δ = {{ v.pt.mc2_muril_fusion_vs_mc2_muril_base.delta }}, 95% CI
+[{{ v.pt.mc2_muril_fusion_vs_mc2_muril_base.lo }}, {{ v.pt.mc2_muril_fusion_vs_mc2_muril_base.hi }}]). No fusion control
+was run for MC2. Given the MC7 control result (Section 11), a fusion difference on MC2 should not be attributed to
+sarcasm knowledge.
+
+### 9.5 Calibration
+
+Temperature scaling, fitted on validation logits, has mixed effects on the shifted test split. Test ECE falls for
+XLM-R ({{ v.mc7_test.mc7_xlmr_base.ece }} → {{ v.mc7_test.mc7_xlmr_base.ece_cal }}) and HingRoBERTa
+({{ v.mc7_test.mc7_hingroberta_base.ece }} → {{ v.mc7_test.mc7_hingroberta_base.ece_cal }}), but not for MuRIL
+({{ v.mc7_test.mc7_muril_base.ece }} → {{ v.mc7_test.mc7_muril_base.ece_cal }}; Figure \ref{fig:calibration}).
+Temperatures fitted on in-distribution data therefore do not reliably transfer across the train–test shift, and
+probabilities shown to moderators should be read as approximate.
+
+[[FIG:results/figures/calibration/fig19_calibration_mc7|Reliability diagram for MuRIL on the MC7 test set before and after temperature scaling.|fig:calibration]]
+
+[[FIG:results/figures/training/fig09_training_curves_mc7|Training/validation loss and validation macro-F1 per epoch (MC7, seed 13).|fig:curves]]

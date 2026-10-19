@@ -1,0 +1,3682 @@
+{
+  "n_test_dedup": 818,
+  "mc_test_flagged": 182,
+  "build_date": "2026-10-18",
+  "shift": {
+    "train_vs_test": "0.884",
+    "train_vs_val": "0.578",
+    "min_class": "0.879",
+    "max_class": "0.960"
+  },
+  "mc7_test": {
+    "mc7_hingroberta_base": {
+      "name": "HingRoBERTa",
+      "n": 3,
+      "macro_f1": "0.721",
+      "macro_f1_sd": "0.040",
+      "accuracy": "0.741",
+      "accuracy_sd": "0.039",
+      "weighted_f1": "0.733",
+      "weighted_f1_sd": "0.037",
+      "ece": "0.112",
+      "ece_sd": "0.028",
+      "brier": "0.385",
+      "brier_sd": "0.038",
+      "roc_auc_macro_ovr": "0.936",
+      "roc_auc_macro_ovr_sd": "0.009",
+      "ens_f1": "0.734",
+      "ci_lo": "0.708",
+      "ci_hi": "0.758",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.813",
+          "recall": "0.890",
+          "f1": "0.850"
+        },
+        "age": {
+          "precision": "0.850",
+          "recall": "0.922",
+          "f1": "0.885"
+        },
+        "gender": {
+          "precision": "0.813",
+          "recall": "0.865",
+          "f1": "0.838"
+        },
+        "religion": {
+          "precision": "0.844",
+          "recall": "0.908",
+          "f1": "0.875"
+        },
+        "mockery": {
+          "precision": "0.415",
+          "recall": "0.268",
+          "f1": "0.325"
+        },
+        "abusive": {
+          "precision": "0.800",
+          "recall": "0.676",
+          "f1": "0.733"
+        },
+        "offensive": {
+          "precision": "0.587",
+          "recall": "0.677",
+          "f1": "0.629"
+        }
+      },
+      "ece_cal": "0.056"
+    },
+    "mc7_majority": {
+      "name": "Majority class",
+      "n": 1,
+      "macro_f1": "0.048",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.200",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.067",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.002",
+      "ece_sd": "0.000",
+      "brier": "0.853",
+      "brier_sd": "0.000",
+      "roc_auc_macro_ovr": "0.500",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.048",
+      "ci_lo": "0.043",
+      "ci_hi": "0.052",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.200",
+          "recall": "1.000",
+          "f1": "0.333"
+        },
+        "age": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "gender": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "religion": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "mockery": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "abusive": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "offensive": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        }
+      }
+    },
+    "mc7_muril_base": {
+      "name": "MuRIL",
+      "n": 3,
+      "macro_f1": "0.632",
+      "macro_f1_sd": "0.016",
+      "accuracy": "0.660",
+      "accuracy_sd": "0.010",
+      "weighted_f1": "0.646",
+      "weighted_f1_sd": "0.015",
+      "ece": "0.094",
+      "ece_sd": "0.005",
+      "brier": "0.482",
+      "brier_sd": "0.010",
+      "roc_auc_macro_ovr": "0.899",
+      "roc_auc_macro_ovr_sd": "0.006",
+      "ens_f1": "0.642",
+      "ci_lo": "0.615",
+      "ci_hi": "0.669",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.763",
+          "recall": "0.855",
+          "f1": "0.807"
+        },
+        "age": {
+          "precision": "0.885",
+          "recall": "0.891",
+          "f1": "0.888"
+        },
+        "gender": {
+          "precision": "0.541",
+          "recall": "0.787",
+          "f1": "0.642"
+        },
+        "religion": {
+          "precision": "0.811",
+          "recall": "0.916",
+          "f1": "0.860"
+        },
+        "mockery": {
+          "precision": "0.352",
+          "recall": "0.244",
+          "f1": "0.288"
+        },
+        "abusive": {
+          "precision": "0.755",
+          "recall": "0.520",
+          "f1": "0.616"
+        },
+        "offensive": {
+          "precision": "0.437",
+          "recall": "0.363",
+          "f1": "0.396"
+        }
+      },
+      "ece_cal": "0.103"
+    },
+    "mc7_muril_fusion": {
+      "name": "MuRIL + sarcasm fusion",
+      "n": 3,
+      "macro_f1": "0.653",
+      "macro_f1_sd": "0.009",
+      "accuracy": "0.676",
+      "accuracy_sd": "0.009",
+      "weighted_f1": "0.666",
+      "weighted_f1_sd": "0.007",
+      "ece": "0.071",
+      "ece_sd": "0.001",
+      "brier": "0.462",
+      "brier_sd": "0.006",
+      "roc_auc_macro_ovr": "0.902",
+      "roc_auc_macro_ovr_sd": "0.004",
+      "ens_f1": "0.649",
+      "ci_lo": "0.621",
+      "ci_hi": "0.674",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.775",
+          "recall": "0.845",
+          "f1": "0.809"
+        },
+        "age": {
+          "precision": "0.880",
+          "recall": "0.907",
+          "f1": "0.893"
+        },
+        "gender": {
+          "precision": "0.582",
+          "recall": "0.780",
+          "f1": "0.667"
+        },
+        "religion": {
+          "precision": "0.824",
+          "recall": "0.931",
+          "f1": "0.875"
+        },
+        "mockery": {
+          "precision": "0.370",
+          "recall": "0.268",
+          "f1": "0.311"
+        },
+        "abusive": {
+          "precision": "0.713",
+          "recall": "0.520",
+          "f1": "0.602"
+        },
+        "offensive": {
+          "precision": "0.411",
+          "recall": "0.371",
+          "f1": "0.390"
+        }
+      },
+      "ece_cal": "0.074"
+    },
+    "mc7_muril_fusion_shuffled": {
+      "name": "MuRIL + fusion (shuffled-sarcasm features)",
+      "n": 3,
+      "macro_f1": "0.648",
+      "macro_f1_sd": "0.005",
+      "accuracy": "0.672",
+      "accuracy_sd": "0.006",
+      "weighted_f1": "0.661",
+      "weighted_f1_sd": "0.006",
+      "ece": "0.082",
+      "ece_sd": "0.006",
+      "brier": "0.471",
+      "brier_sd": "0.004",
+      "roc_auc_macro_ovr": "0.901",
+      "roc_auc_macro_ovr_sd": "0.005",
+      "ens_f1": "0.651",
+      "ci_lo": "0.623",
+      "ci_hi": "0.676",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.775",
+          "recall": "0.845",
+          "f1": "0.809"
+        },
+        "age": {
+          "precision": "0.876",
+          "recall": "0.930",
+          "f1": "0.902"
+        },
+        "gender": {
+          "precision": "0.587",
+          "recall": "0.787",
+          "f1": "0.673"
+        },
+        "religion": {
+          "precision": "0.796",
+          "recall": "0.893",
+          "f1": "0.842"
+        },
+        "mockery": {
+          "precision": "0.315",
+          "recall": "0.220",
+          "f1": "0.259"
+        },
+        "abusive": {
+          "precision": "0.755",
+          "recall": "0.561",
+          "f1": "0.643"
+        },
+        "offensive": {
+          "precision": "0.455",
+          "recall": "0.403",
+          "f1": "0.427"
+        }
+      },
+      "ece_cal": "0.086"
+    },
+    "mc7_muril_mtl": {
+      "name": "MuRIL + sarcasm MTL",
+      "n": 3,
+      "macro_f1": "0.631",
+      "macro_f1_sd": "0.009",
+      "accuracy": "0.653",
+      "accuracy_sd": "0.007",
+      "weighted_f1": "0.643",
+      "weighted_f1_sd": "0.007",
+      "ece": "0.063",
+      "ece_sd": "0.027",
+      "brier": "0.477",
+      "brier_sd": "0.016",
+      "roc_auc_macro_ovr": "0.898",
+      "roc_auc_macro_ovr_sd": "0.003",
+      "ens_f1": "0.648",
+      "ci_lo": "0.620",
+      "ci_hi": "0.675",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.779",
+          "recall": "0.795",
+          "f1": "0.787"
+        },
+        "age": {
+          "precision": "0.876",
+          "recall": "0.930",
+          "f1": "0.902"
+        },
+        "gender": {
+          "precision": "0.563",
+          "recall": "0.823",
+          "f1": "0.669"
+        },
+        "religion": {
+          "precision": "0.819",
+          "recall": "0.901",
+          "f1": "0.858"
+        },
+        "mockery": {
+          "precision": "0.337",
+          "recall": "0.244",
+          "f1": "0.283"
+        },
+        "abusive": {
+          "precision": "0.759",
+          "recall": "0.595",
+          "f1": "0.667"
+        },
+        "offensive": {
+          "precision": "0.416",
+          "recall": "0.339",
+          "f1": "0.373"
+        }
+      },
+      "ece_cal": "0.085"
+    },
+    "mc7_muril_mtl_shuffled": {
+      "name": "MuRIL + shuffled-sarcasm MTL",
+      "n": 3,
+      "macro_f1": "0.645",
+      "macro_f1_sd": "0.020",
+      "accuracy": "0.666",
+      "accuracy_sd": "0.016",
+      "weighted_f1": "0.657",
+      "weighted_f1_sd": "0.020",
+      "ece": "0.070",
+      "ece_sd": "0.026",
+      "brier": "0.476",
+      "brier_sd": "0.024",
+      "roc_auc_macro_ovr": "0.899",
+      "roc_auc_macro_ovr_sd": "0.003",
+      "ens_f1": "0.651",
+      "ci_lo": "0.623",
+      "ci_hi": "0.677",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.767",
+          "recall": "0.825",
+          "f1": "0.795"
+        },
+        "age": {
+          "precision": "0.873",
+          "recall": "0.907",
+          "f1": "0.890"
+        },
+        "gender": {
+          "precision": "0.624",
+          "recall": "0.801",
+          "f1": "0.702"
+        },
+        "religion": {
+          "precision": "0.796",
+          "recall": "0.893",
+          "f1": "0.842"
+        },
+        "mockery": {
+          "precision": "0.312",
+          "recall": "0.236",
+          "f1": "0.269"
+        },
+        "abusive": {
+          "precision": "0.734",
+          "recall": "0.635",
+          "f1": "0.681"
+        },
+        "offensive": {
+          "precision": "0.424",
+          "recall": "0.339",
+          "f1": "0.377"
+        }
+      },
+      "ece_cal": "0.082"
+    },
+    "mc7_tfidf_lr": {
+      "name": "TF-IDF + LR",
+      "n": 1,
+      "macro_f1": "0.727",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.743",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.735",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.057",
+      "ece_sd": "0.000",
+      "brier": "0.379",
+      "brier_sd": "0.000",
+      "roc_auc_macro_ovr": "0.925",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.727",
+      "ci_lo": "0.699",
+      "ci_hi": "0.754",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.758",
+          "recall": "0.875",
+          "f1": "0.812"
+        },
+        "age": {
+          "precision": "0.847",
+          "recall": "0.899",
+          "f1": "0.872"
+        },
+        "gender": {
+          "precision": "0.745",
+          "recall": "0.830",
+          "f1": "0.785"
+        },
+        "religion": {
+          "precision": "0.854",
+          "recall": "0.893",
+          "f1": "0.873"
+        },
+        "mockery": {
+          "precision": "0.516",
+          "recall": "0.370",
+          "f1": "0.431"
+        },
+        "abusive": {
+          "precision": "0.788",
+          "recall": "0.628",
+          "f1": "0.699"
+        },
+        "offensive": {
+          "precision": "0.605",
+          "recall": "0.629",
+          "f1": "0.617"
+        }
+      }
+    },
+    "mc7_tfidf_svm": {
+      "name": "TF-IDF + SVM",
+      "n": 1,
+      "macro_f1": "0.743",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.762",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.751",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.145",
+      "ece_sd": "0.000",
+      "brier": "0.390",
+      "brier_sd": "0.000",
+      "roc_auc_macro_ovr": "0.923",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.743",
+      "ci_lo": "0.717",
+      "ci_hi": "0.771",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.768",
+          "recall": "0.925",
+          "f1": "0.839"
+        },
+        "age": {
+          "precision": "0.832",
+          "recall": "0.922",
+          "f1": "0.875"
+        },
+        "gender": {
+          "precision": "0.755",
+          "recall": "0.787",
+          "f1": "0.771"
+        },
+        "religion": {
+          "precision": "0.860",
+          "recall": "0.939",
+          "f1": "0.898"
+        },
+        "mockery": {
+          "precision": "0.553",
+          "recall": "0.370",
+          "f1": "0.443"
+        },
+        "abusive": {
+          "precision": "0.798",
+          "recall": "0.642",
+          "f1": "0.712"
+        },
+        "offensive": {
+          "precision": "0.672",
+          "recall": "0.661",
+          "f1": "0.667"
+        }
+      }
+    },
+    "mc7_xlmr_base": {
+      "name": "XLM-R base",
+      "n": 3,
+      "macro_f1": "0.630",
+      "macro_f1_sd": "0.018",
+      "accuracy": "0.649",
+      "accuracy_sd": "0.016",
+      "weighted_f1": "0.638",
+      "weighted_f1_sd": "0.015",
+      "ece": "0.152",
+      "ece_sd": "0.009",
+      "brier": "0.504",
+      "brier_sd": "0.030",
+      "roc_auc_macro_ovr": "0.893",
+      "roc_auc_macro_ovr_sd": "0.019",
+      "ens_f1": "0.653",
+      "ci_lo": "0.626",
+      "ci_hi": "0.678",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.696",
+          "recall": "0.800",
+          "f1": "0.744"
+        },
+        "age": {
+          "precision": "0.830",
+          "recall": "0.868",
+          "f1": "0.848"
+        },
+        "gender": {
+          "precision": "0.688",
+          "recall": "0.780",
+          "f1": "0.731"
+        },
+        "religion": {
+          "precision": "0.768",
+          "recall": "0.809",
+          "f1": "0.788"
+        },
+        "mockery": {
+          "precision": "0.295",
+          "recall": "0.181",
+          "f1": "0.224"
+        },
+        "abusive": {
+          "precision": "0.759",
+          "recall": "0.595",
+          "f1": "0.667"
+        },
+        "offensive": {
+          "precision": "0.531",
+          "recall": "0.613",
+          "f1": "0.569"
+        }
+      },
+      "ece_cal": "0.063"
+    }
+  },
+  "mc7_test_dedup": {
+    "mc7_hingroberta_base": {
+      "name": "HingRoBERTa",
+      "n": 3,
+      "macro_f1": "0.708",
+      "macro_f1_sd": "0.048",
+      "accuracy": "0.743",
+      "accuracy_sd": "0.047",
+      "weighted_f1": "0.733",
+      "weighted_f1_sd": "0.044",
+      "ece": "0.114",
+      "ece_sd": "0.032",
+      "brier": "0.375",
+      "brier_sd": "0.045",
+      "roc_auc_macro_ovr": "0.941",
+      "roc_auc_macro_ovr_sd": "0.011",
+      "ens_f1": "0.715",
+      "ci_lo": "0.687",
+      "ci_hi": "0.743",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.836",
+          "recall": "0.913",
+          "f1": "0.873"
+        },
+        "age": {
+          "precision": "0.862",
+          "recall": "0.949",
+          "f1": "0.904"
+        },
+        "gender": {
+          "precision": "0.828",
+          "recall": "0.876",
+          "f1": "0.851"
+        },
+        "religion": {
+          "precision": "0.848",
+          "recall": "0.914",
+          "f1": "0.880"
+        },
+        "mockery": {
+          "precision": "0.250",
+          "recall": "0.161",
+          "f1": "0.196"
+        },
+        "abusive": {
+          "precision": "0.758",
+          "recall": "0.615",
+          "f1": "0.679"
+        },
+        "offensive": {
+          "precision": "0.595",
+          "recall": "0.657",
+          "f1": "0.624"
+        }
+      }
+    },
+    "mc7_majority": {
+      "name": "Majority class",
+      "n": 1,
+      "macro_f1": "0.050",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.211",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.074",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.010",
+      "ece_sd": "0.000",
+      "brier": "0.852",
+      "brier_sd": "0.000",
+      "roc_auc_macro_ovr": "0.500",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.050",
+      "ci_lo": "0.044",
+      "ci_hi": "0.055",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.211",
+          "recall": "1.000",
+          "f1": "0.349"
+        },
+        "age": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "gender": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "religion": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "mockery": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "abusive": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "offensive": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        }
+      }
+    },
+    "mc7_muril_base": {
+      "name": "MuRIL",
+      "n": 3,
+      "macro_f1": "0.628",
+      "macro_f1_sd": "0.017",
+      "accuracy": "0.667",
+      "accuracy_sd": "0.013",
+      "weighted_f1": "0.653",
+      "weighted_f1_sd": "0.017",
+      "ece": "0.094",
+      "ece_sd": "0.010",
+      "brier": "0.469",
+      "brier_sd": "0.013",
+      "roc_auc_macro_ovr": "0.903",
+      "roc_auc_macro_ovr_sd": "0.006",
+      "ens_f1": "0.638",
+      "ci_lo": "0.609",
+      "ci_hi": "0.667",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.801",
+          "recall": "0.861",
+          "f1": "0.830"
+        },
+        "age": {
+          "precision": "0.919",
+          "recall": "0.919",
+          "f1": "0.919"
+        },
+        "gender": {
+          "precision": "0.542",
+          "recall": "0.802",
+          "f1": "0.647"
+        },
+        "religion": {
+          "precision": "0.815",
+          "recall": "0.914",
+          "f1": "0.862"
+        },
+        "mockery": {
+          "precision": "0.242",
+          "recall": "0.172",
+          "f1": "0.201"
+        },
+        "abusive": {
+          "precision": "0.722",
+          "recall": "0.487",
+          "f1": "0.582"
+        },
+        "offensive": {
+          "precision": "0.482",
+          "recall": "0.381",
+          "f1": "0.426"
+        }
+      }
+    },
+    "mc7_muril_fusion": {
+      "name": "MuRIL + sarcasm fusion",
+      "n": 3,
+      "macro_f1": "0.650",
+      "macro_f1_sd": "0.007",
+      "accuracy": "0.685",
+      "accuracy_sd": "0.011",
+      "weighted_f1": "0.675",
+      "weighted_f1_sd": "0.007",
+      "ece": "0.072",
+      "ece_sd": "0.009",
+      "brier": "0.445",
+      "brier_sd": "0.009",
+      "roc_auc_macro_ovr": "0.907",
+      "roc_auc_macro_ovr_sd": "0.004",
+      "ens_f1": "0.643",
+      "ci_lo": "0.613",
+      "ci_hi": "0.671",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.822",
+          "recall": "0.855",
+          "f1": "0.839"
+        },
+        "age": {
+          "precision": "0.912",
+          "recall": "0.939",
+          "f1": "0.925"
+        },
+        "gender": {
+          "precision": "0.584",
+          "recall": "0.802",
+          "f1": "0.676"
+        },
+        "religion": {
+          "precision": "0.829",
+          "recall": "0.922",
+          "f1": "0.873"
+        },
+        "mockery": {
+          "precision": "0.246",
+          "recall": "0.184",
+          "f1": "0.211"
+        },
+        "abusive": {
+          "precision": "0.696",
+          "recall": "0.470",
+          "f1": "0.561"
+        },
+        "offensive": {
+          "precision": "0.433",
+          "recall": "0.400",
+          "f1": "0.416"
+        }
+      }
+    },
+    "mc7_muril_fusion_shuffled": {
+      "name": "MuRIL + fusion (shuffled-sarcasm features)",
+      "n": 3,
+      "macro_f1": "0.640",
+      "macro_f1_sd": "0.002",
+      "accuracy": "0.677",
+      "accuracy_sd": "0.004",
+      "weighted_f1": "0.666",
+      "weighted_f1_sd": "0.001",
+      "ece": "0.084",
+      "ece_sd": "0.002",
+      "brier": "0.457",
+      "brier_sd": "0.005",
+      "roc_auc_macro_ovr": "0.905",
+      "roc_auc_macro_ovr_sd": "0.004",
+      "ens_f1": "0.645",
+      "ci_lo": "0.617",
+      "ci_hi": "0.674",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.822",
+          "recall": "0.855",
+          "f1": "0.839"
+        },
+        "age": {
+          "precision": "0.906",
+          "recall": "0.970",
+          "f1": "0.937"
+        },
+        "gender": {
+          "precision": "0.578",
+          "recall": "0.793",
+          "f1": "0.669"
+        },
+        "religion": {
+          "precision": "0.810",
+          "recall": "0.879",
+          "f1": "0.843"
+        },
+        "mockery": {
+          "precision": "0.200",
+          "recall": "0.149",
+          "f1": "0.171"
+        },
+        "abusive": {
+          "precision": "0.735",
+          "recall": "0.521",
+          "f1": "0.610"
+        },
+        "offensive": {
+          "precision": "0.478",
+          "recall": "0.419",
+          "f1": "0.447"
+        }
+      }
+    },
+    "mc7_muril_mtl": {
+      "name": "MuRIL + sarcasm MTL",
+      "n": 3,
+      "macro_f1": "0.632",
+      "macro_f1_sd": "0.009",
+      "accuracy": "0.664",
+      "accuracy_sd": "0.001",
+      "weighted_f1": "0.656",
+      "weighted_f1_sd": "0.007",
+      "ece": "0.070",
+      "ece_sd": "0.031",
+      "brier": "0.462",
+      "brier_sd": "0.016",
+      "roc_auc_macro_ovr": "0.901",
+      "roc_auc_macro_ovr_sd": "0.002",
+      "ens_f1": "0.646",
+      "ci_lo": "0.617",
+      "ci_hi": "0.675",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.818",
+          "recall": "0.803",
+          "f1": "0.810"
+        },
+        "age": {
+          "precision": "0.906",
+          "recall": "0.970",
+          "f1": "0.937"
+        },
+        "gender": {
+          "precision": "0.558",
+          "recall": "0.835",
+          "f1": "0.669"
+        },
+        "religion": {
+          "precision": "0.833",
+          "recall": "0.905",
+          "f1": "0.868"
+        },
+        "mockery": {
+          "precision": "0.227",
+          "recall": "0.172",
+          "f1": "0.196"
+        },
+        "abusive": {
+          "precision": "0.750",
+          "recall": "0.564",
+          "f1": "0.644"
+        },
+        "offensive": {
+          "precision": "0.457",
+          "recall": "0.352",
+          "f1": "0.398"
+        }
+      }
+    },
+    "mc7_muril_mtl_shuffled": {
+      "name": "MuRIL + shuffled-sarcasm MTL",
+      "n": 3,
+      "macro_f1": "0.643",
+      "macro_f1_sd": "0.035",
+      "accuracy": "0.676",
+      "accuracy_sd": "0.026",
+      "weighted_f1": "0.668",
+      "weighted_f1_sd": "0.033",
+      "ece": "0.068",
+      "ece_sd": "0.034",
+      "brier": "0.462",
+      "brier_sd": "0.032",
+      "roc_auc_macro_ovr": "0.902",
+      "roc_auc_macro_ovr_sd": "0.005",
+      "ens_f1": "0.651",
+      "ci_lo": "0.623",
+      "ci_hi": "0.680",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.804",
+          "recall": "0.832",
+          "f1": "0.818"
+        },
+        "age": {
+          "precision": "0.903",
+          "recall": "0.939",
+          "f1": "0.921"
+        },
+        "gender": {
+          "precision": "0.627",
+          "recall": "0.818",
+          "f1": "0.710"
+        },
+        "religion": {
+          "precision": "0.798",
+          "recall": "0.888",
+          "f1": "0.841"
+        },
+        "mockery": {
+          "precision": "0.200",
+          "recall": "0.161",
+          "f1": "0.178"
+        },
+        "abusive": {
+          "precision": "0.735",
+          "recall": "0.615",
+          "f1": "0.670"
+        },
+        "offensive": {
+          "precision": "0.481",
+          "recall": "0.371",
+          "f1": "0.419"
+        }
+      }
+    },
+    "mc7_tfidf_lr": {
+      "name": "TF-IDF + LR",
+      "n": 1,
+      "macro_f1": "0.703",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.735",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.724",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.055",
+      "ece_sd": "0.000",
+      "brier": "0.385",
+      "brier_sd": "0.000",
+      "roc_auc_macro_ovr": "0.922",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.703",
+      "ci_lo": "0.672",
+      "ci_hi": "0.732",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.768",
+          "recall": "0.879",
+          "f1": "0.819"
+        },
+        "age": {
+          "precision": "0.843",
+          "recall": "0.919",
+          "f1": "0.879"
+        },
+        "gender": {
+          "precision": "0.756",
+          "recall": "0.843",
+          "f1": "0.797"
+        },
+        "religion": {
+          "precision": "0.851",
+          "recall": "0.888",
+          "f1": "0.869"
+        },
+        "mockery": {
+          "precision": "0.371",
+          "recall": "0.264",
+          "f1": "0.309"
+        },
+        "abusive": {
+          "precision": "0.728",
+          "recall": "0.573",
+          "f1": "0.641"
+        },
+        "offensive": {
+          "precision": "0.618",
+          "recall": "0.600",
+          "f1": "0.609"
+        }
+      }
+    },
+    "mc7_tfidf_svm": {
+      "name": "TF-IDF + SVM",
+      "n": 1,
+      "macro_f1": "0.722",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.757",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.742",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.151",
+      "ece_sd": "0.000",
+      "brier": "0.394",
+      "brier_sd": "0.000",
+      "roc_auc_macro_ovr": "0.921",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.722",
+      "ci_lo": "0.691",
+      "ci_hi": "0.750",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.779",
+          "recall": "0.936",
+          "f1": "0.850"
+        },
+        "age": {
+          "precision": "0.825",
+          "recall": "0.949",
+          "f1": "0.883"
+        },
+        "gender": {
+          "precision": "0.762",
+          "recall": "0.793",
+          "f1": "0.777"
+        },
+        "religion": {
+          "precision": "0.858",
+          "recall": "0.940",
+          "f1": "0.897"
+        },
+        "mockery": {
+          "precision": "0.429",
+          "recall": "0.276",
+          "f1": "0.336"
+        },
+        "abusive": {
+          "precision": "0.744",
+          "recall": "0.573",
+          "f1": "0.647"
+        },
+        "offensive": {
+          "precision": "0.691",
+          "recall": "0.638",
+          "f1": "0.663"
+        }
+      }
+    },
+    "mc7_xlmr_base": {
+      "name": "XLM-R base",
+      "n": 3,
+      "macro_f1": "0.628",
+      "macro_f1_sd": "0.018",
+      "accuracy": "0.662",
+      "accuracy_sd": "0.016",
+      "weighted_f1": "0.650",
+      "weighted_f1_sd": "0.014",
+      "ece": "0.151",
+      "ece_sd": "0.011",
+      "brier": "0.488",
+      "brier_sd": "0.036",
+      "roc_auc_macro_ovr": "0.898",
+      "roc_auc_macro_ovr_sd": "0.021",
+      "ens_f1": "0.655",
+      "ci_lo": "0.625",
+      "ci_hi": "0.683",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.743",
+          "recall": "0.803",
+          "f1": "0.772"
+        },
+        "age": {
+          "precision": "0.829",
+          "recall": "0.879",
+          "f1": "0.853"
+        },
+        "gender": {
+          "precision": "0.711",
+          "recall": "0.793",
+          "f1": "0.750"
+        },
+        "religion": {
+          "precision": "0.800",
+          "recall": "0.828",
+          "f1": "0.814"
+        },
+        "mockery": {
+          "precision": "0.204",
+          "recall": "0.126",
+          "f1": "0.156"
+        },
+        "abusive": {
+          "precision": "0.728",
+          "recall": "0.573",
+          "f1": "0.641"
+        },
+        "offensive": {
+          "precision": "0.552",
+          "recall": "0.657",
+          "f1": "0.600"
+        }
+      }
+    }
+  },
+  "mc7_test_neardup": {
+    "mc7_hingroberta_base": {
+      "name": "HingRoBERTa",
+      "n": 3,
+      "macro_f1": "0.734",
+      "macro_f1_sd": "0.015",
+      "accuracy": "0.733",
+      "accuracy_sd": "0.022",
+      "weighted_f1": "0.731",
+      "weighted_f1_sd": "0.020",
+      "ece": "0.123",
+      "ece_sd": "0.004",
+      "brier": "0.430",
+      "brier_sd": "0.021",
+      "roc_auc_macro_ovr": "0.909",
+      "roc_auc_macro_ovr_sd": "0.004",
+      "ens_f1": "0.757",
+      "ci_lo": "0.688",
+      "ci_hi": "0.813",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.667",
+          "recall": "0.741",
+          "f1": "0.702"
+        },
+        "age": {
+          "precision": "0.806",
+          "recall": "0.833",
+          "f1": "0.820"
+        },
+        "gender": {
+          "precision": "0.727",
+          "recall": "0.800",
+          "f1": "0.762"
+        },
+        "religion": {
+          "precision": "0.812",
+          "recall": "0.867",
+          "f1": "0.839"
+        },
+        "mockery": {
+          "precision": "0.769",
+          "recall": "0.500",
+          "f1": "0.606"
+        },
+        "abusive": {
+          "precision": "0.933",
+          "recall": "0.903",
+          "f1": "0.918"
+        },
+        "offensive": {
+          "precision": "0.556",
+          "recall": "0.789",
+          "f1": "0.652"
+        }
+      }
+    },
+    "mc7_majority": {
+      "name": "Majority class",
+      "n": 1,
+      "macro_f1": "0.037",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.148",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.038",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.053",
+      "ece_sd": "0.000",
+      "brier": "0.861",
+      "brier_sd": "0.000",
+      "roc_auc_macro_ovr": "0.500",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.037",
+      "ci_lo": "0.026",
+      "ci_hi": "0.048",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.148",
+          "recall": "1.000",
+          "f1": "0.258"
+        },
+        "age": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "gender": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "religion": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "mockery": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "abusive": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "offensive": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        }
+      }
+    },
+    "mc7_muril_base": {
+      "name": "MuRIL",
+      "n": 3,
+      "macro_f1": "0.625",
+      "macro_f1_sd": "0.010",
+      "accuracy": "0.625",
+      "accuracy_sd": "0.003",
+      "weighted_f1": "0.619",
+      "weighted_f1_sd": "0.003",
+      "ece": "0.135",
+      "ece_sd": "0.023",
+      "brier": "0.542",
+      "brier_sd": "0.009",
+      "roc_auc_macro_ovr": "0.878",
+      "roc_auc_macro_ovr_sd": "0.007",
+      "ens_f1": "0.629",
+      "ci_lo": "0.561",
+      "ci_hi": "0.693",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.579",
+          "recall": "0.815",
+          "f1": "0.677"
+        },
+        "age": {
+          "precision": "0.774",
+          "recall": "0.800",
+          "f1": "0.787"
+        },
+        "gender": {
+          "precision": "0.538",
+          "recall": "0.700",
+          "f1": "0.609"
+        },
+        "religion": {
+          "precision": "0.778",
+          "recall": "0.933",
+          "f1": "0.848"
+        },
+        "mockery": {
+          "precision": "0.615",
+          "recall": "0.400",
+          "f1": "0.485"
+        },
+        "abusive": {
+          "precision": "0.870",
+          "recall": "0.645",
+          "f1": "0.741"
+        },
+        "offensive": {
+          "precision": "0.250",
+          "recall": "0.263",
+          "f1": "0.256"
+        }
+      }
+    },
+    "mc7_muril_fusion": {
+      "name": "MuRIL + sarcasm fusion",
+      "n": 3,
+      "macro_f1": "0.630",
+      "macro_f1_sd": "0.019",
+      "accuracy": "0.637",
+      "accuracy_sd": "0.019",
+      "weighted_f1": "0.630",
+      "weighted_f1_sd": "0.019",
+      "ece": "0.140",
+      "ece_sd": "0.015",
+      "brier": "0.539",
+      "brier_sd": "0.005",
+      "roc_auc_macro_ovr": "0.870",
+      "roc_auc_macro_ovr_sd": "0.007",
+      "ens_f1": "0.632",
+      "ci_lo": "0.565",
+      "ci_hi": "0.689",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.553",
+          "recall": "0.778",
+          "f1": "0.646"
+        },
+        "age": {
+          "precision": "0.774",
+          "recall": "0.800",
+          "f1": "0.787"
+        },
+        "gender": {
+          "precision": "0.565",
+          "recall": "0.650",
+          "f1": "0.605"
+        },
+        "religion": {
+          "precision": "0.789",
+          "recall": "1.000",
+          "f1": "0.882"
+        },
+        "mockery": {
+          "precision": "0.667",
+          "recall": "0.450",
+          "f1": "0.537"
+        },
+        "abusive": {
+          "precision": "0.759",
+          "recall": "0.710",
+          "f1": "0.733"
+        },
+        "offensive": {
+          "precision": "0.267",
+          "recall": "0.211",
+          "f1": "0.235"
+        }
+      }
+    },
+    "mc7_muril_fusion_shuffled": {
+      "name": "MuRIL + fusion (shuffled-sarcasm features)",
+      "n": 3,
+      "macro_f1": "0.648",
+      "macro_f1_sd": "0.026",
+      "accuracy": "0.648",
+      "accuracy_sd": "0.029",
+      "weighted_f1": "0.644",
+      "weighted_f1_sd": "0.030",
+      "ece": "0.134",
+      "ece_sd": "0.002",
+      "brier": "0.531",
+      "brier_sd": "0.013",
+      "roc_auc_macro_ovr": "0.878",
+      "roc_auc_macro_ovr_sd": "0.003",
+      "ens_f1": "0.645",
+      "ci_lo": "0.580",
+      "ci_hi": "0.703",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.553",
+          "recall": "0.778",
+          "f1": "0.646"
+        },
+        "age": {
+          "precision": "0.774",
+          "recall": "0.800",
+          "f1": "0.787"
+        },
+        "gender": {
+          "precision": "0.652",
+          "recall": "0.750",
+          "f1": "0.698"
+        },
+        "religion": {
+          "precision": "0.714",
+          "recall": "1.000",
+          "f1": "0.833"
+        },
+        "mockery": {
+          "precision": "0.625",
+          "recall": "0.375",
+          "f1": "0.469"
+        },
+        "abusive": {
+          "precision": "0.815",
+          "recall": "0.710",
+          "f1": "0.759"
+        },
+        "offensive": {
+          "precision": "0.333",
+          "recall": "0.316",
+          "f1": "0.324"
+        }
+      }
+    },
+    "mc7_muril_mtl": {
+      "name": "MuRIL + sarcasm MTL",
+      "n": 3,
+      "macro_f1": "0.601",
+      "macro_f1_sd": "0.040",
+      "accuracy": "0.603",
+      "accuracy_sd": "0.037",
+      "weighted_f1": "0.597",
+      "weighted_f1_sd": "0.043",
+      "ece": "0.118",
+      "ece_sd": "0.034",
+      "brier": "0.543",
+      "brier_sd": "0.036",
+      "roc_auc_macro_ovr": "0.874",
+      "roc_auc_macro_ovr_sd": "0.008",
+      "ens_f1": "0.626",
+      "ci_lo": "0.555",
+      "ci_hi": "0.684",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.588",
+          "recall": "0.741",
+          "f1": "0.656"
+        },
+        "age": {
+          "precision": "0.774",
+          "recall": "0.800",
+          "f1": "0.787"
+        },
+        "gender": {
+          "precision": "0.600",
+          "recall": "0.750",
+          "f1": "0.667"
+        },
+        "religion": {
+          "precision": "0.722",
+          "recall": "0.867",
+          "f1": "0.788"
+        },
+        "mockery": {
+          "precision": "0.615",
+          "recall": "0.400",
+          "f1": "0.485"
+        },
+        "abusive": {
+          "precision": "0.786",
+          "recall": "0.710",
+          "f1": "0.746"
+        },
+        "offensive": {
+          "precision": "0.250",
+          "recall": "0.263",
+          "f1": "0.256"
+        }
+      }
+    },
+    "mc7_muril_mtl_shuffled": {
+      "name": "MuRIL + shuffled-sarcasm MTL",
+      "n": 3,
+      "macro_f1": "0.613",
+      "macro_f1_sd": "0.039",
+      "accuracy": "0.621",
+      "accuracy_sd": "0.033",
+      "weighted_f1": "0.613",
+      "weighted_f1_sd": "0.035",
+      "ece": "0.136",
+      "ece_sd": "0.020",
+      "brier": "0.540",
+      "brier_sd": "0.020",
+      "roc_auc_macro_ovr": "0.880",
+      "roc_auc_macro_ovr_sd": "0.009",
+      "ens_f1": "0.617",
+      "ci_lo": "0.553",
+      "ci_hi": "0.676",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.583",
+          "recall": "0.778",
+          "f1": "0.667"
+        },
+        "age": {
+          "precision": "0.774",
+          "recall": "0.800",
+          "f1": "0.787"
+        },
+        "gender": {
+          "precision": "0.609",
+          "recall": "0.700",
+          "f1": "0.651"
+        },
+        "religion": {
+          "precision": "0.778",
+          "recall": "0.933",
+          "f1": "0.848"
+        },
+        "mockery": {
+          "precision": "0.615",
+          "recall": "0.400",
+          "f1": "0.485"
+        },
+        "abusive": {
+          "precision": "0.733",
+          "recall": "0.710",
+          "f1": "0.721"
+        },
+        "offensive": {
+          "precision": "0.167",
+          "recall": "0.158",
+          "f1": "0.162"
+        }
+      }
+    },
+    "mc7_tfidf_lr": {
+      "name": "TF-IDF + LR",
+      "n": 1,
+      "macro_f1": "0.785",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.780",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.783",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.097",
+      "ece_sd": "0.000",
+      "brier": "0.352",
+      "brier_sd": "0.000",
+      "roc_auc_macro_ovr": "0.924",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.785",
+      "ci_lo": "0.721",
+      "ci_hi": "0.840",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.697",
+          "recall": "0.852",
+          "f1": "0.767"
+        },
+        "age": {
+          "precision": "0.862",
+          "recall": "0.833",
+          "f1": "0.847"
+        },
+        "gender": {
+          "precision": "0.682",
+          "recall": "0.750",
+          "f1": "0.714"
+        },
+        "religion": {
+          "precision": "0.875",
+          "recall": "0.933",
+          "f1": "0.903"
+        },
+        "mockery": {
+          "precision": "0.828",
+          "recall": "0.600",
+          "f1": "0.696"
+        },
+        "abusive": {
+          "precision": "1.000",
+          "recall": "0.839",
+          "f1": "0.912"
+        },
+        "offensive": {
+          "precision": "0.556",
+          "recall": "0.789",
+          "f1": "0.652"
+        }
+      }
+    },
+    "mc7_tfidf_svm": {
+      "name": "TF-IDF + SVM",
+      "n": 1,
+      "macro_f1": "0.790",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.786",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.785",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.149",
+      "ece_sd": "0.000",
+      "brier": "0.370",
+      "brier_sd": "0.000",
+      "roc_auc_macro_ovr": "0.916",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.790",
+      "ci_lo": "0.725",
+      "ci_hi": "0.846",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.697",
+          "recall": "0.852",
+          "f1": "0.767"
+        },
+        "age": {
+          "precision": "0.862",
+          "recall": "0.833",
+          "f1": "0.847"
+        },
+        "gender": {
+          "precision": "0.714",
+          "recall": "0.750",
+          "f1": "0.732"
+        },
+        "religion": {
+          "precision": "0.875",
+          "recall": "0.933",
+          "f1": "0.903"
+        },
+        "mockery": {
+          "precision": "0.793",
+          "recall": "0.575",
+          "f1": "0.667"
+        },
+        "abusive": {
+          "precision": "0.966",
+          "recall": "0.903",
+          "f1": "0.933"
+        },
+        "offensive": {
+          "precision": "0.600",
+          "recall": "0.789",
+          "f1": "0.682"
+        }
+      }
+    },
+    "mc7_xlmr_base": {
+      "name": "XLM-R base",
+      "n": 3,
+      "macro_f1": "0.595",
+      "macro_f1_sd": "0.021",
+      "accuracy": "0.592",
+      "accuracy_sd": "0.021",
+      "weighted_f1": "0.589",
+      "weighted_f1_sd": "0.024",
+      "ece": "0.168",
+      "ece_sd": "0.012",
+      "brier": "0.577",
+      "brier_sd": "0.004",
+      "roc_auc_macro_ovr": "0.861",
+      "roc_auc_macro_ovr_sd": "0.003",
+      "ens_f1": "0.597",
+      "ci_lo": "0.523",
+      "ci_hi": "0.661",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.488",
+          "recall": "0.778",
+          "f1": "0.600"
+        },
+        "age": {
+          "precision": "0.833",
+          "recall": "0.833",
+          "f1": "0.833"
+        },
+        "gender": {
+          "precision": "0.560",
+          "recall": "0.700",
+          "f1": "0.622"
+        },
+        "religion": {
+          "precision": "0.556",
+          "recall": "0.667",
+          "f1": "0.606"
+        },
+        "mockery": {
+          "precision": "0.500",
+          "recall": "0.300",
+          "f1": "0.375"
+        },
+        "abusive": {
+          "precision": "0.875",
+          "recall": "0.677",
+          "f1": "0.764"
+        },
+        "offensive": {
+          "precision": "0.389",
+          "recall": "0.368",
+          "f1": "0.378"
+        }
+      }
+    }
+  },
+  "mc7_val": {
+    "mc7_hingroberta_base": {
+      "name": "HingRoBERTa",
+      "n": 3,
+      "macro_f1": "0.793",
+      "macro_f1_sd": "0.008",
+      "accuracy": "0.802",
+      "accuracy_sd": "0.009",
+      "weighted_f1": "0.801",
+      "weighted_f1_sd": "0.009",
+      "ece": "0.082",
+      "ece_sd": "0.011",
+      "brier": "0.289",
+      "brier_sd": "0.002",
+      "roc_auc_macro_ovr": "0.964",
+      "roc_auc_macro_ovr_sd": "0.001",
+      "ens_f1": "0.806",
+      "ci_lo": "0.777",
+      "ci_hi": "0.832",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.932",
+          "recall": "0.913",
+          "f1": "0.922"
+        },
+        "age": {
+          "precision": "0.931",
+          "recall": "0.969",
+          "f1": "0.950"
+        },
+        "gender": {
+          "precision": "0.848",
+          "recall": "0.832",
+          "f1": "0.840"
+        },
+        "religion": {
+          "precision": "0.941",
+          "recall": "0.969",
+          "f1": "0.955"
+        },
+        "mockery": {
+          "precision": "0.656",
+          "recall": "0.643",
+          "f1": "0.649"
+        },
+        "abusive": {
+          "precision": "0.658",
+          "recall": "0.737",
+          "f1": "0.695"
+        },
+        "offensive": {
+          "precision": "0.674",
+          "recall": "0.592",
+          "f1": "0.630"
+        }
+      },
+      "ece_cal": "0.039"
+    },
+    "mc7_majority": {
+      "name": "Majority class",
+      "n": 1,
+      "macro_f1": "0.048",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.201",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.067",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.000",
+      "ece_sd": "0.000",
+      "brier": "0.853",
+      "brier_sd": "0.000",
+      "roc_auc_macro_ovr": "0.500",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.048",
+      "ci_lo": "0.042",
+      "ci_hi": "0.054",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.201",
+          "recall": "1.000",
+          "f1": "0.335"
+        },
+        "age": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "gender": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "religion": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "mockery": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "abusive": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "offensive": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        }
+      }
+    },
+    "mc7_muril_base": {
+      "name": "MuRIL",
+      "n": 3,
+      "macro_f1": "0.761",
+      "macro_f1_sd": "0.004",
+      "accuracy": "0.774",
+      "accuracy_sd": "0.005",
+      "weighted_f1": "0.770",
+      "weighted_f1_sd": "0.004",
+      "ece": "0.047",
+      "ece_sd": "0.004",
+      "brier": "0.322",
+      "brier_sd": "0.004",
+      "roc_auc_macro_ovr": "0.943",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.780",
+      "ci_lo": "0.751",
+      "ci_hi": "0.807",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.911",
+          "recall": "0.893",
+          "f1": "0.902"
+        },
+        "age": {
+          "precision": "0.901",
+          "recall": "0.929",
+          "f1": "0.915"
+        },
+        "gender": {
+          "precision": "0.833",
+          "recall": "0.842",
+          "f1": "0.837"
+        },
+        "religion": {
+          "precision": "0.961",
+          "recall": "1.000",
+          "f1": "0.980"
+        },
+        "mockery": {
+          "precision": "0.673",
+          "recall": "0.673",
+          "f1": "0.673"
+        },
+        "abusive": {
+          "precision": "0.624",
+          "recall": "0.687",
+          "f1": "0.654"
+        },
+        "offensive": {
+          "precision": "0.542",
+          "recall": "0.459",
+          "f1": "0.497"
+        }
+      },
+      "ece_cal": "0.052"
+    },
+    "mc7_muril_fusion": {
+      "name": "MuRIL + sarcasm fusion",
+      "n": 3,
+      "macro_f1": "0.755",
+      "macro_f1_sd": "0.004",
+      "accuracy": "0.768",
+      "accuracy_sd": "0.005",
+      "weighted_f1": "0.764",
+      "weighted_f1_sd": "0.005",
+      "ece": "0.043",
+      "ece_sd": "0.003",
+      "brier": "0.328",
+      "brier_sd": "0.008",
+      "roc_auc_macro_ovr": "0.941",
+      "roc_auc_macro_ovr_sd": "0.003",
+      "ens_f1": "0.770",
+      "ci_lo": "0.741",
+      "ci_hi": "0.797",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.893",
+          "recall": "0.899",
+          "f1": "0.896"
+        },
+        "age": {
+          "precision": "0.900",
+          "recall": "0.918",
+          "f1": "0.909"
+        },
+        "gender": {
+          "precision": "0.816",
+          "recall": "0.832",
+          "f1": "0.824"
+        },
+        "religion": {
+          "precision": "0.942",
+          "recall": "0.990",
+          "f1": "0.965"
+        },
+        "mockery": {
+          "precision": "0.676",
+          "recall": "0.704",
+          "f1": "0.690"
+        },
+        "abusive": {
+          "precision": "0.611",
+          "recall": "0.697",
+          "f1": "0.651"
+        },
+        "offensive": {
+          "precision": "0.543",
+          "recall": "0.388",
+          "f1": "0.452"
+        }
+      },
+      "ece_cal": "0.040"
+    },
+    "mc7_muril_fusion_shuffled": {
+      "name": "MuRIL + fusion (shuffled-sarcasm features)",
+      "n": 3,
+      "macro_f1": "0.752",
+      "macro_f1_sd": "0.003",
+      "accuracy": "0.767",
+      "accuracy_sd": "0.002",
+      "weighted_f1": "0.763",
+      "weighted_f1_sd": "0.003",
+      "ece": "0.048",
+      "ece_sd": "0.004",
+      "brier": "0.331",
+      "brier_sd": "0.001",
+      "roc_auc_macro_ovr": "0.941",
+      "roc_auc_macro_ovr_sd": "0.001",
+      "ens_f1": "0.766",
+      "ci_lo": "0.736",
+      "ci_hi": "0.793",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.890",
+          "recall": "0.926",
+          "f1": "0.908"
+        },
+        "age": {
+          "precision": "0.908",
+          "recall": "0.908",
+          "f1": "0.908"
+        },
+        "gender": {
+          "precision": "0.804",
+          "recall": "0.812",
+          "f1": "0.808"
+        },
+        "religion": {
+          "precision": "0.960",
+          "recall": "0.990",
+          "f1": "0.975"
+        },
+        "mockery": {
+          "precision": "0.663",
+          "recall": "0.663",
+          "f1": "0.663"
+        },
+        "abusive": {
+          "precision": "0.593",
+          "recall": "0.677",
+          "f1": "0.632"
+        },
+        "offensive": {
+          "precision": "0.541",
+          "recall": "0.408",
+          "f1": "0.465"
+        }
+      },
+      "ece_cal": "0.053"
+    },
+    "mc7_muril_mtl": {
+      "name": "MuRIL + sarcasm MTL",
+      "n": 3,
+      "macro_f1": "0.754",
+      "macro_f1_sd": "0.006",
+      "accuracy": "0.766",
+      "accuracy_sd": "0.006",
+      "weighted_f1": "0.764",
+      "weighted_f1_sd": "0.005",
+      "ece": "0.051",
+      "ece_sd": "0.014",
+      "brier": "0.334",
+      "brier_sd": "0.012",
+      "roc_auc_macro_ovr": "0.943",
+      "roc_auc_macro_ovr_sd": "0.002",
+      "ens_f1": "0.768",
+      "ci_lo": "0.739",
+      "ci_hi": "0.796",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.924",
+          "recall": "0.899",
+          "f1": "0.912"
+        },
+        "age": {
+          "precision": "0.901",
+          "recall": "0.929",
+          "f1": "0.915"
+        },
+        "gender": {
+          "precision": "0.790",
+          "recall": "0.822",
+          "f1": "0.806"
+        },
+        "religion": {
+          "precision": "0.942",
+          "recall": "0.990",
+          "f1": "0.965"
+        },
+        "mockery": {
+          "precision": "0.680",
+          "recall": "0.673",
+          "f1": "0.677"
+        },
+        "abusive": {
+          "precision": "0.604",
+          "recall": "0.677",
+          "f1": "0.638"
+        },
+        "offensive": {
+          "precision": "0.519",
+          "recall": "0.418",
+          "f1": "0.463"
+        }
+      },
+      "ece_cal": "0.046"
+    },
+    "mc7_muril_mtl_shuffled": {
+      "name": "MuRIL + shuffled-sarcasm MTL",
+      "n": 3,
+      "macro_f1": "0.754",
+      "macro_f1_sd": "0.005",
+      "accuracy": "0.768",
+      "accuracy_sd": "0.002",
+      "weighted_f1": "0.764",
+      "weighted_f1_sd": "0.004",
+      "ece": "0.065",
+      "ece_sd": "0.012",
+      "brier": "0.329",
+      "brier_sd": "0.007",
+      "roc_auc_macro_ovr": "0.941",
+      "roc_auc_macro_ovr_sd": "0.001",
+      "ens_f1": "0.766",
+      "ci_lo": "0.738",
+      "ci_hi": "0.792",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.901",
+          "recall": "0.919",
+          "f1": "0.910"
+        },
+        "age": {
+          "precision": "0.902",
+          "recall": "0.939",
+          "f1": "0.920"
+        },
+        "gender": {
+          "precision": "0.837",
+          "recall": "0.812",
+          "f1": "0.824"
+        },
+        "religion": {
+          "precision": "0.961",
+          "recall": "1.000",
+          "f1": "0.980"
+        },
+        "mockery": {
+          "precision": "0.660",
+          "recall": "0.653",
+          "f1": "0.656"
+        },
+        "abusive": {
+          "precision": "0.574",
+          "recall": "0.667",
+          "f1": "0.617"
+        },
+        "offensive": {
+          "precision": "0.520",
+          "recall": "0.398",
+          "f1": "0.451"
+        }
+      },
+      "ece_cal": "0.062"
+    },
+    "mc7_tfidf_lr": {
+      "name": "TF-IDF + LR",
+      "n": 1,
+      "macro_f1": "0.773",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.781",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.780",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.033",
+      "ece_sd": "0.000",
+      "brier": "0.311",
+      "brier_sd": "0.000",
+      "roc_auc_macro_ovr": "0.955",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.773",
+      "ci_lo": "0.743",
+      "ci_hi": "0.801",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.881",
+          "recall": "0.893",
+          "f1": "0.887"
+        },
+        "age": {
+          "precision": "0.918",
+          "recall": "0.908",
+          "f1": "0.913"
+        },
+        "gender": {
+          "precision": "0.779",
+          "recall": "0.733",
+          "f1": "0.755"
+        },
+        "religion": {
+          "precision": "0.929",
+          "recall": "0.929",
+          "f1": "0.929"
+        },
+        "mockery": {
+          "precision": "0.636",
+          "recall": "0.694",
+          "f1": "0.663"
+        },
+        "abusive": {
+          "precision": "0.646",
+          "recall": "0.737",
+          "f1": "0.689"
+        },
+        "offensive": {
+          "precision": "0.637",
+          "recall": "0.520",
+          "f1": "0.573"
+        }
+      }
+    },
+    "mc7_tfidf_svm": {
+      "name": "TF-IDF + SVM",
+      "n": 1,
+      "macro_f1": "0.763",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.773",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.771",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.135",
+      "ece_sd": "0.000",
+      "brier": "0.336",
+      "brier_sd": "0.000",
+      "roc_auc_macro_ovr": "0.947",
+      "roc_auc_macro_ovr_sd": "0.000",
+      "ens_f1": "0.763",
+      "ci_lo": "0.733",
+      "ci_hi": "0.791",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.877",
+          "recall": "0.906",
+          "f1": "0.891"
+        },
+        "age": {
+          "precision": "0.890",
+          "recall": "0.908",
+          "f1": "0.899"
+        },
+        "gender": {
+          "precision": "0.774",
+          "recall": "0.713",
+          "f1": "0.742"
+        },
+        "religion": {
+          "precision": "0.919",
+          "recall": "0.929",
+          "f1": "0.924"
+        },
+        "mockery": {
+          "precision": "0.670",
+          "recall": "0.622",
+          "f1": "0.646"
+        },
+        "abusive": {
+          "precision": "0.622",
+          "recall": "0.747",
+          "f1": "0.679"
+        },
+        "offensive": {
+          "precision": "0.600",
+          "recall": "0.520",
+          "f1": "0.557"
+        }
+      }
+    },
+    "mc7_xlmr_base": {
+      "name": "XLM-R base",
+      "n": 3,
+      "macro_f1": "0.769",
+      "macro_f1_sd": "0.007",
+      "accuracy": "0.777",
+      "accuracy_sd": "0.008",
+      "weighted_f1": "0.777",
+      "weighted_f1_sd": "0.006",
+      "ece": "0.084",
+      "ece_sd": "0.006",
+      "brier": "0.317",
+      "brier_sd": "0.008",
+      "roc_auc_macro_ovr": "0.956",
+      "roc_auc_macro_ovr_sd": "0.003",
+      "ens_f1": "0.783",
+      "ci_lo": "0.754",
+      "ci_hi": "0.810",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.918",
+          "recall": "0.906",
+          "f1": "0.912"
+        },
+        "age": {
+          "precision": "0.931",
+          "recall": "0.959",
+          "f1": "0.945"
+        },
+        "gender": {
+          "precision": "0.814",
+          "recall": "0.822",
+          "f1": "0.818"
+        },
+        "religion": {
+          "precision": "0.939",
+          "recall": "0.939",
+          "f1": "0.939"
+        },
+        "mockery": {
+          "precision": "0.643",
+          "recall": "0.643",
+          "f1": "0.643"
+        },
+        "abusive": {
+          "precision": "0.643",
+          "recall": "0.636",
+          "f1": "0.640"
+        },
+        "offensive": {
+          "precision": "0.588",
+          "recall": "0.582",
+          "f1": "0.585"
+        }
+      },
+      "ece_cal": "0.034"
+    }
+  },
+  "mc2_test": {
+    "mc2_majority": {
+      "name": "Majority class",
+      "n": 1,
+      "macro_f1": "0.444",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.800",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.711",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.002",
+      "ece_sd": "0.000",
+      "brier": "0.320",
+      "brier_sd": "0.000",
+      "roc_auc": "0.500",
+      "roc_auc_sd": "0.000",
+      "pr_auc": "0.800",
+      "pr_auc_sd": "0.000",
+      "ens_f1": "0.444",
+      "ci_lo": "0.437",
+      "ci_hi": "0.452",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "cyberbullying": {
+          "precision": "0.800",
+          "recall": "1.000",
+          "f1": "0.889"
+        }
+      }
+    },
+    "mc2_muril_base": {
+      "name": "MuRIL",
+      "n": 3,
+      "macro_f1": "0.859",
+      "macro_f1_sd": "0.006",
+      "accuracy": "0.912",
+      "accuracy_sd": "0.009",
+      "weighted_f1": "0.911",
+      "weighted_f1_sd": "0.006",
+      "ece": "0.061",
+      "ece_sd": "0.017",
+      "brier": "0.157",
+      "brier_sd": "0.019",
+      "roc_auc": "0.947",
+      "roc_auc_sd": "0.006",
+      "pr_auc": "0.984",
+      "pr_auc_sd": "0.002",
+      "ens_f1": "0.858",
+      "ci_lo": "0.830",
+      "ci_hi": "0.885",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.808",
+          "recall": "0.735",
+          "f1": "0.770"
+        },
+        "cyberbullying": {
+          "precision": "0.935",
+          "recall": "0.956",
+          "f1": "0.946"
+        }
+      },
+      "ece_cal": "0.038"
+    },
+    "mc2_muril_fusion": {
+      "name": "MuRIL + sarcasm fusion",
+      "n": 3,
+      "macro_f1": "0.872",
+      "macro_f1_sd": "0.007",
+      "accuracy": "0.920",
+      "accuracy_sd": "0.008",
+      "weighted_f1": "0.919",
+      "weighted_f1_sd": "0.006",
+      "ece": "0.053",
+      "ece_sd": "0.022",
+      "brier": "0.144",
+      "brier_sd": "0.021",
+      "roc_auc": "0.939",
+      "roc_auc_sd": "0.009",
+      "pr_auc": "0.979",
+      "pr_auc_sd": "0.003",
+      "ens_f1": "0.873",
+      "ci_lo": "0.845",
+      "ci_hi": "0.898",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.827",
+          "recall": "0.765",
+          "f1": "0.795"
+        },
+        "cyberbullying": {
+          "precision": "0.942",
+          "recall": "0.960",
+          "f1": "0.951"
+        }
+      },
+      "ece_cal": "0.033"
+    },
+    "mc2_muril_mtl": {
+      "name": "MuRIL + sarcasm MTL",
+      "n": 3,
+      "macro_f1": "0.853",
+      "macro_f1_sd": "0.016",
+      "accuracy": "0.904",
+      "accuracy_sd": "0.013",
+      "weighted_f1": "0.905",
+      "weighted_f1_sd": "0.012",
+      "ece": "0.075",
+      "ece_sd": "0.011",
+      "brier": "0.172",
+      "brier_sd": "0.020",
+      "roc_auc": "0.934",
+      "roc_auc_sd": "0.009",
+      "pr_auc": "0.977",
+      "pr_auc_sd": "0.005",
+      "ens_f1": "0.857",
+      "ci_lo": "0.828",
+      "ci_hi": "0.882",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.758",
+          "recall": "0.785",
+          "f1": "0.771"
+        },
+        "cyberbullying": {
+          "precision": "0.946",
+          "recall": "0.938",
+          "f1": "0.942"
+        }
+      },
+      "ece_cal": "0.048"
+    },
+    "mc2_tfidf_lr": {
+      "name": "TF-IDF + LR",
+      "n": 1,
+      "macro_f1": "0.879",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.925",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.924",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.025",
+      "ece_sd": "0.000",
+      "brier": "0.115",
+      "brier_sd": "0.000",
+      "roc_auc": "0.960",
+      "roc_auc_sd": "0.000",
+      "pr_auc": "0.988",
+      "pr_auc_sd": "0.000",
+      "ens_f1": "0.879",
+      "ci_lo": "0.852",
+      "ci_hi": "0.904",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.838",
+          "recall": "0.775",
+          "f1": "0.805"
+        },
+        "cyberbullying": {
+          "precision": "0.945",
+          "recall": "0.963",
+          "f1": "0.954"
+        }
+      }
+    },
+    "mc2_tfidf_svm": {
+      "name": "TF-IDF + SVM",
+      "n": 1,
+      "macro_f1": "0.887",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.929",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.928",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.031",
+      "ece_sd": "0.000",
+      "brier": "0.107",
+      "brier_sd": "0.000",
+      "roc_auc": "0.965",
+      "roc_auc_sd": "0.000",
+      "pr_auc": "0.990",
+      "pr_auc_sd": "0.000",
+      "ens_f1": "0.887",
+      "ci_lo": "0.859",
+      "ci_hi": "0.912",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.841",
+          "recall": "0.795",
+          "f1": "0.817"
+        },
+        "cyberbullying": {
+          "precision": "0.949",
+          "recall": "0.963",
+          "f1": "0.956"
+        }
+      }
+    },
+    "mc2_xlmr_base": {
+      "name": "XLM-R base",
+      "n": 3,
+      "macro_f1": "0.863",
+      "macro_f1_sd": "0.017",
+      "accuracy": "0.910",
+      "accuracy_sd": "0.012",
+      "weighted_f1": "0.911",
+      "weighted_f1_sd": "0.011",
+      "ece": "0.073",
+      "ece_sd": "0.009",
+      "brier": "0.157",
+      "brier_sd": "0.022",
+      "roc_auc": "0.941",
+      "roc_auc_sd": "0.006",
+      "pr_auc": "0.982",
+      "pr_auc_sd": "0.002",
+      "ens_f1": "0.876",
+      "ci_lo": "0.850",
+      "ci_hi": "0.900",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.791",
+          "recall": "0.815",
+          "f1": "0.803"
+        },
+        "cyberbullying": {
+          "precision": "0.953",
+          "recall": "0.946",
+          "f1": "0.950"
+        }
+      },
+      "ece_cal": "0.035"
+    }
+  },
+  "mc2_test_dedup": {
+    "mc2_majority": {
+      "name": "Majority class",
+      "n": 1,
+      "macro_f1": "0.441",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.789",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.695",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.010",
+      "ece_sd": "0.000",
+      "brier": "0.334",
+      "brier_sd": "0.000",
+      "roc_auc": "0.500",
+      "roc_auc_sd": "0.000",
+      "pr_auc": "0.789",
+      "pr_auc_sd": "0.000",
+      "ens_f1": "0.441",
+      "ci_lo": "0.432",
+      "ci_hi": "0.450",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        },
+        "cyberbullying": {
+          "precision": "0.789",
+          "recall": "1.000",
+          "f1": "0.882"
+        }
+      }
+    },
+    "mc2_muril_base": {
+      "name": "MuRIL",
+      "n": 3,
+      "macro_f1": "0.867",
+      "macro_f1_sd": "0.005",
+      "accuracy": "0.914",
+      "accuracy_sd": "0.008",
+      "weighted_f1": "0.913",
+      "weighted_f1_sd": "0.005",
+      "ece": "0.060",
+      "ece_sd": "0.016",
+      "brier": "0.152",
+      "brier_sd": "0.017",
+      "roc_auc": "0.951",
+      "roc_auc_sd": "0.008",
+      "pr_auc": "0.985",
+      "pr_auc_sd": "0.002",
+      "ens_f1": "0.868",
+      "ci_lo": "0.836",
+      "ci_hi": "0.896",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.842",
+          "recall": "0.740",
+          "f1": "0.788"
+        },
+        "cyberbullying": {
+          "precision": "0.932",
+          "recall": "0.963",
+          "f1": "0.947"
+        }
+      }
+    },
+    "mc2_muril_fusion": {
+      "name": "MuRIL + sarcasm fusion",
+      "n": 3,
+      "macro_f1": "0.884",
+      "macro_f1_sd": "0.009",
+      "accuracy": "0.925",
+      "accuracy_sd": "0.008",
+      "weighted_f1": "0.923",
+      "weighted_f1_sd": "0.007",
+      "ece": "0.051",
+      "ece_sd": "0.021",
+      "brier": "0.136",
+      "brier_sd": "0.019",
+      "roc_auc": "0.942",
+      "roc_auc_sd": "0.011",
+      "pr_auc": "0.979",
+      "pr_auc_sd": "0.004",
+      "ens_f1": "0.883",
+      "ci_lo": "0.853",
+      "ci_hi": "0.910",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.868",
+          "recall": "0.763",
+          "f1": "0.812"
+        },
+        "cyberbullying": {
+          "precision": "0.938",
+          "recall": "0.969",
+          "f1": "0.953"
+        }
+      }
+    },
+    "mc2_muril_mtl": {
+      "name": "MuRIL + sarcasm MTL",
+      "n": 3,
+      "macro_f1": "0.860",
+      "macro_f1_sd": "0.018",
+      "accuracy": "0.905",
+      "accuracy_sd": "0.014",
+      "weighted_f1": "0.906",
+      "weighted_f1_sd": "0.013",
+      "ece": "0.074",
+      "ece_sd": "0.012",
+      "brier": "0.168",
+      "brier_sd": "0.024",
+      "roc_auc": "0.940",
+      "roc_auc_sd": "0.009",
+      "pr_auc": "0.979",
+      "pr_auc_sd": "0.005",
+      "ens_f1": "0.865",
+      "ci_lo": "0.834",
+      "ci_hi": "0.892",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.783",
+          "recall": "0.792",
+          "f1": "0.787"
+        },
+        "cyberbullying": {
+          "precision": "0.944",
+          "recall": "0.941",
+          "f1": "0.943"
+        }
+      }
+    },
+    "mc2_tfidf_lr": {
+      "name": "TF-IDF + LR",
+      "n": 1,
+      "macro_f1": "0.876",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.921",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.919",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.025",
+      "ece_sd": "0.000",
+      "brier": "0.116",
+      "brier_sd": "0.000",
+      "roc_auc": "0.963",
+      "roc_auc_sd": "0.000",
+      "pr_auc": "0.989",
+      "pr_auc_sd": "0.000",
+      "ens_f1": "0.876",
+      "ci_lo": "0.846",
+      "ci_hi": "0.904",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.846",
+          "recall": "0.763",
+          "f1": "0.802"
+        },
+        "cyberbullying": {
+          "precision": "0.938",
+          "recall": "0.963",
+          "f1": "0.950"
+        }
+      }
+    },
+    "mc2_tfidf_svm": {
+      "name": "TF-IDF + SVM",
+      "n": 1,
+      "macro_f1": "0.885",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.925",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.924",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.032",
+      "ece_sd": "0.000",
+      "brier": "0.109",
+      "brier_sd": "0.000",
+      "roc_auc": "0.968",
+      "roc_auc_sd": "0.000",
+      "pr_auc": "0.991",
+      "pr_auc_sd": "0.000",
+      "ens_f1": "0.885",
+      "ci_lo": "0.858",
+      "ci_hi": "0.912",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.850",
+          "recall": "0.786",
+          "f1": "0.817"
+        },
+        "cyberbullying": {
+          "precision": "0.944",
+          "recall": "0.963",
+          "f1": "0.953"
+        }
+      }
+    },
+    "mc2_xlmr_base": {
+      "name": "XLM-R base",
+      "n": 3,
+      "macro_f1": "0.871",
+      "macro_f1_sd": "0.015",
+      "accuracy": "0.913",
+      "accuracy_sd": "0.011",
+      "weighted_f1": "0.913",
+      "weighted_f1_sd": "0.011",
+      "ece": "0.072",
+      "ece_sd": "0.010",
+      "brier": "0.153",
+      "brier_sd": "0.022",
+      "roc_auc": "0.943",
+      "roc_auc_sd": "0.006",
+      "pr_auc": "0.981",
+      "pr_auc_sd": "0.003",
+      "ens_f1": "0.875",
+      "ci_lo": "0.846",
+      "ci_hi": "0.901",
+      "per_class": {
+        "not_cyberbullying": {
+          "precision": "0.803",
+          "recall": "0.803",
+          "f1": "0.803"
+        },
+        "cyberbullying": {
+          "precision": "0.947",
+          "recall": "0.947",
+          "f1": "0.947"
+        }
+      }
+    }
+  },
+  "sarcasm_test": {
+    "sarcasm_majority": {
+      "name": "Majority class",
+      "n": 1,
+      "macro_f1": "0.475",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.904",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.858",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.000",
+      "ece_sd": "0.000",
+      "brier": "0.174",
+      "brier_sd": "0.000",
+      "roc_auc": "0.500",
+      "roc_auc_sd": "0.000",
+      "pr_auc": "0.096",
+      "pr_auc_sd": "0.000",
+      "ens_f1": "0.475",
+      "ci_lo": "0.470",
+      "ci_hi": "0.480",
+      "per_class": {
+        "non_sarcastic": {
+          "precision": "0.904",
+          "recall": "1.000",
+          "f1": "0.949"
+        },
+        "sarcastic": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        }
+      }
+    },
+    "sarcasm_muril_base": {
+      "name": "MuRIL",
+      "n": 3,
+      "macro_f1": "0.781",
+      "macro_f1_sd": "0.002",
+      "accuracy": "0.912",
+      "accuracy_sd": "0.010",
+      "weighted_f1": "0.918",
+      "weighted_f1_sd": "0.006",
+      "ece": "0.046",
+      "ece_sd": "0.003",
+      "brier": "0.137",
+      "brier_sd": "0.010",
+      "roc_auc": "0.949",
+      "roc_auc_sd": "0.008",
+      "pr_auc": "0.608",
+      "pr_auc_sd": "0.043",
+      "ens_f1": "0.806",
+      "ci_lo": "0.766",
+      "ci_hi": "0.842",
+      "per_class": {
+        "non_sarcastic": {
+          "precision": "0.975",
+          "recall": "0.938",
+          "f1": "0.956"
+        },
+        "sarcastic": {
+          "precision": "0.569",
+          "recall": "0.772",
+          "f1": "0.655"
+        }
+      },
+      "ece_cal": "0.077"
+    },
+    "sarcasm_muril_shuffled_labels": {
+      "name": "MuRIL (shuffled training labels)",
+      "n": 1,
+      "macro_f1": "0.475",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.904",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.858",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.376",
+      "ece_sd": "0.000",
+      "brier": "0.456",
+      "brier_sd": "0.000",
+      "roc_auc": "0.433",
+      "roc_auc_sd": "0.000",
+      "pr_auc": "0.089",
+      "pr_auc_sd": "0.000",
+      "ens_f1": "0.475",
+      "ci_lo": "0.470",
+      "ci_hi": "0.480",
+      "per_class": {
+        "non_sarcastic": {
+          "precision": "0.904",
+          "recall": "1.000",
+          "f1": "0.949"
+        },
+        "sarcastic": {
+          "precision": "0.000",
+          "recall": "0.000",
+          "f1": "0.000"
+        }
+      },
+      "ece_cal": "0.001"
+    },
+    "sarcasm_tfidf_lr": {
+      "name": "TF-IDF + LR",
+      "n": 1,
+      "macro_f1": "0.739",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.912",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.911",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.041",
+      "ece_sd": "0.000",
+      "brier": "0.119",
+      "brier_sd": "0.000",
+      "roc_auc": "0.935",
+      "roc_auc_sd": "0.000",
+      "pr_auc": "0.541",
+      "pr_auc_sd": "0.000",
+      "ens_f1": "0.739",
+      "ci_lo": "0.693",
+      "ci_hi": "0.783",
+      "per_class": {
+        "non_sarcastic": {
+          "precision": "0.948",
+          "recall": "0.956",
+          "f1": "0.952"
+        },
+        "sarcastic": {
+          "precision": "0.548",
+          "recall": "0.505",
+          "f1": "0.526"
+        }
+      }
+    },
+    "sarcasm_tfidf_svm": {
+      "name": "TF-IDF + SVM",
+      "n": 1,
+      "macro_f1": "0.724",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.914",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.909",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.024",
+      "ece_sd": "0.000",
+      "brier": "0.117",
+      "brier_sd": "0.000",
+      "roc_auc": "0.932",
+      "roc_auc_sd": "0.000",
+      "pr_auc": "0.537",
+      "pr_auc_sd": "0.000",
+      "ens_f1": "0.724",
+      "ci_lo": "0.675",
+      "ci_hi": "0.773",
+      "per_class": {
+        "non_sarcastic": {
+          "precision": "0.941",
+          "recall": "0.965",
+          "f1": "0.953"
+        },
+        "sarcastic": {
+          "precision": "0.571",
+          "recall": "0.436",
+          "f1": "0.494"
+        }
+      }
+    }
+  },
+  "conda_test": {
+    "conda_distilroberta_base": {
+      "name": "DistilRoBERTa",
+      "n": 3,
+      "macro_f1": "0.900",
+      "macro_f1_sd": "0.002",
+      "accuracy": "0.934",
+      "accuracy_sd": "0.001",
+      "weighted_f1": "0.935",
+      "weighted_f1_sd": "0.001",
+      "ece": "0.029",
+      "ece_sd": "0.005",
+      "brier": "0.105",
+      "brier_sd": "0.002",
+      "roc_auc": "0.966",
+      "roc_auc_sd": "0.001",
+      "pr_auc": "0.913",
+      "pr_auc_sd": "0.004",
+      "ens_f1": "0.906",
+      "ci_lo": "0.897",
+      "ci_hi": "0.914",
+      "per_class": {
+        "non_toxic": {
+          "precision": "0.966",
+          "recall": "0.956",
+          "f1": "0.961"
+        },
+        "toxic": {
+          "precision": "0.834",
+          "recall": "0.868",
+          "f1": "0.851"
+        }
+      },
+      "ece_cal": "0.011"
+    },
+    "conda_tfidf_lr": {
+      "name": "TF-IDF + LR",
+      "n": 1,
+      "macro_f1": "0.903",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.937",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.937",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.056",
+      "ece_sd": "0.000",
+      "brier": "0.114",
+      "brier_sd": "0.000",
+      "roc_auc": "0.965",
+      "roc_auc_sd": "0.000",
+      "pr_auc": "0.917",
+      "pr_auc_sd": "0.000",
+      "ens_f1": "0.903",
+      "ci_lo": "0.895",
+      "ci_hi": "0.911",
+      "per_class": {
+        "non_toxic": {
+          "precision": "0.967",
+          "recall": "0.954",
+          "f1": "0.960"
+        },
+        "toxic": {
+          "precision": "0.825",
+          "recall": "0.869",
+          "f1": "0.847"
+        }
+      }
+    },
+    "conda_ctx_distilroberta_base": {
+      "name": "DistilRoBERTa",
+      "n": 3,
+      "macro_f1": "0.902",
+      "macro_f1_sd": "0.005",
+      "accuracy": "0.935",
+      "accuracy_sd": "0.004",
+      "weighted_f1": "0.936",
+      "weighted_f1_sd": "0.004",
+      "ece": "0.034",
+      "ece_sd": "0.006",
+      "brier": "0.106",
+      "brier_sd": "0.009",
+      "roc_auc": "0.968",
+      "roc_auc_sd": "0.001",
+      "pr_auc": "0.917",
+      "pr_auc_sd": "0.003",
+      "ens_f1": "0.903",
+      "ci_lo": "0.894",
+      "ci_hi": "0.911",
+      "per_class": {
+        "non_toxic": {
+          "precision": "0.966",
+          "recall": "0.954",
+          "f1": "0.960"
+        },
+        "toxic": {
+          "precision": "0.827",
+          "recall": "0.865",
+          "f1": "0.845"
+        }
+      },
+      "ece_cal": "0.012"
+    },
+    "conda_ctx_tfidf_lr": {
+      "name": "TF-IDF + LR",
+      "n": 1,
+      "macro_f1": "0.784",
+      "macro_f1_sd": "0.000",
+      "accuracy": "0.855",
+      "accuracy_sd": "0.000",
+      "weighted_f1": "0.858",
+      "weighted_f1_sd": "0.000",
+      "ece": "0.046",
+      "ece_sd": "0.000",
+      "brier": "0.214",
+      "brier_sd": "0.000",
+      "roc_auc": "0.897",
+      "roc_auc_sd": "0.000",
+      "pr_auc": "0.725",
+      "pr_auc_sd": "0.000",
+      "ens_f1": "0.784",
+      "ci_lo": "0.772",
+      "ci_hi": "0.796",
+      "per_class": {
+        "non_toxic": {
+          "precision": "0.922",
+          "recall": "0.893",
+          "f1": "0.908"
+        },
+        "toxic": {
+          "precision": "0.624",
+          "recall": "0.702",
+          "f1": "0.661"
+        }
+      }
+    }
+  },
+  "pt": {
+    "mc7_xlmr_base_vs_mc7_muril_base": {
+      "delta": "+0.011",
+      "lo": "-0.017",
+      "hi": "+0.038",
+      "p": "0.460",
+      "p_mcnemar": "0.771",
+      "seeds_pos": "1/3"
+    },
+    "mc7_hingroberta_base_vs_mc7_muril_base": {
+      "delta": "+0.091",
+      "lo": "+0.065",
+      "hi": "+0.118",
+      "p": "0.000",
+      "p_mcnemar": "0.000",
+      "seeds_pos": "3/3"
+    },
+    "mc7_muril_mtl_vs_mc7_muril_base": {
+      "delta": "+0.006",
+      "lo": "-0.014",
+      "hi": "+0.026",
+      "p": "0.552",
+      "p_mcnemar": "0.744",
+      "seeds_pos": "2/3"
+    },
+    "mc7_muril_mtl_shuffled_vs_mc7_muril_base": {
+      "delta": "+0.008",
+      "lo": "-0.010",
+      "hi": "+0.026",
+      "p": "0.361",
+      "p_mcnemar": "0.410",
+      "seeds_pos": "3/3"
+    },
+    "mc7_muril_fusion_vs_mc7_muril_base": {
+      "delta": "+0.007",
+      "lo": "-0.013",
+      "hi": "+0.026",
+      "p": "0.495",
+      "p_mcnemar": "0.657",
+      "seeds_pos": "3/3"
+    },
+    "mc7_tfidf_svm_vs_mc7_muril_base": {
+      "delta": "+0.101",
+      "lo": "+0.072",
+      "hi": "+0.130",
+      "p": "0.000",
+      "p_mcnemar": "0.000",
+      "seeds_pos": "1/1"
+    },
+    "mc7_tfidf_lr_vs_mc7_muril_base": {
+      "delta": "+0.085",
+      "lo": "+0.057",
+      "hi": "+0.113",
+      "p": "0.000",
+      "p_mcnemar": "0.000",
+      "seeds_pos": "1/1"
+    },
+    "mc7_muril_mtl_vs_mc7_muril_mtl_shuffled": {
+      "delta": "-0.002",
+      "lo": "-0.022",
+      "hi": "+0.017",
+      "p": "0.821",
+      "p_mcnemar": "0.741",
+      "seeds_pos": "1/3"
+    },
+    "mc7_muril_fusion_vs_mc7_muril_fusion_shuffled": {
+      "delta": "-0.001",
+      "lo": "-0.019",
+      "hi": "+0.016",
+      "p": "0.837",
+      "p_mcnemar": "0.804",
+      "seeds_pos": "2/3"
+    },
+    "mc2_xlmr_base_vs_mc2_muril_base": {
+      "delta": "+0.019",
+      "lo": "-0.006",
+      "hi": "+0.046",
+      "p": "0.150",
+      "p_mcnemar": "0.422",
+      "seeds_pos": "1/3"
+    },
+    "mc2_muril_mtl_vs_mc2_muril_base": {
+      "delta": "-0.001",
+      "lo": "-0.021",
+      "hi": "+0.020",
+      "p": "0.924",
+      "p_mcnemar": "0.568",
+      "seeds_pos": "1/3"
+    },
+    "mc2_muril_fusion_vs_mc2_muril_base": {
+      "delta": "+0.015",
+      "lo": "-0.004",
+      "hi": "+0.034",
+      "p": "0.124",
+      "p_mcnemar": "0.188",
+      "seeds_pos": "3/3"
+    },
+    "mc2_tfidf_svm_vs_mc2_muril_base": {
+      "delta": "+0.029",
+      "lo": "+0.001",
+      "hi": "+0.060",
+      "p": "0.045",
+      "p_mcnemar": "0.078",
+      "seeds_pos": "1/1"
+    },
+    "sarcasm_muril_base_vs_sarcasm_tfidf_lr": {
+      "delta": "+0.067",
+      "lo": "+0.019",
+      "hi": "+0.115",
+      "p": "0.003",
+      "p_mcnemar": "0.326",
+      "seeds_pos": "1/1"
+    }
+  },
+  "boost": {
+    "base_050": {
+      "macro_f1": "0.859",
+      "recall_cb": "0.951",
+      "fpr": "0.245"
+    },
+    "base_055": {
+      "macro_f1": "0.858",
+      "recall_cb": "0.950",
+      "fpr": "0.245"
+    },
+    "boost_055": {
+      "macro_f1": "0.859",
+      "recall_cb": "0.951",
+      "fpr": "0.247"
+    },
+    "n_boosted": 429,
+    "share_ge": "42.9%"
+  },
+  "ext": {
+    "olid_ext__mc2_majority": {
+      "f1": "0.218",
+      "auc": "0.500",
+      "n": 860
+    },
+    "olid_ext__mc2_muril_base": {
+      "f1": "0.275",
+      "auc": "0.623",
+      "n": 860
+    },
+    "olid_ext__mc2_muril_mtl": {
+      "f1": "0.253",
+      "auc": "0.645",
+      "n": 860
+    },
+    "olid_ext__mc2_tfidf_lr": {
+      "f1": "0.235",
+      "auc": "0.544",
+      "n": 860
+    },
+    "olid_ext__mc2_tfidf_svm": {
+      "f1": "0.253",
+      "auc": "0.552",
+      "n": 860
+    },
+    "olid_ext__mc2_xlmr_base": {
+      "f1": "0.317",
+      "auc": "0.678",
+      "n": 860
+    },
+    "usr_sarcasm__sarcasm_majority": {
+      "f1": "0.363",
+      "auc": "0.500",
+      "n": 8455
+    },
+    "usr_sarcasm__sarcasm_muril_base": {
+      "f1": "0.520",
+      "auc": "0.537",
+      "n": 8455
+    },
+    "usr_sarcasm__sarcasm_tfidf_lr": {
+      "f1": "0.448",
+      "auc": "0.443",
+      "n": 8455
+    },
+    "usr_sarcasm__sarcasm_tfidf_svm": {
+      "f1": "0.433",
+      "auc": "0.450",
+      "n": 8455
+    }
+  },
+  "ea": {
+    "slices": {
+      "test_without_near_duplicate_in_train": {
+        "n": 818,
+        "acc": "0.678",
+        "f1": "0.638"
+      },
+      "test_with_near_duplicate_in_train": {
+        "n": 182,
+        "acc": "0.632",
+        "f1": "0.629"
+      },
+      "short_8_words": {
+        "n": 503,
+        "acc": "0.746",
+        "f1": "0.659"
+      },
+      "medium_9_20_words": {
+        "n": 471,
+        "acc": "0.611",
+        "f1": "0.607"
+      },
+      "long_20_words": {
+        "n": 26,
+        "acc": "0.269",
+        "f1": "0.262"
+      },
+      "low_english_function_word_ratio_5": {
+        "n": 727,
+        "acc": "0.688",
+        "f1": "0.609"
+      },
+      "high_english_function_word_ratio_15": {
+        "n": 154,
+        "acc": "0.656",
+        "f1": "0.660"
+      },
+      "no_oov_words_vs_train_vocabulary": {
+        "n": 556,
+        "acc": "0.669",
+        "f1": "0.653"
+      },
+      "oov_rate_30_spelling_transliteration_variation": {
+        "n": 34,
+        "acc": "0.647",
+        "f1": "0.617"
+      },
+      "contains_profanity": {
+        "n": 260,
+        "acc": "0.604",
+        "f1": "0.581"
+      },
+      "no_profanity": {
+        "n": 740,
+        "acc": "0.693",
+        "f1": "0.566"
+      },
+      "sarcasm_model_p_0_5_model_inferred_not_gold": {
+        "n": 410,
+        "acc": "0.612",
+        "f1": "0.546"
+      },
+      "sarcasm_model_p_0_5": {
+        "n": 590,
+        "acc": "0.710",
+        "f1": "0.681"
+      }
+    },
+    "fp": {
+      "not_cb_total": 200,
+      "not_cb_predicted_cb": 29,
+      "not_cb_with_profanity": 4,
+      "fp_rate_with_profanity": 0.25,
+      "fp_rate_without_profanity": 0.14285714285714285,
+      "cb_total": 800,
+      "cb_predicted_not_cb": 53
+    },
+    "top": [
+      [
+        "offensive",
+        "gender",
+        38
+      ],
+      [
+        "mockery",
+        "not_cyberbullying",
+        31
+      ],
+      [
+        "mockery",
+        "offensive",
+        27
+      ],
+      [
+        "offensive",
+        "mockery",
+        24
+      ],
+      [
+        "abusive",
+        "offensive",
+        23
+      ]
+    ],
+    "fp_rate_prof": "25.0%",
+    "fp_rate_noprof": "14.3%"
+  },
+  "aux": {
+    "mc2__muril__mtl__s13": {
+      "macro_f1": 0.736264750207605,
+      "accuracy": 0.9066666666666666
+    },
+    "mc2__muril__mtl__s42": {
+      "macro_f1": 0.7425589711098002,
+      "accuracy": 0.9038095238095238
+    },
+    "mc2__muril__mtl__s87": {
+      "macro_f1": 0.7191572900950685,
+      "accuracy": 0.9019047619047619
+    },
+    "mc7__muril__mtl__s13": {
+      "macro_f1": 0.7879802327435039,
+      "accuracy": 0.9095238095238095
+    },
+    "mc7__muril__mtl__s42": {
+      "macro_f1": 0.7867902237318172,
+      "accuracy": 0.9161904761904762
+    },
+    "mc7__muril__mtl__s87": {
+      "macro_f1": 0.7939788945666733,
+      "accuracy": 0.9123809523809524
+    },
+    "mc7__muril__mtl_shuffled__s13": {
+      "macro_f1": 0.5440729483282675,
+      "accuracy": 0.7590476190476191
+    },
+    "mc7__muril__mtl_shuffled__s42": {
+      "macro_f1": 0.5092282918369875,
+      "accuracy": 0.7304761904761905
+    },
+    "mc7__muril__mtl_shuffled__s87": {
+      "macro_f1": 0.49635012350035285,
+      "accuracy": 0.6685714285714286
+    }
+  },
+  "xai": {
+    "faith": {
+      "k1": {
+        "n": "100.000",
+        "mean_drop_top": "0.421",
+        "mean_drop_random": "0.092",
+        "mean_diff": "0.329",
+        "diff_ci95": [
+          0.2715441177853566,
+          0.38510123997746853
+        ],
+        "share_top_gt_random": "0.860"
+      },
+      "k2": {
+        "n": "100.000",
+        "mean_drop_top": "0.527",
+        "mean_drop_random": "0.164",
+        "mean_diff": "0.363",
+        "diff_ci95": [
+          0.30082353516115107,
+          0.4249399740982382
+        ],
+        "share_top_gt_random": "0.880"
+      },
+      "k3": {
+        "n": "100.000",
+        "mean_drop_top": "0.558",
+        "mean_drop_random": "0.209",
+        "mean_diff": "0.349",
+        "diff_ci95": [
+          0.2954329282829449,
+          0.4029530325734514
+        ],
+        "share_top_gt_random": "0.880"
+      }
+    },
+    "stab": {
+      "budget_100_vs_1000": {
+        "spearman_mean": "0.950",
+        "top3_overlap_mean": "0.833",
+        "n": 12
+      },
+      "budget_250_vs_1000": {
+        "spearman_mean": "0.986",
+        "top3_overlap_mean": "0.944",
+        "n": 12
+      },
+      "budget_500_vs_1000": {
+        "spearman_mean": "0.997",
+        "top3_overlap_mean": "0.972",
+        "n": 12
+      }
+    },
+    "occ": {
+      "spearman_mean": "0.273",
+      "top3_overlap_mean": "0.565",
+      "n": 23
+    },
+    "sec": "0.9",
+    "inf_ms": "23",
+    "factor": "38",
+    "device": "cpu"
+  },
+  "early": {
+    "conda__distilroberta__base__s13": {
+      "f1": "0.913",
+      "precision": "0.916",
+      "recall": "0.909",
+      "false_alarm_rate": "0.051",
+      "delay_mean": "0.010",
+      "delay_median": "0.000",
+      "erde_3": "0.161",
+      "erde_5": "0.097",
+      "alarms_before_onset": 35,
+      "far10_recall": "0.909",
+      "far10_far": "0.051",
+      "tau": "0.680",
+      "k1_recall": "0.463",
+      "k1_prefix_recall": "0.860"
+    },
+    "conda__distilroberta__base__s42": {
+      "f1": "0.910",
+      "precision": "0.930",
+      "recall": "0.890",
+      "false_alarm_rate": "0.041",
+      "delay_mean": "0.071",
+      "delay_median": "0.000",
+      "erde_3": "0.165",
+      "erde_5": "0.101",
+      "alarms_before_onset": 26,
+      "far10_recall": "0.890",
+      "far10_far": "0.041",
+      "tau": "0.830",
+      "k1_recall": "0.445",
+      "k1_prefix_recall": "0.835"
+    },
+    "conda__distilroberta__base__s87": {
+      "f1": "0.914",
+      "precision": "0.918",
+      "recall": "0.911",
+      "false_alarm_rate": "0.050",
+      "delay_mean": "0.008",
+      "delay_median": "0.000",
+      "erde_3": "0.161",
+      "erde_5": "0.096",
+      "alarms_before_onset": 29,
+      "far10_recall": "0.911",
+      "far10_far": "0.050",
+      "tau": "0.740",
+      "k1_recall": "0.458",
+      "k1_prefix_recall": "0.864"
+    },
+    "conda__tfidf_lr": {
+      "f1": "0.912",
+      "precision": "0.928",
+      "recall": "0.897",
+      "false_alarm_rate": "0.043",
+      "delay_mean": "0.022",
+      "delay_median": "0.000",
+      "erde_3": "0.165",
+      "erde_5": "0.098",
+      "alarms_before_onset": 27,
+      "far10_recall": "0.897",
+      "far10_far": "0.043",
+      "tau": "0.620",
+      "k1_recall": "0.443",
+      "k1_prefix_recall": "0.838"
+    },
+    "conda_ctx__distilroberta__base__s13": {
+      "f1": "0.906",
+      "precision": "0.948",
+      "recall": "0.868",
+      "false_alarm_rate": "0.029",
+      "delay_mean": "0.148",
+      "delay_median": "0.000",
+      "erde_3": "0.171",
+      "erde_5": "0.109",
+      "alarms_before_onset": 16,
+      "far10_recall": "0.868",
+      "far10_far": "0.029",
+      "tau": "0.950",
+      "k1_recall": "0.428",
+      "k1_prefix_recall": "0.809"
+    },
+    "conda_ctx__distilroberta__base__s42": {
+      "f1": "0.910",
+      "precision": "0.926",
+      "recall": "0.894",
+      "false_alarm_rate": "0.044",
+      "delay_mean": "0.070",
+      "delay_median": "0.000",
+      "erde_3": "0.165",
+      "erde_5": "0.101",
+      "alarms_before_onset": 25,
+      "far10_recall": "0.894",
+      "far10_far": "0.044",
+      "tau": "0.850",
+      "k1_recall": "0.446",
+      "k1_prefix_recall": "0.847"
+    },
+    "conda_ctx__distilroberta__base__s87": {
+      "f1": "0.910",
+      "precision": "0.927",
+      "recall": "0.894",
+      "false_alarm_rate": "0.043",
+      "delay_mean": "0.058",
+      "delay_median": "0.000",
+      "erde_3": "0.165",
+      "erde_5": "0.101",
+      "alarms_before_onset": 27,
+      "far10_recall": "0.894",
+      "far10_far": "0.043",
+      "tau": "0.550",
+      "k1_recall": "0.447",
+      "k1_prefix_recall": "0.838"
+    },
+    "conda_ctx__tfidf_lr": {
+      "f1": "0.853",
+      "precision": "0.824",
+      "recall": "0.884",
+      "false_alarm_rate": "0.116",
+      "delay_mean": "-0.044",
+      "delay_median": "0.000",
+      "erde_3": "0.179",
+      "erde_5": "0.118",
+      "alarms_before_onset": 64,
+      "far10_recall": "0.849",
+      "far10_far": "0.083",
+      "tau": "0.260",
+      "k1_recall": "0.492",
+      "k1_prefix_recall": "0.855"
+    }
+  },
+  "bench": {
+    "muril": {
+      "name": "MuRIL",
+      "params_m": "237.6",
+      "trainable_params_m": "86.0",
+      "size_mb": "453.1",
+      "size_note": "fp16 state dict",
+      "latency_ms_bs1_cpu": "23.7",
+      "latency_p95_ms_bs1_cpu": "32.4",
+      "throughput_per_s_bs32_cpu": "136.6",
+      "latency_ms_bs1_mps": "11.3",
+      "latency_p95_ms_bs1_mps": "197.1",
+      "throughput_per_s_bs32_mps": "272.0",
+      "train_minutes_mean": "13.8"
+    },
+    "xlm_r_base": {
+      "name": "XLM-R base",
+      "params_m": "278.0",
+      "trainable_params_m": "86.0",
+      "size_mb": "530.3",
+      "size_note": "fp16 state dict",
+      "latency_ms_bs1_cpu": "30.2",
+      "latency_p95_ms_bs1_cpu": "35.2",
+      "throughput_per_s_bs32_cpu": "142.4",
+      "latency_ms_bs1_mps": "10.8",
+      "latency_p95_ms_bs1_mps": "179.2",
+      "throughput_per_s_bs32_mps": "333.1",
+      "train_minutes_mean": "13.3"
+    },
+    "hingroberta": {
+      "name": "HingRoBERTa",
+      "params_m": "278.0",
+      "trainable_params_m": "86.0",
+      "size_mb": "530.3",
+      "size_note": "fp16 state dict",
+      "latency_ms_bs1_cpu": "29.9",
+      "latency_p95_ms_bs1_cpu": "35.4",
+      "throughput_per_s_bs32_cpu": "144.1",
+      "latency_ms_bs1_mps": "10.5",
+      "latency_p95_ms_bs1_mps": "11.9",
+      "throughput_per_s_bs32_mps": "346.6",
+      "train_minutes_mean": "13.2"
+    },
+    "distilroberta": {
+      "name": "DistilRoBERTa",
+      "params_m": "82.1",
+      "trainable_params_m": "43.5",
+      "size_mb": "156.6",
+      "size_note": "fp16 state dict",
+      "latency_ms_bs1_cpu": "16.0",
+      "latency_p95_ms_bs1_cpu": "17.2",
+      "throughput_per_s_bs32_cpu": "224.1",
+      "latency_ms_bs1_mps": "6.1",
+      "latency_p95_ms_bs1_mps": "21.5",
+      "throughput_per_s_bs32_mps": "512.0"
+    },
+    "tf_idf_lr": {
+      "name": "TF-IDF + LR",
+      "params_m": "0.8",
+      "trainable_params_m": null,
+      "size_mb": "10.0",
+      "size_note": "pickled vectoriser + model",
+      "latency_ms_bs1_cpu": "0.6",
+      "train_minutes_mean": "0.5"
+    },
+    "tf_idf_svm": {
+      "name": "TF-IDF + SVM",
+      "params_m": "0.8",
+      "trainable_params_m": null,
+      "size_mb": "33.9",
+      "size_note": "pickled vectoriser + model",
+      "latency_ms_bs1_cpu": "2.8",
+      "train_minutes_mean": "0.8"
+    }
+  },
+  "text": {
+    "aux_head_range": "0.787–0.794",
+    "aux_head_shuffled_range": "0.496–0.544",
+    "fusion_control": "A fusion control whose features come from a sarcasm model trained on permuted labels scores 0.648 ± 0.005; real vs. control features: no reliable difference (Δ = -0.001, 95% CI [-0.019, +0.016]). Any fusion effect is therefore not attributable to sarcasm knowledge.",
+    "full_ft": "A diagnostic run with the token-embedding table unfrozen could not be completed: two attempts (batch 32, and batch 16 with 2-step gradient accumulation) drove the 16 GB machine to critical memory pressure and were stopped. Whether freezing contributes to the gap therefore remains open.",
+    "abstract_sarcasm": "Multitask sarcasm supervision shows no reliable difference from the base model (Δ macro-F1 = +0.006, 95% CI [-0.014, +0.026]), and a shuffled-label control performs as well as real sarcasm labels (Δ = -0.002), so the sarcasm labels themselves add nothing measurable. Feature fusion with a separately trained sarcasm model shows no reliable difference from the base model (Δ = +0.007, 95% CI [-0.013, +0.026]). A Hinglish-pretrained encoder (HingRoBERTa) is the only transformer that approaches the TF-IDF baselines.",
+    "abstract_xai": "deleting the top-attributed word lowers the predicted-class probability by 0.421 vs. 0.092 for a random word",
+    "abstract_early": "flags toxic conversations with alarm F1 0.913 at a 0.051 false-alarm rate, but almost always at the first toxic turn rather than before it."
+  },
+  "tables": {
+    "tab01_datasets": "**Datasets used in this study (records after validation).**\n\n| Dataset | Language | Unit | Labels | Records | Licence | Role |\n|---|---|---|---|---|---|---|\n| MC-Hinglish1.0 | hi-en (Roman) | comment | 7 cyberbullying types | 8,400 | CC-BY-NC-SA-4.0 | train / val / test |\n| Swami et al. sarcasm | hi-en (Roman) | tweet | sarcastic / not | 5,250 | GPL-3.0 | sarcasm supervision |\n| CONDA | en | chat turn | E / I / A / O intent | 35,895 | not stated | early-detection proxy |\n| TweetEval-Offensive (test) | en | tweet | offensive / not | 860 | OLID terms | external stress test |\n| User sarcasm file (human labels) | hi-en | comment | sarcastic / not | 8,455 | unknown | supplementary test (provenance unknown) |\n",
+    "tab02_splits": "**Split sizes and label distributions.**\n\n| Dataset | Split | N | Label distribution |\n|---|---|---|---|\n| MC-Hinglish1.0 | train | 6,659 | abusive: 890, age: 879, gender: 903, mockery: 882, not_cyberbullying: 1342, offensive: 882, religion: 881 |\n| MC-Hinglish1.0 | val | 741 | abusive: 99, age: 98, gender: 101, mockery: 98, not_cyberbullying: 149, offensive: 98, religion: 98 |\n| MC-Hinglish1.0 | test | 1,000 | abusive: 148, age: 129, gender: 141, mockery: 127, not_cyberbullying: 200, offensive: 124, religion: 131 |\n| Swami sarcasm | train | 3,675 | 0: 3322, 1: 353 |\n| Swami sarcasm | val | 525 | 0: 475, 1: 50 |\n| Swami sarcasm | test | 1,050 | 0: 949, 1: 101 |\n| CONDA (turns) | train | 25,341 | A: 1670, E: 3253, I: 1567, O: 18851 |\n| CONDA (turns) | val | 3,495 | A: 218, E: 501, I: 241, O: 2535 |\n| CONDA (turns) | test | 7,059 | A: 411, E: 957, I: 466, O: 5225 |\n",
+    "tab03_data_quality": "**Data-quality and leakage audit (measured).**\n\n| Check | Value |\n|---|---|\n| official train: exact-duplicate groups | 8 |\n| official train: normalised-duplicate groups | 250 |\n| official train: near-duplicate pairs (cos >= 0.9) | 1,082 |\n| label conflicts among exact duplicates | 0 |\n| test items with near-duplicate in official train | 182 |\n| our train<->val near-duplicate pairs | 0 |\n| Swami sarcastic tweets containing #sarcasm/#irony | 486 / 504 |\n| CONDA conversations split across official train/valid files | 3,540 |\n",
+    "tab03b_split_shift": "**Domain-classifier test of distribution shift (TF-IDF LR, 5-fold CV ROC-AUC; 0.5 = indistinguishable).**\n\n| Comparison | ROC-AUC |\n|---|---|\n| official train vs official test | 0.884 |\n| official train vs our validation (control) | 0.578 |\n| class 'abusive': train vs test (vs val) | 0.941 (0.579) |\n| class 'age': train vs test (vs val) | 0.921 (0.689) |\n| class 'gender': train vs test (vs val) | 0.923 (0.637) |\n| class 'mockery': train vs test (vs val) | 0.879 (0.561) |\n| class 'not_cyberbullying': train vs test (vs val) | 0.960 (0.539) |\n| class 'offensive': train vs test (vs val) | 0.911 (0.641) |\n| class 'religion': train vs test (vs val) | 0.928 (0.699) |\n",
+    "tab04_hyperparameters": "**Model configurations and hyperparameters (shared across models).**\n\n| Setting | Value |\n|---|---|\n| max_len | 128 |\n| batch_size | 32 |\n| freeze_word_embeddings | True |\n| lr | 3e-05 |\n| head_lr | 0.001 |\n| epochs | 5 |\n| patience | 2 |\n| warmup | 0.1 |\n| weight_decay | 0.01 |\n| clip | 1.0 |\n| dropout | 0.1 |\n| class_weighting | True |\n| amp | False |\n| optimiser | AdamW (fused), linear warm-up/decay |\n| seeds | 13, 42, 87 |\n| MTL lambda | 0.5 |\n| model selection | best validation macro-F1 epoch |\n| TF-IDF features | word 1-2-grams + char_wb 2-5-grams, sublinear TF |\n| TF-IDF C grid (val-selected) | 0.1, 0.3, 1, 3, 10 |\n| encoder: muril | google/muril-base-cased @ afd9f36c |\n| encoder: xlmr | FacebookAI/xlm-roberta-base @ e73636d4 |\n| encoder: hingroberta | l3cube-pune/hing-roberta @ f714c4bd |\n| encoder: distilroberta | distilbert/distilroberta-base @ fb53ab88 |\n",
+    "tab05_results_mc7": "**MC7 (7-way cyberbullying type): test-set results (mean ± s.d. over seeds; ensemble = mean of seed probabilities with bootstrap 95% CI; dedup = test items without near-duplicates in training).**\n\n| Model | Seeds | Accuracy | Macro-F1 | Weighted-F1 | ROC-AUC (macro OvR) | Macro-F1 (dedup test) | Ens. macro-F1 [95% CI] | ECE |\n|---|---|---|---|---|---|---|---|---|\n| HingRoBERTa | 3 | 0.741 ± 0.039 | 0.721 ± 0.040 | 0.733 ± 0.037 | 0.936 ± 0.009 | 0.708 ± 0.048 | 0.734 [0.708, 0.758] | 0.112 ± 0.028 |\n| Majority class | 1 | 0.200 | 0.048 | 0.067 | 0.500 | 0.050 | 0.048 [0.043, 0.052] | 0.002 |\n| MuRIL | 3 | 0.660 ± 0.010 | 0.632 ± 0.016 | 0.646 ± 0.015 | 0.899 ± 0.006 | 0.628 ± 0.017 | 0.642 [0.615, 0.669] | 0.094 ± 0.005 |\n| MuRIL + sarcasm fusion | 3 | 0.676 ± 0.009 | 0.653 ± 0.009 | 0.666 ± 0.007 | 0.902 ± 0.004 | 0.650 ± 0.007 | 0.649 [0.621, 0.674] | 0.071 ± 0.001 |\n| MuRIL + fusion (shuffled-sarcasm features) | 3 | 0.672 ± 0.006 | 0.648 ± 0.005 | 0.661 ± 0.006 | 0.901 ± 0.005 | 0.640 ± 0.002 | 0.651 [0.623, 0.676] | 0.082 ± 0.006 |\n| MuRIL + sarcasm MTL | 3 | 0.653 ± 0.007 | 0.631 ± 0.009 | 0.643 ± 0.007 | 0.898 ± 0.003 | 0.632 ± 0.009 | 0.648 [0.620, 0.675] | 0.063 ± 0.027 |\n| MuRIL + shuffled-sarcasm MTL | 3 | 0.666 ± 0.016 | 0.645 ± 0.020 | 0.657 ± 0.020 | 0.899 ± 0.003 | 0.643 ± 0.035 | 0.651 [0.623, 0.677] | 0.070 ± 0.026 |\n| TF-IDF + LR | 1 | 0.743 | 0.727 | 0.735 | 0.925 | 0.703 | 0.727 [0.699, 0.754] | 0.057 |\n| TF-IDF + SVM | 1 | 0.762 | 0.743 | 0.751 | 0.923 | 0.722 | 0.743 [0.717, 0.771] | 0.145 |\n| XLM-R base | 3 | 0.649 ± 0.016 | 0.630 ± 0.018 | 0.638 ± 0.015 | 0.893 ± 0.019 | 0.628 ± 0.018 | 0.653 [0.626, 0.678] | 0.152 ± 0.009 |\n",
+    "tab05b_mc7_subsets": "**MC7 macro-F1 by evaluation subset: validation (in-distribution), full official test, test items with a near-duplicate in training, and the de-duplicated remainder (mean ± s.d. over seeds).**\n\n| Model | Full test (1000) | Near-dup items (182) | De-duplicated (818) | Validation |\n|---|---|---|---|---|\n| HingRoBERTa | 0.721 ± 0.040 | 0.734 ± 0.015 | 0.708 ± 0.048 | 0.793 ± 0.008 |\n| MuRIL | 0.632 ± 0.016 | 0.625 ± 0.010 | 0.628 ± 0.017 | 0.761 ± 0.004 |\n| MuRIL + sarcasm fusion | 0.653 ± 0.009 | 0.630 ± 0.019 | 0.650 ± 0.007 | 0.755 ± 0.004 |\n| MuRIL + fusion (shuffled-sarcasm features) | 0.648 ± 0.005 | 0.648 ± 0.026 | 0.640 ± 0.002 | 0.752 ± 0.003 |\n| MuRIL + sarcasm MTL | 0.631 ± 0.009 | 0.601 ± 0.040 | 0.632 ± 0.009 | 0.754 ± 0.006 |\n| MuRIL + shuffled-sarcasm MTL | 0.645 ± 0.020 | 0.613 ± 0.039 | 0.643 ± 0.035 | 0.754 ± 0.005 |\n| TF-IDF + LR | 0.727 | 0.785 | 0.703 | 0.773 |\n| TF-IDF + SVM | 0.743 | 0.790 | 0.722 | 0.763 |\n| XLM-R base | 0.630 ± 0.018 | 0.595 ± 0.021 | 0.628 ± 0.018 | 0.769 ± 0.007 |\n",
+    "tab06_per_class_mc7": "**Per-class results of MuRIL (seed ensemble) on the MC7 test set, with TF-IDF+SVM F1 for reference.**\n\n| Class | Precision | Recall | F1 | Support | F1 TF-IDF+SVM |\n|---|---|---|---|---|---|\n| not_cyberbullying | 0.763 | 0.855 | 0.807 | 200 | 0.839 |\n| age | 0.885 | 0.891 | 0.888 | 129 | 0.875 |\n| gender | 0.541 | 0.787 | 0.642 | 141 | 0.771 |\n| religion | 0.811 | 0.916 | 0.860 | 131 | 0.898 |\n| mockery | 0.352 | 0.244 | 0.288 | 127 | 0.443 |\n| abusive | 0.755 | 0.520 | 0.616 | 148 | 0.712 |\n| offensive | 0.437 | 0.363 | 0.396 | 124 | 0.667 |\n",
+    "tab07_paired_tests": "**Paired comparisons on the test set (B minus A). Bootstrap: 2,000 paired resamples of the seed-ensemble predictions; McNemar: exact test on per-item correctness. No multiple-comparison correction was applied; treat p-values as descriptive.**\n\n| Comparison (B vs A) | Delta macro-F1 (ensemble) | 95% CI | p (bootstrap) | p (McNemar) | Seeds with Delta>0 |\n|---|---|---|---|---|---|\n| XLM-R base vs MuRIL | 0.011 | [-0.017, +0.038] | 0.460 | 0.771 | 1/3 |\n| HingRoBERTa vs MuRIL | 0.091 | [+0.065, +0.118] | 0.000 | 0.000 | 3/3 |\n| MuRIL + sarcasm MTL vs MuRIL | 0.006 | [-0.014, +0.026] | 0.552 | 0.744 | 2/3 |\n| MuRIL + shuffled-sarcasm MTL vs MuRIL | 0.008 | [-0.010, +0.026] | 0.361 | 0.410 | 3/3 |\n| MuRIL + sarcasm fusion vs MuRIL | 0.007 | [-0.013, +0.026] | 0.495 | 0.657 | 3/3 |\n| TF-IDF + SVM vs MuRIL | 0.101 | [+0.072, +0.130] | 0.000 | 0.000 | 1/1 |\n| TF-IDF + LR vs MuRIL | 0.085 | [+0.057, +0.113] | 0.000 | 0.000 | 1/1 |\n| MuRIL + sarcasm MTL vs MuRIL + shuffled-sarcasm MTL | -0.002 | [-0.022, +0.017] | 0.821 | 0.741 | 1/3 |\n| MuRIL + sarcasm fusion vs MuRIL + fusion (shuffled-sarcasm features) | -0.001 | [-0.019, +0.016] | 0.837 | 0.804 | 2/3 |\n| XLM-R base vs MuRIL | 0.019 | [-0.006, +0.046] | 0.150 | 0.422 | 1/3 |\n| MuRIL + sarcasm MTL vs MuRIL | -0.001 | [-0.021, +0.020] | 0.924 | 0.568 | 1/3 |\n| MuRIL + sarcasm fusion vs MuRIL | 0.015 | [-0.004, +0.034] | 0.124 | 0.188 | 3/3 |\n| TF-IDF + SVM vs MuRIL | 0.029 | [+0.001, +0.060] | 0.045 | 0.078 | 1/1 |\n| MuRIL vs TF-IDF + LR | 0.067 | [+0.019, +0.115] | 0.003 | 0.326 | 1/1 |\n",
+    "tab08_results_mc2": "**MC2 (binary cyberbullying): test-set results (mean ± s.d. over seeds; ensemble = mean of seed probabilities with bootstrap 95% CI; dedup = test items without near-duplicates in training).**\n\n| Model | Seeds | Accuracy | Macro-F1 | Weighted-F1 | ROC-AUC | Macro-F1 (dedup test) | Ens. macro-F1 [95% CI] | ECE |\n|---|---|---|---|---|---|---|---|---|\n| Majority class | 1 | 0.800 | 0.444 | 0.711 | 0.500 | 0.441 | 0.444 [0.437, 0.452] | 0.002 |\n| MuRIL | 3 | 0.912 ± 0.009 | 0.859 ± 0.006 | 0.911 ± 0.006 | 0.947 ± 0.006 | 0.867 ± 0.005 | 0.858 [0.830, 0.885] | 0.061 ± 0.017 |\n| MuRIL + sarcasm fusion | 3 | 0.920 ± 0.008 | 0.872 ± 0.007 | 0.919 ± 0.006 | 0.939 ± 0.009 | 0.884 ± 0.009 | 0.873 [0.845, 0.898] | 0.053 ± 0.022 |\n| MuRIL + sarcasm MTL | 3 | 0.904 ± 0.013 | 0.853 ± 0.016 | 0.905 ± 0.012 | 0.934 ± 0.009 | 0.860 ± 0.018 | 0.857 [0.828, 0.882] | 0.075 ± 0.011 |\n| TF-IDF + LR | 1 | 0.925 | 0.879 | 0.924 | 0.960 | 0.876 | 0.879 [0.852, 0.904] | 0.025 |\n| TF-IDF + SVM | 1 | 0.929 | 0.887 | 0.928 | 0.965 | 0.885 | 0.887 [0.859, 0.912] | 0.031 |\n| XLM-R base | 3 | 0.910 ± 0.012 | 0.863 ± 0.017 | 0.911 ± 0.011 | 0.941 ± 0.006 | 0.871 ± 0.015 | 0.876 [0.850, 0.900] | 0.073 ± 0.009 |\n",
+    "tab09_legacy_boost": "**Original SACENet additive sarcasm boost (p + 0.18*s if s >= 0.45; threshold 0.55) re-evaluated on MC2 with a trained sarcasm model, compared with the unboosted MuRIL classifier.**\n\n| Seed | Setting | Macro-F1 | Recall (CB) | False-positive rate | Boosted items |\n|---|---|---|---|---|---|\n| 13 | base@0.50 | 0.854 | 0.940 | 0.230 | – |\n| 13 | base@0.55 | 0.852 | 0.939 | 0.230 | – |\n| 13 | boost@0.55 | 0.853 | 0.941 | 0.235 | 429 |\n| 42 | base@0.50 | 0.859 | 0.931 | 0.190 | – |\n| 42 | base@0.55 | 0.858 | 0.930 | 0.190 | – |\n| 42 | boost@0.55 | 0.860 | 0.932 | 0.190 | 429 |\n| 87 | base@0.50 | 0.866 | 0.981 | 0.315 | – |\n| 87 | base@0.55 | 0.864 | 0.980 | 0.315 | – |\n| 87 | boost@0.55 | 0.864 | 0.980 | 0.315 | 429 |\n",
+    "tab10_external": "**Cross-dataset evaluation without any re-training or threshold tuning. Label constructs differ from the training task (offensive language; differently sourced sarcasm), so these numbers measure transfer, not in-domain performance.**\n\n| Test set | Model (trained on) | N | Macro-F1 (mean) | ROC-AUC (mean) | Runs |\n|---|---|---|---|---|---|\n| TweetEval-Offensive (en) | Majority class (MC2) | 860 | 0.218 | 0.500 | 1 |\n| TweetEval-Offensive (en) | MuRIL (MC2) | 860 | 0.275 | 0.623 | 3 |\n| TweetEval-Offensive (en) | MuRIL + sarcasm MTL (MC2) | 860 | 0.253 | 0.645 | 3 |\n| TweetEval-Offensive (en) | TF-IDF + LR (MC2) | 860 | 0.235 | 0.544 | 1 |\n| TweetEval-Offensive (en) | TF-IDF + SVM (MC2) | 860 | 0.253 | 0.552 | 1 |\n| TweetEval-Offensive (en) | XLM-R base (MC2) | 860 | 0.317 | 0.678 | 3 |\n| User sarcasm file (hi-en) | Majority class (Swami) | 8,455 | 0.363 | 0.500 | 1 |\n| User sarcasm file (hi-en) | MuRIL (Swami) | 8,455 | 0.520 | 0.537 | 3 |\n| User sarcasm file (hi-en) | TF-IDF + LR (Swami) | 8,455 | 0.448 | 0.443 | 1 |\n| User sarcasm file (hi-en) | TF-IDF + SVM (Swami) | 8,455 | 0.433 | 0.450 | 1 |\n",
+    "tab11_error_slices": "**Error analysis by heuristic slice (MuRIL seed ensemble, MC7 test).**\n\n| Slice | N | Accuracy | Macro-F1 |\n|---|---|---|---|\n| test without near-duplicate in train | 818 | 0.678 | 0.638 |\n| test WITH near-duplicate in train | 182 | 0.632 | 0.629 |\n| short (<=8 words) | 503 | 0.746 | 0.659 |\n| medium (9-20 words) | 471 | 0.611 | 0.607 |\n| long (>20 words) | 26 | 0.269 | 0.262 |\n| low English function-word ratio (<5%) | 727 | 0.688 | 0.609 |\n| high English function-word ratio (>=15%) | 154 | 0.656 | 0.660 |\n| no OOV words vs train vocabulary | 556 | 0.669 | 0.653 |\n| OOV rate >= 30% (spelling/transliteration variation) | 34 | 0.647 | 0.617 |\n| contains profanity | 260 | 0.604 | 0.581 |\n| no profanity | 740 | 0.693 | 0.566 |\n| sarcasm model P>=0.5 (model-inferred, not gold) | 410 | 0.612 | 0.546 |\n| sarcasm model P<0.5 | 590 | 0.710 | 0.681 |\n",
+    "tab11b_top_confusions": "**Most frequent confusions (MuRIL seed ensemble, MC7 test).**\n\n| Gold | Predicted | Count |\n|---|---|---|\n| offensive | gender | 38 |\n| mockery | not_cyberbullying | 31 |\n| mockery | offensive | 27 |\n| offensive | mockery | 24 |\n| abusive | offensive | 23 |\n| abusive | gender | 22 |\n| mockery | gender | 19 |\n| abusive | religion | 15 |\n| gender | mockery | 14 |\n| mockery | abusive | 14 |\n| not_cyberbullying | mockery | 12 |\n| not_cyberbullying | gender | 7 |\n",
+    "tab12_runtime_size": "**Model size, inference latency and training time (Apple M1 Pro).**\n\n| name | params_m | trainable_params_m | size_mb | latency_ms_bs1_cpu | latency_ms_bs1_mps | throughput_per_s_bs32_mps | train_minutes_mean |\n|---|---|---|---|---|---|---|---|\n| MuRIL | 237.562 | 86.047 | 453.113 | 23.749 | 11.307 | 272.041 | 13.761 |\n| XLM-R base | 278.049 | 86.047 | 530.336 | 30.242 | 10.828 | 333.086 | 13.327 |\n| HingRoBERTa | 278.049 | 86.047 | 530.336 | 29.936 | 10.479 | 346.571 | 13.193 |\n| DistilRoBERTa | 82.124 | 43.520 | 156.639 | 15.972 | 6.095 | 512.006 | – |\n| TF-IDF + LR | 0.784 | – | 9.973 | 0.571 | – | – | 0.458 |\n| TF-IDF + SVM | 0.784 | – | 33.913 | 2.798 | – | – | 0.811 |\n",
+    "tab13_early_detection": "**Early-warning proxy evaluation on CONDA test conversations (running-max policy; thresholds chosen on validation).**\n\n| Turn scorer | F1 | Precision | Recall | False-alarm rate | Mean delay | ERDE_3 | ERDE_5 | Recall @FAR<=0.10(val) | FAR @FAR<=0.10(val) |\n|---|---|---|---|---|---|---|---|---|---|\n| conda__distilroberta__base__s13 | 0.913 | 0.916 | 0.909 | 0.051 | 0.010 | 0.161 | 0.097 | 0.909 | 0.051 |\n| conda__distilroberta__base__s42 | 0.910 | 0.930 | 0.890 | 0.041 | 0.071 | 0.165 | 0.101 | 0.890 | 0.041 |\n| conda__distilroberta__base__s87 | 0.914 | 0.918 | 0.911 | 0.050 | 0.008 | 0.161 | 0.096 | 0.911 | 0.050 |\n| conda__tfidf_lr | 0.912 | 0.928 | 0.897 | 0.043 | 0.022 | 0.165 | 0.098 | 0.897 | 0.043 |\n| conda_ctx__distilroberta__base__s13 | 0.906 | 0.948 | 0.868 | 0.029 | 0.148 | 0.171 | 0.109 | 0.868 | 0.029 |\n| conda_ctx__distilroberta__base__s42 | 0.910 | 0.926 | 0.894 | 0.044 | 0.070 | 0.165 | 0.101 | 0.894 | 0.044 |\n| conda_ctx__distilroberta__base__s87 | 0.910 | 0.927 | 0.894 | 0.043 | 0.058 | 0.165 | 0.101 | 0.894 | 0.043 |\n| conda_ctx__tfidf_lr | 0.853 | 0.824 | 0.884 | 0.116 | -0.044 | 0.179 | 0.118 | 0.849 | 0.083 |\n",
+    "tab14_results_sarcasm": "**Sarcasm detection (Swami test, hashtags removed): test-set results (mean ± s.d. over seeds; ensemble = mean of seed probabilities with bootstrap 95% CI; dedup = test items without near-duplicates in training).**\n\n| Model | Seeds | Accuracy | Macro-F1 | Weighted-F1 | ROC-AUC | Macro-F1 (dedup test) | Ens. macro-F1 [95% CI] | ECE |\n|---|---|---|---|---|---|---|---|---|\n| Majority class | 1 | 0.904 | 0.475 | 0.858 | 0.500 | – | 0.475 [0.470, 0.480] | 0.000 |\n| MuRIL | 3 | 0.912 ± 0.010 | 0.781 ± 0.002 | 0.918 ± 0.006 | 0.949 ± 0.008 | – | 0.806 [0.766, 0.842] | 0.046 ± 0.003 |\n| MuRIL (shuffled training labels) | 1 | 0.904 | 0.475 | 0.858 | 0.433 | – | 0.475 [0.470, 0.480] | 0.376 |\n| TF-IDF + LR | 1 | 0.912 | 0.739 | 0.911 | 0.935 | – | 0.739 [0.693, 0.783] | 0.041 |\n| TF-IDF + SVM | 1 | 0.914 | 0.724 | 0.909 | 0.932 | – | 0.724 [0.675, 0.773] | 0.024 |\n",
+    "tab15_explainability": "**SHAP faithfulness, stability and overhead (MuRIL, MC7).**\n\n| Measure | Value |\n|---|---|\n| deletion drop, top-1 vs random | 0.421 vs 0.092 (diff +0.329, 95% CI [+0.272, +0.385]; n=100) |\n| deletion drop, top-2 vs random | 0.527 vs 0.164 (diff +0.363, 95% CI [+0.301, +0.425]; n=100) |\n| deletion drop, top-3 vs random | 0.558 vs 0.209 (diff +0.349, 95% CI [+0.295, +0.403]; n=100) |\n| rank stability: budget 100 vs 1000 | Spearman 0.950; top-3 overlap 0.83 (n=12) |\n| rank stability: budget 250 vs 1000 | Spearman 0.986; top-3 overlap 0.94 (n=12) |\n| rank stability: budget 500 vs 1000 | Spearman 0.997; top-3 overlap 0.97 (n=12) |\n| SHAP vs leave-one-word-out occlusion | Spearman 0.273; top-3 overlap 0.57 (n=23) |\n| time per explanation (cpu, 500 evals) | 0.87 s vs 23 ms inference (x38) |\n"
+  },
+  "n_runs": 54,
+  "n_figures": 19,
+  "n_tables": 18,
+  "n_collapsed": 1,
+  "verify": {
+    "summary": "396/396 checks passed over 57 runs"
+  }
+}

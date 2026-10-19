@@ -1,0 +1,11 @@
+{
+  "exp_id": "mc2__majority",
+  "kind": "baseline",
+  "task": "mc2",
+  "model": "majority",
+  "seed": 0,
+  "extra_eval": [
+    "olid_ext"
+  ],
+  "group": "baselines"
+}

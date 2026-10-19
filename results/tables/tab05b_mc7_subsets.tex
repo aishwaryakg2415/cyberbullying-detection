@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\small
+\caption{MC7 macro-F1 by evaluation subset: validation (in-distribution), full official test, test items with a near-duplicate in training, and the de-duplicated remainder (mean $\pm$ s.d. over seeds).}
+\label{tab:tab05b_mc7_subsets}
+\begin{tabular}{lrrrr}
+\toprule
+Model & Full test (1000) & Near-dup items (182) & De-duplicated (818) & Validation \\
+\midrule
+HingRoBERTa & 0.721 $\pm$ 0.040 & 0.734 $\pm$ 0.015 & 0.708 $\pm$ 0.048 & 0.793 $\pm$ 0.008 \\
+MuRIL & 0.632 $\pm$ 0.016 & 0.625 $\pm$ 0.010 & 0.628 $\pm$ 0.017 & 0.761 $\pm$ 0.004 \\
+MuRIL + sarcasm fusion & 0.653 $\pm$ 0.009 & 0.630 $\pm$ 0.019 & 0.650 $\pm$ 0.007 & 0.755 $\pm$ 0.004 \\
+MuRIL + fusion (shuffled-sarcasm features) & 0.648 $\pm$ 0.005 & 0.648 $\pm$ 0.026 & 0.640 $\pm$ 0.002 & 0.752 $\pm$ 0.003 \\
+MuRIL + sarcasm MTL & 0.631 $\pm$ 0.009 & 0.601 $\pm$ 0.040 & 0.632 $\pm$ 0.009 & 0.754 $\pm$ 0.006 \\
+MuRIL + shuffled-sarcasm MTL & 0.645 $\pm$ 0.020 & 0.613 $\pm$ 0.039 & 0.643 $\pm$ 0.035 & 0.754 $\pm$ 0.005 \\
+TF-IDF + LR & 0.727 & 0.785 & 0.703 & 0.773 \\
+TF-IDF + SVM & 0.743 & 0.790 & 0.722 & 0.763 \\
+XLM-R base & 0.630 $\pm$ 0.018 & 0.595 $\pm$ 0.021 & 0.628 $\pm$ 0.018 & 0.769 $\pm$ 0.007 \\
+\bottomrule
+\end{tabular}
+\end{table}

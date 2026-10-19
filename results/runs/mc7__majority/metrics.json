@@ -1,0 +1,507 @@
+{
+  "exp_id": "mc7__majority",
+  "task": "mc7",
+  "labels": [
+    "not_cyberbullying",
+    "age",
+    "gender",
+    "religion",
+    "mockery",
+    "abusive",
+    "offensive"
+  ],
+  "train_seconds": 0.0003757499944185838,
+  "selected": {
+    "majority_class": 0
+  },
+  "device": "cpu",
+  "val": {
+    "n": 741,
+    "accuracy": 0.20107962213225372,
+    "macro_f1": 0.0478330658105939,
+    "weighted_f1": 0.06732778359035012,
+    "macro_precision": 0.028725660304607676,
+    "macro_recall": 0.14285714285714285,
+    "per_class": {
+      "not_cyberbullying": {
+        "precision": 0.20107962213225372,
+        "recall": 1.0,
+        "f1": 0.3348314606741573,
+        "support": 149
+      },
+      "age": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 98
+      },
+      "gender": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 101
+      },
+      "religion": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 98
+      },
+      "mockery": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 98
+      },
+      "abusive": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 99
+      },
+      "offensive": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 98
+      }
+    },
+    "confusion_matrix": [
+      [
+        149,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        98,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        101,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        98,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        98,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        99,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        98,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "labels": [
+      "not_cyberbullying",
+      "age",
+      "gender",
+      "religion",
+      "mockery",
+      "abusive",
+      "offensive"
+    ],
+    "roc_auc_macro_ovr": 0.5,
+    "pr_auc_macro": 0.14285714285714285,
+    "ece": 0.0004521393935009166,
+    "reliability": [
+      {
+        "lo": 0.0,
+        "hi": 0.06666666666666667,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.06666666666666667,
+        "hi": 0.13333333333333333,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.13333333333333333,
+        "hi": 0.2,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.2,
+        "hi": 0.26666666666666666,
+        "n": 741,
+        "conf": 0.20153176152575464,
+        "acc": 0.20107962213225372
+      },
+      {
+        "lo": 0.26666666666666666,
+        "hi": 0.3333333333333333,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.3333333333333333,
+        "hi": 0.4,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.4,
+        "hi": 0.4666666666666667,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.4666666666666667,
+        "hi": 0.5333333333333333,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.5333333333333333,
+        "hi": 0.6,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.6,
+        "hi": 0.6666666666666666,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.6666666666666666,
+        "hi": 0.7333333333333333,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.7333333333333333,
+        "hi": 0.8,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.8,
+        "hi": 0.8666666666666667,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.8666666666666667,
+        "hi": 0.9333333333333333,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.9333333333333333,
+        "hi": 1.0,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      }
+    ],
+    "brier": 0.8531755047898528,
+    "nll": 1.9333215733529376
+  },
+  "test": {
+    "n": 1000,
+    "accuracy": 0.2,
+    "macro_f1": 0.047619047619047616,
+    "weighted_f1": 0.06666666666666665,
+    "macro_precision": 0.028571428571428574,
+    "macro_recall": 0.14285714285714285,
+    "per_class": {
+      "not_cyberbullying": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.3333333333333333,
+        "support": 200
+      },
+      "age": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 129
+      },
+      "gender": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 141
+      },
+      "religion": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 131
+      },
+      "mockery": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 127
+      },
+      "abusive": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 148
+      },
+      "offensive": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 124
+      }
+    },
+    "confusion_matrix": [
+      [
+        200,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        129,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        141,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        131,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        127,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        148,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        124,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "labels": [
+      "not_cyberbullying",
+      "age",
+      "gender",
+      "religion",
+      "mockery",
+      "abusive",
+      "offensive"
+    ],
+    "roc_auc_macro_ovr": 0.5,
+    "pr_auc_macro": 0.14285714285714285,
+    "ece": 0.0015317615257545991,
+    "reliability": [
+      {
+        "lo": 0.0,
+        "hi": 0.06666666666666667,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.06666666666666667,
+        "hi": 0.13333333333333333,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.13333333333333333,
+        "hi": 0.2,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.2,
+        "hi": 0.26666666666666666,
+        "n": 1000,
+        "conf": 0.2015317615257546,
+        "acc": 0.2
+      },
+      {
+        "lo": 0.26666666666666666,
+        "hi": 0.3333333333333333,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.3333333333333333,
+        "hi": 0.4,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.4,
+        "hi": 0.4666666666666667,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.4666666666666667,
+        "hi": 0.5333333333333333,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.5333333333333333,
+        "hi": 0.6,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.6,
+        "hi": 0.6666666666666666,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.6666666666666666,
+        "hi": 0.7333333333333333,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.7333333333333333,
+        "hi": 0.8,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.8,
+        "hi": 0.8666666666666667,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.8666666666666667,
+        "hi": 0.9333333333333333,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      },
+      {
+        "lo": 0.9333333333333333,
+        "hi": 1.0,
+        "n": 0,
+        "conf": null,
+        "acc": null
+      }
+    ],
+    "brier": 0.8532571342913099,
+    "nll": 1.9335216752322948
+  },
+  "model_bytes": 311,
+  "latency_ms_cpu_bs1": {
+    "mean": 0.0007761996312183328,
+    "p50": 0.0006249974831007421,
+    "p95": 0.0007499984349124134
+  },
+  "memory_end": {
+    "rss_gb": 0.348,
+    "sys_total_gb": 16.0,
+    "sys_available_gb": 5.03,
+    "mps_alloc_gb": 0.0,
+    "mps_driver_gb": 0.0
+  }
+}

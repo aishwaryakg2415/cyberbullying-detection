@@ -1,0 +1,9 @@
+{
+  "device": "cpu",
+  "shap_max_evals": 500,
+  "shap_seconds_per_text_mean": 0.8741698060861698,
+  "shap_seconds_per_text_budget300_mean": 0.6488629587793548,
+  "inference_seconds_per_text_mean": 0.023019441599171842,
+  "overhead_factor": 37.975282863404445,
+  "total_qualitative_seconds": 21.56580270899576
+}

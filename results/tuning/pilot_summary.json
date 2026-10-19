@@ -1,0 +1,40 @@
+{
+ "selection_rule": "among settings that did not collapse on any task's validation data, highest validation macro-F1; seed 13",
+ "selected": "encoder lr 3e-5, head lr 1e-3 (applied to ALL transformer models and tasks)",
+ "candidates": [
+  {
+   "config": "v1: enc lr 3e-5, head lr 3e-5",
+   "val_macro_f1": 0.7739147620247787,
+   "val_loss_at_best": 1.4104541540145874,
+   "temperature": 0.23089749244747837,
+   "note": "superseded; its TEST result (0.662) was seen and prompted this pilot"
+  },
+  {
+   "config": "mc7__muril__pilot_enc3e-5_head1e-3__s13",
+   "val_macro_f1": 0.7581659315441357,
+   "val_loss_at_best": 0.6882848739624023,
+   "temperature": 0.9588979324004572,
+   "note": "validation only; test not evaluated"
+  },
+  {
+   "config": "mc7__muril__pilot_enc5e-5_head1e-3__s13",
+   "val_macro_f1": 0.7813590226331595,
+   "val_loss_at_best": 0.6442630290985107,
+   "temperature": 1.0386610640023703,
+   "note": "validation only; test not evaluated"
+  },
+  {
+   "config": "sarcasm__muril__pilot_enc3e-5_head1e-3__s13",
+   "val_macro_f1": 0.7604770905298833,
+   "val_loss_at_best": 0.39298945665359497,
+   "temperature": 0.5682093320237749,
+   "note": "validation only; stable"
+  },
+  {
+   "config": "sarcasm enc 5e-5 / head 1e-3 (seeds 13, 42; full runs)",
+   "val_macro_f1": 0.475,
+   "note": "COLLAPSED to the majority class (flat train loss ~0.691 = ln 2); runs kept in results/runs_superseded/config_v2_collapsed/. Seed 13's test score (0.4747 = majority) was printed by the runner before the collapse was noticed."
+  }
+ ],
+ "disclosure": "The pilot was triggered after observing the v1 configuration's test macro-F1 (0.662, vs 0.774 validation). The choice between pilots used validation data only. The 5e-5 setting was first adopted (best MC7 validation) but collapsed on the sarcasm task; it was replaced by 3e-5/1e-3, which was stable on both tasks' validation sets (MC7 val macro-F1 0.758, sarcasm 0.761)."
+}

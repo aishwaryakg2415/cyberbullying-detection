@@ -1,0 +1,11 @@
+Test set,Model (trained on),N,Macro-F1 (mean),ROC-AUC (mean),Runs
+TweetEval-Offensive (en),Majority class (MC2),860,0.21818181818181817,0.5,1
+TweetEval-Offensive (en),MuRIL (MC2),860,0.2748633373449148,0.623412858422939,3
+TweetEval-Offensive (en),MuRIL + sarcasm MTL (MC2),860,0.253071606423298,0.6445463709677419,3
+TweetEval-Offensive (en),TF-IDF + LR (MC2),860,0.23531526182441034,0.5442237903225806,1
+TweetEval-Offensive (en),TF-IDF + SVM (MC2),860,0.25286891870050104,0.5519321236559139,1
+TweetEval-Offensive (en),XLM-R base (MC2),860,0.3165116709987376,0.6777654569892473,3
+User sarcasm file (hi-en),Majority class (Swami),8455,0.3626564148952209,0.5,1
+User sarcasm file (hi-en),MuRIL (Swami),8455,0.5200378053955529,0.5368473105944017,3
+User sarcasm file (hi-en),TF-IDF + LR (Swami),8455,0.448327217599191,0.44261404355779066,1
+User sarcasm file (hi-en),TF-IDF + SVM (Swami),8455,0.43314244113641587,0.4497561330932749,1

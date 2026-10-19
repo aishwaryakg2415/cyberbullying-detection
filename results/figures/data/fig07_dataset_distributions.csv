@@ -1,0 +1,28 @@
+dataset,split,label,n
+MC-Hinglish1.0,train,abusive,890
+MC-Hinglish1.0,train,age,879
+MC-Hinglish1.0,train,gender,903
+MC-Hinglish1.0,train,mockery,882
+MC-Hinglish1.0,train,not_cyberbullying,1342
+MC-Hinglish1.0,train,offensive,882
+MC-Hinglish1.0,train,religion,881
+MC-Hinglish1.0,val,abusive,99
+MC-Hinglish1.0,val,age,98
+MC-Hinglish1.0,val,gender,101
+MC-Hinglish1.0,val,mockery,98
+MC-Hinglish1.0,val,not_cyberbullying,149
+MC-Hinglish1.0,val,offensive,98
+MC-Hinglish1.0,val,religion,98
+MC-Hinglish1.0,test,abusive,148
+MC-Hinglish1.0,test,age,129
+MC-Hinglish1.0,test,gender,141
+MC-Hinglish1.0,test,mockery,127
+MC-Hinglish1.0,test,not_cyberbullying,200
+MC-Hinglish1.0,test,offensive,124
+MC-Hinglish1.0,test,religion,131
+Swami sarcasm,train,0,3322
+Swami sarcasm,train,1,353
+Swami sarcasm,val,0,475
+Swami sarcasm,val,1,50
+Swami sarcasm,test,0,949
+Swami sarcasm,test,1,101

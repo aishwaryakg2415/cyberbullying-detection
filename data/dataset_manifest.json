@@ -1,0 +1,208 @@
+{
+  "generated_by": "scripts/verify_datasets.py --write-manifest",
+  "datasets": {
+    "mc_hinglish": {
+      "name": "MC-Hinglish1.0",
+      "citation_key": "laskar2024mchinglish",
+      "paper": "Rahman-Laskar, Gupta, Badhani & Pinto-Avendano (2024). Cyberbullying Detection in a Multi-classification Codemixed Dataset. Computacion y Sistemas 28(3). doi:10.13053/CyS-28-3-4989",
+      "official_page": "https://huggingface.co/datasets/sahinurlaskar/MC-Hinglish1.0",
+      "also": "https://github.com/sahinurlaskar/MC-Hinglish1.0",
+      "license": "CC-BY-NC-SA-4.0",
+      "access": "public (no gating)",
+      "language": "hi-en",
+      "revision": "a8ae581fb5fcea58ae2b7642b86251d464af3e96",
+      "role": "primary train/val/test (cyberbullying type, 7 classes; derived binary)",
+      "urls": {
+        "train.csv": "https://huggingface.co/datasets/sahinurlaskar/MC-Hinglish1.0/resolve/a8ae581fb5fcea58ae2b7642b86251d464af3e96/Train_data_MC-Hinglish1.0.csv",
+        "test.csv": "https://huggingface.co/datasets/sahinurlaskar/MC-Hinglish1.0/resolve/a8ae581fb5fcea58ae2b7642b86251d464af3e96/Test_data_MC-Hinglish1.0.csv"
+      },
+      "files": {
+        "train.csv": {
+          "sha256": "9bf055eed84572967008014ef4050ea80e442bbc77f853aad00c74efde4a7bd9",
+          "bytes": 834612
+        },
+        "test.csv": {
+          "sha256": "fc3276501cb2f501cd07eebff916200aa216dd59d0ffb644ae9eace472eea81a",
+          "bytes": 60145
+        }
+      },
+      "counts": {
+        "records": 8400,
+        "by_split": {
+          "train": 7400,
+          "test": 1000
+        },
+        "labels": {
+          "mockery": 1107,
+          "offensive": 1104,
+          "gender": 1145,
+          "age": 1106,
+          "religion": 1110,
+          "not_cyberbullying": 1691,
+          "abusive": 1137
+        }
+      }
+    },
+    "swami_sarcasm": {
+      "name": "English-Hindi Code-Mixed Sarcasm Corpus (Swami et al., 2018)",
+      "citation_key": "swami2018sarcasm",
+      "paper": "Swami, Khandelwal, Singh, Akhtar & Shrivastava (2018). A Corpus of English-Hindi Code-Mixed Tweets for Sarcasm Detection. arXiv:1805.11869",
+      "official_page": "https://github.com/sahilswami96/SarcasmDetection_CodeMixed",
+      "license": "GPL-3.0 (repository licence)",
+      "access": "public",
+      "language": "hi-en",
+      "revision": "7c259dc56d7e710cc55da0544bf1132b41d39c1d",
+      "role": "human-annotated sarcasm supervision for the sarcasm component",
+      "urls": {
+        "Sarcasm_tweets.txt": "https://raw.githubusercontent.com/sahilswami96/SarcasmDetection_CodeMixed/7c259dc56d7e710cc55da0544bf1132b41d39c1d/Dataset/Sarcasm_tweets.txt",
+        "Sarcasm_tweet_truth.txt": "https://raw.githubusercontent.com/sahilswami96/SarcasmDetection_CodeMixed/7c259dc56d7e710cc55da0544bf1132b41d39c1d/Dataset/Sarcasm_tweet_truth.txt",
+        "Sarcasm_tweets_with_language.txt": "https://raw.githubusercontent.com/sahilswami96/SarcasmDetection_CodeMixed/7c259dc56d7e710cc55da0544bf1132b41d39c1d/Dataset/Sarcasm_tweets_with_language.txt"
+      },
+      "files": {
+        "Sarcasm_tweets.txt": {
+          "sha256": "487e8a7bdf965660aafb6997088d0fb47cc967bec69eb16978726a658dbf9987",
+          "bytes": 680289
+        },
+        "Sarcasm_tweet_truth.txt": {
+          "sha256": "765571204c4fba7bcd9252cdd8898d94a36049875871ff3a7c0e631bd228e86c",
+          "bytes": 115826
+        },
+        "Sarcasm_tweets_with_language.txt": {
+          "sha256": "ad6901ff57d385d38e3b73586864e56fa4abc3e8ed49c43080c13f8cd2997043",
+          "bytes": 2369267
+        }
+      },
+      "counts": {
+        "records": 5250,
+        "labels": {
+          "NO": 4746,
+          "YES": 504
+        }
+      }
+    },
+    "conda": {
+      "name": "CONDA: CONtextual Dual-Annotated in-game toxicity dataset",
+      "citation_key": "weld2021conda",
+      "paper": "Weld et al. (2021). CONDA: a CONtextual Dual-Annotated dataset for in-game toxicity understanding and detection. Findings of ACL-IJCNLP 2021. doi:10.18653/v1/2021.findings-acl.213",
+      "official_page": "https://github.com/usydnlp/CONDA",
+      "license": "not specified in repository (used for non-commercial research evaluation only; not redistributed)",
+      "access": "public",
+      "language": "en",
+      "revision": "3fb90675f881079c85c1de1f25df1bf8d521194f",
+      "role": "PROXY sequential dataset for the early-detection mechanism (English game chat toxicity, not cyberbullying, not Hinglish). Official test file is unannotated and not used.",
+      "urls": {
+        "CONDA_train.csv": "https://raw.githubusercontent.com/usydnlp/CONDA/3fb90675f881079c85c1de1f25df1bf8d521194f/data/CONDA_train.csv",
+        "CONDA_valid.csv": "https://raw.githubusercontent.com/usydnlp/CONDA/3fb90675f881079c85c1de1f25df1bf8d521194f/data/CONDA_valid.csv"
+      },
+      "files": {
+        "CONDA_train.csv": {
+          "sha256": "fe7b18d19deae8c5a465163247dc929baea643f381e7f28596fec0b1559bddcd",
+          "bytes": 2856782
+        },
+        "CONDA_valid.csv": {
+          "sha256": "4ed5b3eee87131014cdd373fe0303bc57c246cf10c5b864f08bd1ef8306d4949",
+          "bytes": 956223
+        }
+      },
+      "counts": {
+        "records": 35895,
+        "by_split": {
+          "train": 26921,
+          "valid": 8974
+        },
+        "labels": {
+          "O": 26611,
+          "E": 4711,
+          "A": 2299,
+          "I": 2274
+        },
+        "conversations": 10902
+      }
+    },
+    "tweeteval_offensive": {
+      "name": "TweetEval - Offensive (OLID / OffensEval-2019 data)",
+      "citation_key": "barbieri2020tweeteval",
+      "paper": "Barbieri et al. (2020) TweetEval, Findings of EMNLP 2020; data from Zampieri et al. (2019) OLID, NAACL 2019",
+      "official_page": "https://huggingface.co/datasets/cardiffnlp/tweet_eval",
+      "license": "see OLID terms (TweetEval card lists 'unknown')",
+      "access": "public",
+      "language": "en",
+      "revision": "b3a375baf0f409c77e6bc7aa35102b7b3534f8be",
+      "role": "English external stress test only (label = offensive language, NOT cyberbullying)",
+      "urls": {
+        "test.parquet": "https://huggingface.co/datasets/cardiffnlp/tweet_eval/resolve/b3a375baf0f409c77e6bc7aa35102b7b3534f8be/offensive/test-00000-of-00001.parquet"
+      },
+      "files": {
+        "test.parquet": {
+          "sha256": "15b87adaf1850d8e3e104be6240255813d48d776940be546ad353fee9fcfb099",
+          "bytes": 93731
+        }
+      },
+      "counts": {
+        "records": 860,
+        "labels": {
+          "1": 240,
+          "0": 620
+        }
+      }
+    },
+    "user_sarcasm_human": {
+      "name": "User-supplied Hinglish sarcasm comments (human + AI labels)",
+      "citation_key": null,
+      "paper": "UNKNOWN - provenance not documented by the project; could not be matched to a public release",
+      "official_page": null,
+      "license": "UNKNOWN",
+      "access": "local file supplied by the project owner (human_labelled_features.csv)",
+      "language": "hi-en (+ some Devanagari / Marathi)",
+      "role": "SUPPLEMENTARY cross-corpus sarcasm test only; excluded from all headline results",
+      "urls": {
+        "human_labelled_features.csv": null
+      },
+      "files": {
+        "human_labelled_features.csv": {
+          "sha256": "fb6014dd690c8f77dcbe43c8f7ee0e4bcf691ffe636068c455d6d1b1bd65903e",
+          "bytes": 1141167
+        }
+      },
+      "counts": {
+        "records": 8882,
+        "labels": {
+          "1": 3737,
+          "0": 5145
+        }
+      }
+    },
+    "user_sarcasm_ai": {
+      "name": "User-supplied Hinglish comments with LLM-generated sarcasm labels",
+      "citation_key": null,
+      "paper": "UNKNOWN",
+      "official_page": null,
+      "license": "UNKNOWN",
+      "access": "local file supplied by the project owner (ai_labelled_features.csv)",
+      "language": "hi-en",
+      "role": "NOT USED for training or evaluation: labels are machine-generated, not ground truth",
+      "urls": {
+        "ai_labelled_features.csv": null
+      },
+      "files": {
+        "ai_labelled_features.csv": {
+          "sha256": "be69a035527614198e1cdec3ac3405dfa44374574a78cd44f91b03cdb08fe0a0",
+          "bytes": 1512986
+        }
+      },
+      "counts": {
+        "records": 12809,
+        "labels": {
+          "non-sarcastic": 7281,
+          "sarcastic": 5528
+        }
+      }
+    }
+  },
+  "unavailable": {
+    "hasoc": "HASOC (FIRE 2019-2021): data is released to registered participants via the organisers' form at https://hasocfire.github.io/ . Unofficial HF re-uploads exist but have no clear licence, so they are not used.",
+    "trac": "TRAC-1/TRAC-2 aggression data: distributed by the organisers on request (https://sites.google.com/view/trac2/ ; https://sites.google.com/view/trac1/). Not downloaded.",
+    "bohra2018": "Bohra et al. (2018) Hinglish hate speech: repository ships tweet IDs + labels only (id_annotated.tsv); text requires X/Twitter API hydration, which is not available.",
+    "olid_official": "OLID official zip is hosted on a Google Sites page; the TweetEval redistribution (identical OffensEval-2019 test tweets) is used instead."
+  }
+}

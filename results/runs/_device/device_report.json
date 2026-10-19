@@ -1,0 +1,52 @@
+{
+ "device": {
+  "selected": "mps",
+  "cuda_available": false,
+  "cuda_device_name": null,
+  "cuda_total_memory_gb": null,
+  "cuda_version": null,
+  "mps_built": true,
+  "mps_available": true,
+  "amp_dtype": null,
+  "smoke_test_ms": 1019.3,
+  "torch_version": "2.14.1",
+  "machine": "arm64",
+  "errors": []
+ },
+ "benchmark_bert_base_like_bs16_len64": {
+  "fp32": {
+   "sec_per_step_median": 0.4645779170023161,
+   "finite": true
+  },
+  "fp16_autocast": {
+   "sec_per_step_median": 0.5193753339990508,
+   "finite": true
+  },
+  "cpu_fp32": {
+   "sec_per_step_median": 1.1678118749987334
+  }
+ },
+ "hardware": {
+  "machine": "arm64",
+  "processor": "arm",
+  "cpu_count": 10,
+  "ram_gb": 16.0
+ },
+ "packages": {
+  "python": "3.11.16",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "torch": "2.14.1",
+  "transformers": "5.20.1",
+  "tokenizers": "0.23.3",
+  "datasets": "5.1.0",
+  "scikit-learn": "1.9.1",
+  "numpy": "2.4.6",
+  "pandas": "3.0.6",
+  "scipy": "1.17.1",
+  "shap": "0.51.0",
+  "matplotlib": "3.11.2",
+  "seaborn": "0.13.2",
+  "streamlit": "1.66.0",
+  "accelerate": "1.15.0"
+ }
+}

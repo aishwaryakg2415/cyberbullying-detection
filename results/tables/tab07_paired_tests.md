@@ -1,0 +1,18 @@
+**Paired comparisons on the test set (B minus A). Bootstrap: 2,000 paired resamples of the seed-ensemble predictions; McNemar: exact test on per-item correctness. No multiple-comparison correction was applied; treat p-values as descriptive.**
+
+| Comparison (B vs A) | Delta macro-F1 (ensemble) | 95% CI | p (bootstrap) | p (McNemar) | Seeds with Delta>0 |
+|---|---|---|---|---|---|
+| XLM-R base vs MuRIL | 0.011 | [-0.017, +0.038] | 0.460 | 0.771 | 1/3 |
+| HingRoBERTa vs MuRIL | 0.091 | [+0.065, +0.118] | 0.000 | 0.000 | 3/3 |
+| MuRIL + sarcasm MTL vs MuRIL | 0.006 | [-0.014, +0.026] | 0.552 | 0.744 | 2/3 |
+| MuRIL + shuffled-sarcasm MTL vs MuRIL | 0.008 | [-0.010, +0.026] | 0.361 | 0.410 | 3/3 |
+| MuRIL + sarcasm fusion vs MuRIL | 0.007 | [-0.013, +0.026] | 0.495 | 0.657 | 3/3 |
+| TF-IDF + SVM vs MuRIL | 0.101 | [+0.072, +0.130] | 0.000 | 0.000 | 1/1 |
+| TF-IDF + LR vs MuRIL | 0.085 | [+0.057, +0.113] | 0.000 | 0.000 | 1/1 |
+| MuRIL + sarcasm MTL vs MuRIL + shuffled-sarcasm MTL | -0.002 | [-0.022, +0.017] | 0.821 | 0.741 | 1/3 |
+| MuRIL + sarcasm fusion vs MuRIL + fusion (shuffled-sarcasm features) | -0.001 | [-0.019, +0.016] | 0.837 | 0.804 | 2/3 |
+| XLM-R base vs MuRIL | 0.019 | [-0.006, +0.046] | 0.150 | 0.422 | 1/3 |
+| MuRIL + sarcasm MTL vs MuRIL | -0.001 | [-0.021, +0.020] | 0.924 | 0.568 | 1/3 |
+| MuRIL + sarcasm fusion vs MuRIL | 0.015 | [-0.004, +0.034] | 0.124 | 0.188 | 3/3 |
+| TF-IDF + SVM vs MuRIL | 0.029 | [+0.001, +0.060] | 0.045 | 0.078 | 1/1 |
+| MuRIL vs TF-IDF + LR | 0.067 | [+0.019, +0.115] | 0.003 | 0.326 | 1/1 |

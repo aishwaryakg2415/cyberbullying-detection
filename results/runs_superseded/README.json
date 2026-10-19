@@ -1,0 +1,1 @@
+{"note":"Superseded transformer runs (config v1: lr 3e-5 for encoder AND head, 5 epochs). Under-fitted: MC7 MuRIL s13 val macro-F1 0.774 / test 0.662, temperature 0.23. Replaced after validation-only pilot (see results/tuning/). Kept for transparency; not used in any reported result."}

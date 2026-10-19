@@ -1,0 +1,87 @@
+# SACENet experiment plan. Every run listed here is executed by
+#   python scripts/run_experiments.py --group <name>
+# and recorded in results/experiment_registry.{jsonl,csv}.
+
+seeds: [13, 42, 87]
+
+models:
+  muril:        {name: google/muril-base-cased,     revision: afd9f36c7923d54e97903922ff1b260d091d202f}
+  xlmr:         {name: FacebookAI/xlm-roberta-base, revision: e73636d4f797dec63c3081bb6ed5c7b0bb3f2089}
+  hingroberta:  {name: l3cube-pune/hing-roberta,    revision: f714c4bdce6b008a2fbb84193eee99e651c59e15}
+  distilroberta: {name: distilbert/distilroberta-base, revision: fb53ab8802853c8e4fbdbcd0529f21fc6f459b2b}
+
+# Shared fine-tuning hyper-parameters (not tuned per model; see RESEARCH_METHODOLOGY.md)
+train_defaults:
+  max_len: 128        # 3.6% of MC-Hinglish train texts exceed 64 MuRIL tokens; 1.2% exceed 128
+  batch_size: 32
+  freeze_word_embeddings: true   # optimiser-cost fix on MPS; see src/models/transformer.py
+  lr: 3.0e-5          # encoder; validation-only pilots (results/tuning/pilot_summary.json): 5e-5 collapsed on sarcasm
+  head_lr: 1.0e-3     # classification/auxiliary heads and fusion projection
+  epochs: 5
+  patience: 2
+  warmup: 0.1
+  weight_decay: 0.01
+  clip: 1.0
+  dropout: 0.1
+  class_weighting: true
+  amp: off            # decided by the MPS benchmark (results/runs/_device/)
+
+groups:
+  tuning:
+    # Validation-only pilot (test never evaluated) after config v1 under-fitted
+    # (MC7 MuRIL s13: val loss 1.41 after 5 epochs, temperature 0.23). Seed 13 only.
+    - {task: mc7, model: muril, variant: pilot_enc3e-5_head1e-3, lr: 3.0e-5, head_lr: 1.0e-3, skip_test: true}
+    - {task: mc7, model: muril, variant: pilot_enc5e-5_head1e-3, lr: 5.0e-5, head_lr: 1.0e-3, skip_test: true}
+    # 5e-5 collapsed to the majority class on the sarcasm task (seeds 13 and 42, flat loss ln 2);
+    # check that the 3e-5 setting is stable on sarcasm validation before adopting it globally.
+    - {task: sarcasm, model: muril, variant: pilot_enc3e-5_head1e-3, lr: 3.0e-5, head_lr: 1.0e-3, skip_test: true}
+
+  baselines:
+    - {task: mc7,     models: [majority, tfidf_lr, tfidf_svm]}
+    - {task: mc2,     models: [majority, tfidf_lr, tfidf_svm], extra_eval: [olid_ext]}
+    - {task: sarcasm, models: [majority, tfidf_lr, tfidf_svm], extra_eval: [usr_sarcasm]}
+
+  sarcasm_component:
+    # Separately trained sarcasm detector (Swami et al. 2018 labels).
+    # Seed 13 is the component used for feature fusion; its features are exported.
+    - {task: sarcasm, model: muril, variant: base, extra_eval: [usr_sarcasm],
+       keep_seed: 13, export_seed: 13, export_features: [mc7]}
+
+  mc7_backbones:
+    - {task: mc7, model: muril,       variant: base, keep_seed: 13}
+    - {task: mc7, model: xlmr,        variant: base}
+    - {task: mc7, model: hingroberta, variant: base}
+
+  mc7_sarcasm:
+    - {task: mc7, model: muril, variant: mtl,         aux: {task: sarcasm, lambda: 0.5}}
+    - {task: mc7, model: muril, variant: mtl_shuffled, aux: {task: sarcasm, lambda: 0.5, shuffle_labels: true}}
+    - {task: mc7, model: muril, variant: fusion,      fusion_from: sarcasm__muril__base__s13}
+
+  mc2_models:
+    - {task: mc2, model: muril,  variant: base, extra_eval: [olid_ext]}
+    - {task: mc2, model: xlmr,   variant: base, extra_eval: [olid_ext]}
+    - {task: mc2, model: muril,  variant: mtl,    aux: {task: sarcasm, lambda: 0.5}, extra_eval: [olid_ext]}
+    - {task: mc2, model: muril,  variant: fusion, fusion_from: sarcasm__muril__base__s13, extra_eval: [olid_ext]}
+
+  early_conda:
+    # Turn-level toxicity scorers for the early-detection PROXY study (English game chat).
+    - {task: conda,     model: distilroberta, variant: base, epochs: 3}
+    - {task: conda_ctx, model: distilroberta, variant: base, epochs: 3}
+    - {task: conda,     models: [tfidf_lr]}
+    - {task: conda_ctx, models: [tfidf_lr]}
+
+  diagnostics:
+    # Run AFTER the main chain; reported regardless of outcome, never used for selection.
+    # Does freezing the token-embedding table explain the transformer generalisation gap
+    # on the shifted official test split (results/analysis/split_shift.json)?
+    # batch 16 x 2 accumulation steps = the same effective batch of 32; needed because the first attempt
+    # with batch 32 drove the 16 GB machine to CRITICAL memory pressure (run stopped, not reported).
+    - {task: mc7, model: muril, variant: full_ft, freeze_word_embeddings: false, batch_size: 16, grad_accum: 2,
+       eval_batch_size: 32}
+
+  diagnostics_fusion_control:
+    # Fusion control: a sarcasm model trained on PERMUTED labels supplies the fusion features.
+    # If fusion with these features matches real fusion, the fusion gain is not sarcasm-specific.
+    - {task: sarcasm, model: muril, variant: shuffled_labels, shuffle_train_labels: true,
+       export_seed: 13, export_features: [mc7], keep_checkpoint: false}
+    - {task: mc7, model: muril, variant: fusion_shuffled, fusion_from: sarcasm__muril__shuffled_labels__s13}

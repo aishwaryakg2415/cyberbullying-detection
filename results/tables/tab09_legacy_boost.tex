@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Original SACENet additive sarcasm boost (p + 0.18*s if s >= 0.45; threshold 0.55) re-evaluated on MC2 with a trained sarcasm model, compared with the unboosted MuRIL classifier.}
+\label{tab:tab09_legacy_boost}
+\begin{tabular}{lrrrrr}
+\toprule
+Seed & Setting & Macro-F1 & Recall (CB) & False-positive rate & Boosted items \\
+\midrule
+13 & base@0.50 & 0.854 & 0.940 & 0.230 & -- \\
+13 & base@0.55 & 0.852 & 0.939 & 0.230 & -- \\
+13 & boost@0.55 & 0.853 & 0.941 & 0.235 & 429 \\
+42 & base@0.50 & 0.859 & 0.931 & 0.190 & -- \\
+42 & base@0.55 & 0.858 & 0.930 & 0.190 & -- \\
+42 & boost@0.55 & 0.860 & 0.932 & 0.190 & 429 \\
+87 & base@0.50 & 0.866 & 0.981 & 0.315 & -- \\
+87 & base@0.55 & 0.864 & 0.980 & 0.315 & -- \\
+87 & boost@0.55 & 0.864 & 0.980 & 0.315 & 429 \\
+\bottomrule
+\end{tabular}
+\end{table}

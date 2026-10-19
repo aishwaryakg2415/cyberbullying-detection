@@ -1,0 +1,104 @@
+{
+  "hardware": {
+    "machine": "arm64",
+    "processor": "arm",
+    "cpu_count": 10,
+    "ram_gb": 16.0
+  },
+  "packages": {
+    "python": "3.11.16",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "torch": "2.14.1",
+    "transformers": "5.20.1",
+    "tokenizers": "0.23.3",
+    "datasets": "5.1.0",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scipy": "1.17.1",
+    "shap": "0.51.0",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "streamlit": "1.66.0",
+    "accelerate": "1.15.0"
+  },
+  "devices": [
+    "cpu",
+    "mps"
+  ],
+  "models": [
+    {
+      "name": "MuRIL",
+      "params_m": 237.561607,
+      "trainable_params_m": 86.046727,
+      "size_mb": 453.11280632019043,
+      "size_note": "fp16 state dict",
+      "latency_ms_bs1_cpu": 23.748957995849196,
+      "latency_p95_ms_bs1_cpu": 32.41578510351246,
+      "throughput_per_s_bs32_cpu": 136.59134519605388,
+      "latency_ms_bs1_mps": 11.306978994980454,
+      "latency_p95_ms_bs1_mps": 197.0799083530437,
+      "throughput_per_s_bs32_mps": 272.0409555195318,
+      "train_minutes_mean": 13.760588328711107
+    },
+    {
+      "name": "XLM-R base",
+      "params_m": 278.049031,
+      "trainable_params_m": 86.047495,
+      "size_mb": 530.3364391326904,
+      "size_note": "fp16 state dict",
+      "latency_ms_bs1_cpu": 30.242458495195024,
+      "latency_p95_ms_bs1_cpu": 35.197987844003364,
+      "throughput_per_s_bs32_cpu": 142.36373789411576,
+      "latency_ms_bs1_mps": 10.82785399921704,
+      "latency_p95_ms_bs1_mps": 179.24841250569426,
+      "throughput_per_s_bs32_mps": 333.0855431309002,
+      "train_minutes_mean": 13.32731269375003
+    },
+    {
+      "name": "HingRoBERTa",
+      "params_m": 278.049031,
+      "trainable_params_m": 86.047495,
+      "size_mb": 530.3364391326904,
+      "size_note": "fp16 state dict",
+      "latency_ms_bs1_cpu": 29.93579149915604,
+      "latency_p95_ms_bs1_cpu": 35.43037709969212,
+      "throughput_per_s_bs32_cpu": 144.09436376013429,
+      "latency_ms_bs1_mps": 10.478791497007478,
+      "latency_p95_ms_bs1_mps": 11.88226694066543,
+      "throughput_per_s_bs32_mps": 346.5707361737687,
+      "train_minutes_mean": 13.192891424072231
+    },
+    {
+      "name": "DistilRoBERTa",
+      "params_m": 82.123783,
+      "trainable_params_m": 43.520263,
+      "size_mb": 156.63868522644043,
+      "size_note": "fp16 state dict",
+      "latency_ms_bs1_cpu": 15.971687498677056,
+      "latency_p95_ms_bs1_cpu": 17.156764896935783,
+      "throughput_per_s_bs32_cpu": 224.11971728452363,
+      "latency_ms_bs1_mps": 6.094854499679059,
+      "latency_p95_ms_bs1_mps": 21.472756258299224,
+      "throughput_per_s_bs32_mps": 512.0060880908088
+    },
+    {
+      "name": "TF-IDF + LR",
+      "params_m": 0.784322,
+      "trainable_params_m": null,
+      "size_mb": 9.973194122314453,
+      "size_note": "pickled vectoriser + model",
+      "latency_ms_bs1_cpu": 0.571020496863639,
+      "train_minutes_mean": 0.4584794256999885
+    },
+    {
+      "name": "TF-IDF + SVM",
+      "params_m": 0.784322,
+      "trainable_params_m": null,
+      "size_mb": 33.91294860839844,
+      "size_note": "pickled vectoriser + model",
+      "latency_ms_bs1_cpu": 2.797582998027792,
+      "train_minutes_mean": 0.8110222965166031
+    }
+  ]
+}

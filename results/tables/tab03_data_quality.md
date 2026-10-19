@@ -1,0 +1,12 @@
+**Data-quality and leakage audit (measured).**
+
+| Check | Value |
+|---|---|
+| official train: exact-duplicate groups | 8 |
+| official train: normalised-duplicate groups | 250 |
+| official train: near-duplicate pairs (cos >= 0.9) | 1,082 |
+| label conflicts among exact duplicates | 0 |
+| test items with near-duplicate in official train | 182 |
+| our train<->val near-duplicate pairs | 0 |
+| Swami sarcastic tweets containing #sarcasm/#irony | 486 / 504 |
+| CONDA conversations split across official train/valid files | 3,540 |

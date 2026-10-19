@@ -1,0 +1,255 @@
+# Does Sarcasm Supervision Help? A Leakage-Controlled, Explainable Study of Cyberbullying-Type Detection in Hinglish
+
+*Working title in the brief: "SACENet: Sarcasm-Aware Explainable Detection of Cyberbullying in Hinglish Text". The
+title was revised because the evidence supports a controlled evaluation of sarcasm-aware components rather than a
+validated new detector, and because early detection was evaluated only on a proxy dataset.*
+
+*Authors: [to be added by the project owner]. Draft generated from saved experimental results on {{ v.build_date }}.*
+
+## Abstract
+
+Cyberbullying on Indian social media is often written in Hinglish, a Roman-script mixture of Hindi and English, and
+is often indirect: mockery and sarcasm stand in for explicit insults. We study whether sarcasm knowledge, learned from a
+separate human-annotated Hinglish sarcasm corpus, improves seven-way cyberbullying-type classification on
+MC-Hinglish1.0, and whether token-level explanations of the resulting models are faithful. Under a leakage-controlled
+protocol with three seeds per configuration, a fine-tuned MuRIL encoder reaches a test macro-F1 of
+{{ v.mc7_test.mc7_muril_base.macro_f1 }} ± {{ v.mc7_test.mc7_muril_base.macro_f1_sd }}, against
+{{ v.mc7_test.mc7_tfidf_svm.macro_f1 }} for a character-n-gram TF-IDF SVM. {{ v.text.abstract_sarcasm }} We also find
+that {{ v.mc_test_flagged }} of the 1,000 official test items (18.2%) have near-duplicates in the training split, and
+that the sarcasm corpus's retrieval hashtags leak its labels; both would inflate reported scores if left unaddressed.
+SHAP attributions pass a deletion-based faithfulness test ({{ v.text.abstract_xai }}). A causal early-warning
+procedure, evaluated only on English in-game chat as a proxy, {{ v.text.abstract_early }} Code, split identifiers and
+per-item predictions are released for verification.
+
+**Keywords:** cyberbullying detection; code-mixing; Hinglish; sarcasm; multitask learning; explainability; SHAP; reproducibility
+
+## 1. Introduction
+
+Automated detection of cyberbullying and abusive language has been studied for more than a decade
+\cite{salawu2020survey,vanhee2018cyberbullying,fortuna2018survey}, mostly for English. In India, a large share of
+social-media communication is code-mixed: users alternate between Hindi and English within a sentence and usually write
+Hindi in Roman script without standard spelling \cite{khanuja2020gluecos,bohra2018hinglish}. This creates three
+difficulties for detection models. Vocabulary is sparse because the same Hindi word appears in many transliterations;
+pretrained encoders see comparatively little romanised Hindi; and cyberbullying is often *indirect*, mocking a target
+through exaggerated praise or irony rather than explicit slurs \cite{joshi2017sarcasm}.
+
+Sarcasm is therefore a natural candidate for auxiliary knowledge. It is also hard to supply honestly: we are not aware of
+a public Hinglish corpus that annotates both cyberbullying and sarcasm on the same texts. Sarcasm signals must come from a
+*different* corpus, and whether they transfer is an empirical question, not something to assume. A common
+shortcut—deriving "sarcasm" labels from a cyberbullying category such as *mockery* or from surface cues—makes any
+measured benefit circular. The prototype that preceded this work did exactly that (Section 5.4).
+
+Explainability matters because moderation decisions affect people. Attribution methods such as SHAP
+\cite{lundberg2017shap} can show which words a model relied on. However, attributions describe model behaviour, not
+author intent, and they are not guaranteed to be faithful to the model \cite{jacovi2020faithfulness}. We therefore
+*test* faithfulness rather than assume it.
+
+Finally, the original motivation included *early* detection of escalating cyberbullying in conversations
+\cite{lopezvizcaino2021early}. Validating that requires real conversations with turn-level labels. We found no openly
+available Hinglish dataset of this kind. We therefore evaluate the early-warning mechanism on CONDA \cite{weld2021conda},
+an English in-game chat corpus with turn-level toxicity labels, and describe it explicitly as a proxy study.
+
+**Research questions.**
+
+- **RQ1.** How do classical and transformer models (multilingual vs. Hinglish-specific) compare on MC-Hinglish1.0 under leakage-controlled splits?
+- **RQ2.** Does sarcasm supervision from a separate human-annotated Hinglish corpus improve cyberbullying-type classification, and is any gain attributable to the sarcasm *labels* rather than to additional auxiliary data?
+- **RQ3.** Are SHAP explanations of the resulting model faithful and stable?
+- **RQ4.** In a proxy setting, how early and with how many false alarms can a causal turn-level detector flag toxic conversations?
+
+## 2. Related Work
+
+**Cyberbullying and abusive language.** Surveys cover feature-based and neural detectors
+\cite{salawu2020survey,fortuna2018survey}. \citet{vanhee2018cyberbullying} address fine-grained cyberbullying
+detection, and \citet{vidgen2020directions} show how sampling and annotation choices shape abusive-language datasets,
+which is one reason we do not merge datasets with different label definitions. \citet{sap2019racial} document
+dialect-correlated label bias. Widely used benchmarks include OLID \cite{zampieri2019olid} (also distributed in
+TweetEval; \citealp{barbieri2020tweeteval}), HASOC \cite{mandl2019hasoc}, TRAC \cite{kumar2018trac,kumar2020trac2}
+and HateXplain \cite{mathew2021hatexplain}.
+
+**Hinglish and code-mixed NLP.** \citet{bohra2018hinglish} released Hinglish hate-speech annotations, and GLUECoS
+\cite{khanuja2020gluecos} benchmarks code-switched NLP. MuRIL \cite{khanuja2021muril} is pretrained on 17 Indian
+languages including transliterated text, and the L3Cube HingBERT family \cite{nayak2022hingbert} is pretrained on
+Hinglish. MC-Hinglish1.0 \cite{laskar2024mchinglish} annotates seven cyberbullying types. Its authors report classical
+models and a voting ensemble at 0.609 accuracy on the official split. \citet{kumar2025murilxai} combine MuRIL with
+attribution analysis on six other Hinglish datasets, so we do not claim that combination as new.
+
+**Sarcasm.** \citet{joshi2017sarcasm} survey sarcasm detection. For Hinglish, \citet{swami2018sarcasm} release 5,250
+annotated tweets, \citet{aggarwal2020sarcasm} release a further corpus and use bilingual embeddings, and
+\citet{majumder2026smallwins} find that a small fine-tuned model can outperform prompted LLMs. Multitask learning
+\cite{caruana1997multitask,ruder2017mtl} has been used to share sentiment and sarcasm information
+\cite{majumder2019sarcasmmtl}.
+
+**Explainability.** LIME \cite{ribeiro2016lime}, SHAP \cite{lundberg2017shap} and Integrated Gradients
+\cite{sundararajan2017ig} are standard attribution methods. ERASER \cite{deyoung2020eraser} operationalises
+faithfulness via comprehensiveness and sufficiency, and \citet{jacovi2020faithfulness} discuss what faithfulness can
+and cannot establish.
+
+**Early detection.** eRisk introduced latency-weighted evaluation (ERDE; \citealp{losada2016erisk}).
+\citet{lopezvizcaino2021early} study early cyberbullying detection on social-network sessions, and
+\citet{hosseinmardi2015instagram} annotate Instagram media sessions. CONDA \cite{weld2021conda} provides
+conversation-structured in-game chat with utterance-level toxicity intents.
+
+## 3. Research Gap and Contributions
+
+Combining a multilingual encoder with a sarcasm signal, SHAP and early detection is not novel in itself. Our
+contributions are evidential and methodological:
+
+1. **A leakage-audited benchmark protocol for MC-Hinglish1.0.** We quantify near-duplicates between the official train
+   and test splits ({{ v.mc_test_flagged }} test items), report results on both the official and a de-duplicated test
+   set, and release split identifiers.
+2. **A controlled test of sarcasm transfer.** We compare multitask learning with a *shuffled-label* control and with
+   feature fusion, after identifying and removing a retrieval-hashtag artefact in the sarcasm corpus. We also re-evaluate
+   the prototype's hand-set "sarcasm boost" rule using a trained sarcasm model.
+3. **Faithfulness and stability checks of SHAP explanations** for a Hinglish abuse classifier.
+4. **A clearly scoped proxy evaluation of causal early warning** with delay, false-alarm and ERDE metrics.
+
+## 4. Problem Formulation
+
+Let $x$ be a comment. **MC7** is the original seven-way task: predict $y \in \mathcal{Y}$, with $\mathcal{Y}$ =
+{not\_cyberbullying, age, gender, religion, mockery, abusive, offensive}. **MC2** is the derived binary task
+$b=\mathbb{1}[y\neq\texttt{not\_cyberbullying}]$; the derivation is justified because the dataset defines the six
+other labels as types of cyberbullying. Sarcasm detection is the auxiliary task: predict $s\in\{0,1\}$ on a separate
+corpus. For early detection, a conversation $(u_1,\dots,u_n)$ has turn labels $z_t\in\{0,1\}$ and is positive if
+$\exists t: z_t=1$, with onset $o=\min\{t: z_t=1\}$. After each turn, a detector emits $p_t=f(u_{\le t})$, which
+depends only on turns observed so far, and raises an alarm at $\hat t=\min\{t: a_t\ge\tau\}$ with
+$a_t=\max_{s\le t}p_s$.
+
+## 5. Datasets
+
+[[TAB:tab01_datasets|tab:datasets]]
+
+### 5.1 MC-Hinglish1.0
+
+MC-Hinglish1.0 \cite{laskar2024mchinglish} contains 8,400 Roman-script Hinglish Twitter comments (7,400 train /
+1,000 test). The class sizes are near-balanced (1,104–1,145 per cyberbullying type) except for not\_cyberbullying
+(1,691). The release reports neither the number of annotators nor inter-annotator agreement. Our local copy is
+byte-identical to the public release (SHA-256 verified). We carve a stratified 10% validation split (741 items) from
+the official training split and keep the official test split unchanged (Table \ref{tab:splits}).
+
+**Train–test overlap.** Using character 3–5-gram TF-IDF cosine similarity ≥ 0.9, {{ v.mc_test_flagged }} test items
+(18.2%) have a near-duplicate in the official training split; 38 are duplicates after case/punctuation/repetition
+normalisation and 4 are exact. We keep the official test split for comparability and also report every result on the
+{{ v.n_test_dedup }}-item de-duplicated subset. Our validation split is grouped by near-duplicate cluster and has zero
+overlap with training data (Table \ref{tab:quality}).
+
+### 5.2 Sarcasm corpus
+
+The corpus of \citet{swami2018sarcasm} contains 5,250 Hinglish tweets (504 sarcastic, 9.6%) with token-level language
+tags (romanised Hindi 75%, English 10% of tagged tokens; mean code-mixing index 11.8). **Retrieval artefact:** 486 of
+the 504 sarcastic tweets contain `#sarcasm` or `#irony`, the hashtags used to collect them, while non-sarcastic tweets
+carry topical query hashtags. With hashtags kept, a TF-IDF logistic regression reaches 0.879 macro-F1; after removing all
+hashtags it reaches 0.739. All `#` tokens are removed from the model input, and we split 70/10/20 with stratification
+and near-duplicate grouping.
+
+### 5.3 CONDA (proxy for early detection)
+
+CONDA \cite{weld2021conda} contains English Dota 2 chat with utterance-level intents (explicit toxicity E, implicit
+toxicity I, action A, other O); we define toxic = E ∪ I. The official train/validation files split conversations
+*per utterance*: 3,540 conversations occur in both files. We therefore pool the 35,895 annotated utterances (10,902
+conversations) and re-split by match, giving 7,726 / 1,089 / 2,087 conversations for train / validation / test.
+Conversations are short (median 2 turns), and turns from the unannotated official test file are missing.
+
+### 5.4 Data not used
+
+HASOC and TRAC require registration with the organisers, and the Bohra et al. data ships tweet IDs only. Two
+user-supplied sarcasm files have undocumented provenance. Their LLM-generated labels agree with the accompanying human
+labels on only 52.9% of items, so they are never used as ground truth. The human labels serve only as a supplementary
+cross-corpus test. The prototype's "sarcastic" field for MC-Hinglish (mockery label or regex cue) was discarded as
+circular.
+
+[[TAB:tab03_data_quality|tab:quality]]
+
+## 6. Methodology
+
+[[FIG:results/figures/diagrams/fig01_system_architecture|SACENet system overview. Solid components were trained and evaluated on MC-Hinglish1.0. The dashed early-warning path was evaluated only on the English CONDA proxy.|fig:system]]
+
+### 6.1 Preprocessing
+
+Text is NFC-normalised. Case, punctuation, Devanagari and code-switching are preserved. Emoji are mapped to their CLDR
+names, because MuRIL's vocabulary maps many emoji to [UNK]. URLs and user mentions become placeholders, and character
+elongations are capped at three repetitions. Class imbalance is handled with inverse-frequency class weights computed on
+the training split only; no resampling is used.
+
+### 6.2 Baselines
+
+We train a majority-class predictor and linear models on word 1–2-gram plus character 2–5-gram TF-IDF features: logistic
+regression, and a linear SVM with Platt scaling fitted by 5-fold cross-validation within the training split. The
+regularisation strength $C\in\{0.1,0.3,1,3,10\}$ is selected on validation macro-F1.
+
+### 6.3 Transformer classifiers
+
+We fine-tune MuRIL \cite{khanuja2021muril}, XLM-R base \cite{conneau2020xlmr} and HingRoBERTa \cite{nayak2022hingbert}
+with a linear head on the first-token representation $h$:
+
+$$\hat{y}=\mathrm{softmax}(W\,\mathrm{dropout}(h)+b),\qquad \mathcal{L}_{\mathrm{CB}}=-\sum_i w_{y_i}\log \hat{y}_{i,y_i}$$
+
+where $w_c$ are the training-split inverse-frequency weights normalised to mean 1.
+
+### 6.4 Sarcasm-aware variants
+
+**Multitask learning (MTL).** A second linear head on the same encoder predicts sarcasm on Swami-corpus batches,
+and both losses are optimised jointly:
+
+$$\mathcal{L}=\mathcal{L}_{\mathrm{CB}}+\lambda\,\mathcal{L}_{\mathrm{sarc}},\qquad \lambda=0.5$$
+
+with one auxiliary batch per main batch (the smaller auxiliary set is cycled).
+
+**Shuffled-label control.** The control is identical to MTL, except that the sarcasm labels are permuted once at random
+(the class ratio is kept). If MTL improves over the base model only because of extra text or regularisation, the
+control should improve equally.
+
+**Feature fusion.** A separately trained MuRIL sarcasm detector is frozen. For every comment, its probability
+$p_{\mathrm{sarc}}$ and pooled embedding $e$ are projected as $\phi=\mathrm{GELU}(W_\phi[p_{\mathrm{sarc}};e])\in\mathbb{R}^{64}$
+and concatenated with $h$ before the cyberbullying head.
+
+**Prototype boost rule.** The earlier prototype raised the binary bullying probability as
+$p'=\min(1,p+0.18\,s)$ when $s\ge0.45$, with decision threshold 0.55. We re-evaluate this rule on MC2, using the
+trained sarcasm detector's $s$.
+
+[[FIG:results/figures/diagrams/fig04_sarcasm_components|Sarcasm components: (a) multitask learning with a shuffled-label control; (b) feature fusion with a frozen, separately trained sarcasm model.|fig:sarcasm]]
+
+### 6.5 Explanations and their checks
+
+We explain the predicted-class probability with the SHAP Partition explainer and a tokenizer-based text masker, then
+sum subword attributions per word. *Faithfulness* is measured with a deletion test in the spirit of ERASER
+comprehensiveness \cite{deyoung2020eraser}: the drop in the predicted-class probability after deleting the top-$k$
+attributed words is compared with deleting $k$ random words. *Stability* is measured as the rank agreement across SHAP
+evaluation budgets and with leave-one-word-out occlusion.
+
+### 6.6 Early-warning procedure (proxy)
+
+Turn scorers are TF-IDF logistic regression and DistilRoBERTa, each trained on CONDA training turns with or without the
+two preceding turns as causal context. The alarm threshold $\tau$ maximises conversation-level F1 on validation
+conversations. A second operating point caps the validation false-alarm rate at 10%.
+
+## 7. Experimental Setup
+
+All transformers share one hyperparameter setting (Table \ref{tab:hparams}): encoder learning rate $3\times10^{-5}$ and
+head learning rate $10^{-3}$ with linear warm-up (10%) and decay, AdamW \cite{loshchilov2017adamw} with weight decay 0.01, batch size 32, at most 5 epochs with
+early stopping (patience 2) on validation macro-F1, gradient clipping at 1.0, and maximum length 128 tokens. Each
+configuration is trained with seeds 13, 42 and 87. Training used an Apple M1 Pro GPU through PyTorch's MPS backend in
+fp32; fp16 autocast was measured to be slower on this hardware. Because the optimiser update of MuRIL's
+151M-parameter token-embedding table dominated step time, **the token-embedding table is frozen for all transformer
+models**, while position embeddings and all encoder layers are fine-tuned. Pretrained weights are pinned to exact Hub
+revisions. **Tuning disclosure.** An initial configuration (learning rate $3\times10^{-5}$ for encoder and head)
+under-fitted. For MuRIL on MC7, validation loss was 1.41 after five epochs, the fitted temperature was 0.23, and the
+test macro-F1 (0.662) was far below the validation macro-F1 (0.774). Observing this test result prompted a small pilot,
+which used validation data only (encoder learning rate $\in\{3,5\}\times10^{-5}$, head $10^{-3}$, one seed). The
+$5\times10^{-5}$ setting was best on MC7 validation, but it collapsed to the majority class on the sarcasm task. We therefore
+fixed the best setting that was stable on every task's validation data ($3\times10^{-5}$ / $10^{-3}$) for all models and
+tasks. Because the decision to tune was triggered by a test
+observation, the test set is not perfectly untouched; we report this rather than hide it. Implementation uses PyTorch, Transformers \cite{wolf2020transformers}, scikit-learn
+\cite{pedregosa2011sklearn} and SHAP.
+
+[[TAB:tab04_hyperparameters|tab:hparams]]
+
+## 8. Evaluation Metrics
+
+The primary metric is macro-F1. We also report accuracy, weighted-F1, per-class precision/recall/F1, ROC-AUC (macro
+one-vs-rest for MC7) and PR-AUC. For probability quality we report the Brier score and the expected calibration error
+(ECE; 15 bins), before and after temperature scaling \cite{guo2017calibration} fitted on validation logits. Seed
+variability is given as mean ± s.d. over three seeds. For each configuration, the seed ensemble (mean probability) gets a
+95% bootstrap confidence interval. Pairs of systems are compared with paired bootstrap resampling \cite{koehn2004significance}
+and the exact McNemar test \cite{dietterich1998tests}. Because several comparisons are made without correction, we
+treat p-values as descriptive. For early detection we report alarm precision, recall and F1, the false-alarm rate on
+negative conversations, the delay $\hat t-o$ in turns, and ERDE$_o$ \cite{losada2016erisk}.

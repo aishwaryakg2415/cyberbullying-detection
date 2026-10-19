@@ -1,0 +1,9 @@
+{
+  "exp_id": "conda_ctx__tfidf_lr",
+  "kind": "baseline",
+  "task": "conda_ctx",
+  "model": "tfidf_lr",
+  "seed": 0,
+  "extra_eval": [],
+  "group": "early_conda"
+}

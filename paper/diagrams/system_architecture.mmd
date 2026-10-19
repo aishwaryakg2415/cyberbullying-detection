@@ -1,0 +1,9 @@
+flowchart LR
+  A[Hinglish comment] --> B[Normalisation]
+  B --> C[MuRIL encoder]
+  C --> D[Cyberbullying-type head]
+  C --> E[Aux sarcasm head - MTL]
+  B --> F[Frozen sarcasm model] -->|fusion features| D
+  D --> G[Temperature-scaled probabilities] --> H[SHAP + faithfulness]
+  S[Conversation stream - CONDA proxy]:::proxy -.-> W[Causal early warning]:::proxy
+  classDef proxy stroke-dasharray: 5 5

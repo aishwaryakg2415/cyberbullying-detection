@@ -1,0 +1,100 @@
+# SACENet — Final Experiment Report
+
+*Rendered from saved results by `scripts/build_paper.py` on {{ v.build_date }}. Every number traces to per-item predictions
+in `results/runs/` (re-checked by `scripts/verify_results.py`: {{ v.verify.summary }}).*
+
+## 1. What was done
+
+1. **Audit** (`reports/PROJECT_AUDIT.md`). The original code had never run and contained hard-coded "results". It is
+   preserved in `legacy/`.
+2. **Data.** All sources were verified by SHA-256 (`data/dataset_manifest.json`): MC-Hinglish1.0 (primary), Swami et al.
+   sarcasm, CONDA (early-detection proxy), TweetEval-Offensive (English stress test), and the user-supplied sarcasm file
+   (supplementary). HASOC and TRAC need registration and are documented in `data/README.md`.
+3. **Pipeline.** Code-mix-preserving cleaning; exact, normalised and near-duplicate detection; group-aware splits; leakage
+   report; training-only class weights. 32 tests pass.
+4. **Experiments.** {{ v.n_runs }} completed runs: baselines, 3 transformer backbones × 3 seeds, sarcasm component,
+   MTL / shuffled control / fusion / fusion control, binary task, CONDA scorers, and diagnostics.
+5. **Explainability.** SHAP with a deletion-faithfulness test, stability checks and timing.
+6. **Assets.** {{ v.n_figures }} figures (PNG+PDF+data), {{ v.n_tables }} tables (CSV+LaTeX+Markdown), and the paper
+   (Markdown, LaTeX, PDF).
+7. **Demo app** (`app/streamlit_app.py`), tested headless.
+
+## 2. Headline results
+
+### MC7 (seven cyberbullying types), official test split
+{{ v.tables.tab05_results_mc7 }}
+
+### Validation vs. test, and near-duplicate subsets
+{{ v.tables.tab05b_mc7_subsets }}
+
+### Distribution-shift diagnostic
+{{ v.tables.tab03b_split_shift }}
+
+### Paired comparisons
+{{ v.tables.tab07_paired_tests }}
+
+### Binary task (MC2)
+{{ v.tables.tab08_results_mc2 }}
+
+### Prototype sarcasm-boost rule (MC2)
+{{ v.tables.tab09_legacy_boost }}
+
+### Sarcasm detection (Swami test, hashtags removed)
+{{ v.tables.tab14_results_sarcasm }}
+
+### External tests
+{{ v.tables.tab10_external }}
+
+### Explainability
+{{ v.tables.tab15_explainability }}
+
+### Early detection (CONDA proxy, English game chat)
+{{ v.tables.tab13_early_detection }}
+
+### Runtime and size
+{{ v.tables.tab12_runtime_size }}
+
+## 3. Findings in one paragraph each
+
+- **RQ1.** On the official test split, character-n-gram TF-IDF models ({{ v.mc7_test.mc7_tfidf_svm.macro_f1 }}) and
+  HingRoBERTa ({{ v.mc7_test.mc7_hingroberta_base.macro_f1 }}) outperform MuRIL ({{ v.mc7_test.mc7_muril_base.macro_f1 }})
+  and XLM-R ({{ v.mc7_test.mc7_xlmr_base.macro_f1 }}). On validation all are close. The official test split is
+  distribution-shifted (domain-classifier AUC {{ v.shift.train_vs_test }} vs. {{ v.shift.train_vs_val }} control).
+- **RQ2.** {{ v.text.abstract_sarcasm }} {{ v.text.fusion_control }}
+- **RQ3.** SHAP is faithful under deletion ({{ v.text.abstract_xai }}), stable at ≥ 100 evaluations, and weakly aligned with
+  occlusion (Spearman {{ v.xai.occ.spearman_mean }}).
+- **RQ4 (proxy only).** The causal alarm {{ v.text.abstract_early }} This does not validate Hinglish early detection.
+- **Diagnostic.** {{ v.text.full_ft }}
+
+## 4. Failures, superseded runs and deviations (full disclosure)
+
+- **Config v1** (lr 3e-5 for encoder and head) under-fitted. MC7 MuRIL s13 reached val 0.774 / test 0.662 with temperature
+  0.23. Its test result was seen and prompted a validation-only pilot (`results/tuning/pilot_summary.json`). The 5 runs are
+  kept in `results/runs_superseded/`.
+- **Config v2** (encoder lr 5e-5) collapsed to the majority class on the sarcasm task (2 runs, kept in
+  `results/runs_superseded/config_v2_collapsed/`). The final config (3e-5 / 1e-3) is stable on all tasks' validation sets.
+  Collapsed runs among final results: {{ v.n_collapsed }}.
+- **Frozen token-embedding table** for all models, for compute reasons (MPS optimiser cost). The unfrozen diagnostic was
+  attempted twice and abandoned at critical memory pressure (`results/runs_superseded/not_feasible/README.json`).
+- **CONDA** official split is utterance-level, so it was re-split by match. Conversations are short and partially incomplete.
+- **Swami sarcasm corpus**: retrieval hashtags leaked labels and were removed from the model input.
+- **Watchdog pauses**: training was paused once for ~17 s by an over-strict swap rule (then corrected), and the unfrozen
+  diagnostic was paused twice at critical memory pressure (`results/logs/watchdog.log`).
+- **Bug-induced re-runs**: `mc2__muril__fusion__s13` crashed in its external evaluation (fusion features do not exist for
+  OLID texts); `s42` was stopped pre-emptively. Both were re-run after the fix (external evaluation is skipped for fusion runs).
+- **Collapse flag**: `sarcasm__muril__shuffled_labels__s13` (the fusion-control feature extractor) predicts the majority class,
+  as expected for a model trained on permuted labels.
+- **Not done**: unfrozen-embedding diagnostic (memory); HASOC/TRAC evaluation (access required); Hinglish conversation-level early detection (no data); human
+  evaluation of explanations; per-model hyperparameter search.
+
+## 5. Generated assets
+- Figures: `results/figures/**` (captions: `paper/FIGURE_CAPTIONS.md`)
+- Tables: `results/tables/*` (captions: `paper/TABLE_CAPTIONS.md`)
+- Paper: `paper/SACENet_Research_Paper_Draft.{md,tex}`, `paper/build/SACENet_Research_Paper_Draft.pdf`; v1 in `paper/SACENet_Research_Paper_Draft_v1.md`
+- Registry: `results/experiment_registry.{jsonl,csv}`; verification: `results/verification_report.json`
+
+## 6. Recommended next steps
+1. Resolve `paper/Author_Review_Notes.md` §A (provenance of user files, literature currency).
+2. Request HASOC/TRAC access and add them as external tests.
+3. Run full fine-tuning with a per-model learning-rate search as a robustness appendix.
+4. Annotate sarcasm on a sample of MC-Hinglish to test the sarcasm hypothesis directly.

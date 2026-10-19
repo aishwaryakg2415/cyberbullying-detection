@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Domain-classifier test of distribution shift (TF-IDF LR, 5-fold CV ROC-AUC; 0.5 = indistinguishable).}
+\label{tab:tab03b_split_shift}
+\begin{tabular}{lr}
+\toprule
+Comparison & ROC-AUC \\
+\midrule
+official train vs official test & 0.884 \\
+official train vs our validation (control) & 0.578 \\
+class 'abusive': train vs test (vs val) & 0.941 (0.579) \\
+class 'age': train vs test (vs val) & 0.921 (0.689) \\
+class 'gender': train vs test (vs val) & 0.923 (0.637) \\
+class 'mockery': train vs test (vs val) & 0.879 (0.561) \\
+class 'not\_cyberbullying': train vs test (vs val) & 0.960 (0.539) \\
+class 'offensive': train vs test (vs val) & 0.911 (0.641) \\
+class 'religion': train vs test (vs val) & 0.928 (0.699) \\
+\bottomrule
+\end{tabular}
+\end{table}

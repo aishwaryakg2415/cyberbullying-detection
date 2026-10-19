@@ -1,0 +1,9 @@
+{
+  "exp_id": "mc7__majority",
+  "kind": "baseline",
+  "task": "mc7",
+  "model": "majority",
+  "seed": 0,
+  "extra_eval": [],
+  "group": "baselines"
+}

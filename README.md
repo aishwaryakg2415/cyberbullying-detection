@@ -1,178 +1,132 @@
-# 🔬 SACENet: Sarcasm-Aware Explainable Early Detection of Cyberbullying
-### IEEE Research Paper — Complete Implementation
+# SACENet — Sarcasm-Aware Explainable Detection of Cyberbullying in Hinglish
 
-> **Paper Title**: *Sarcasm-Aware Explainable Early Detection of Cyberbullying Using LLM-Enhanced Multi-Platform Analysis*
+A reproducible research codebase for classifying **cyberbullying types in Hinglish (Hindi-English code-mixed)
+comments**. It tests whether **sarcasm supervision** helps, checks **SHAP explanations** for faithfulness, and
+evaluates a **causal early-warning** procedure on a public conversational proxy dataset.
 
----
+> **Status (honest summary).** All results come from runs whose per-item predictions are saved in
+> `results/runs/` and are re-verified by `scripts/verify_results.py`. Measured numbers are in
+> `results/FINAL_EXPERIMENT_REPORT.md` and the paper draft in `paper/`. Early detection was evaluated **only on an
+> English game-chat proxy (CONDA)**, not on Hinglish cyberbullying. See *Limitations*.
 
-## 📁 Project Structure
+The original prototype is preserved unchanged in `legacy/`: notebooks, the LLM sarcasm engine, the hard-coded
+"results", and the original README and requirements. `reports/PROJECT_AUDIT.md` explains why it was replaced.
 
-```
-cyberbullying/
-├── SACENet_Research_Notebook.ipynb  ← MAIN ENTRY POINT (run this)
-├── config.py                         ← All hyperparameters & settings
-├── dataset.py                        ← Multi-platform corpus builder
-├── sarcasm_engine.py                 ← LLM sarcasm detection (Gemini/GPT/BERT)
-├── model.py                          ← SACENet core pipeline
-├── train.py                          ← Fine-tuning pipeline
-├── evaluate.py                       ← Benchmarking vs baselines
-├── visualise.py                      ← IEEE-quality figure generation
-├── requirements.txt                  ← All dependencies
-├── data/                             ← Place your CSV datasets here
-├── plots/                            ← Generated figures (auto-created)
-├── results/                          ← Evaluation JSON results (auto-created)
-└── saved_models/                     ← Fine-tuned model weights (auto-created)
-```
-
----
-
-## 🏗️ Architecture: SACENet
+## Repository layout
 
 ```
-Input Text
-    │
-    ├────────────────────────────────────┐
-    │                                    │
-    ▼                                    ▼
-┌──────────────────────┐    ┌──────────────────────────┐
-│  LLM Sarcasm Engine  │    │  Twitter-RoBERTa          │
-│  ─────────────────── │    │  Cyberbullying Classifier │
-│  • Gemini 1.5 Flash  │    │  (Fine-tuned on corpus)   │
-│  • GPT-4o-mini       │    └──────────────────────────┘
-│  • Local BERT        │             │
-└──────────────────────┘        P(Cyberbullying)
-    │                                    │
-    │ sarcasm_score + indicators         │
-    └────────────────┬───────────────────┘
-                     │
-                     ▼
-         ┌───────────────────────┐
-         │  Sarcasm-Aware Fusion │  ← Dynamic boost when sarcasm detected
-         └───────────────────────┘
-                     │
-                     ▼
-         ┌───────────────────────┐
-         │  SHAP Explainability  │  ← Token-level attribution
-         └───────────────────────┘
-                     │
-                     ▼
-         ┌───────────────────────┐
-         │  DetectionResult      │  ← Structured output
-         └───────────────────────┘
+configs/experiments.yaml      every experiment (models, pinned revisions, seeds, hyperparameters)
+src/data/                     sources, loaders, cleaning, duplicate/leakage checks, splitting
+src/models/                   TF-IDF baselines; transformer with optional multitask head / fusion
+src/training/                 training loop (MPS/CUDA/CPU), baseline runner, task definitions
+src/evaluation/               metrics, CIs, paired tests, calibration, early-detection metrics, aggregation
+src/explainability/           SHAP, occlusion, deletion-faithfulness, stability
+src/inference/                checkpoint loader / predictor
+src/reporting/                figures, diagrams, tables
+scripts/                      CLI entry points (below)
+app/streamlit_app.py          demo app
+data/                         manifest, dataset card, split ID lists (raw text is NOT committed)
+results/                      runs, analysis, figures, tables, registry, reports
+paper/                        manuscript (md + tex + pdf), bibliography, captions, checklists
+tests/                        pytest suite
+legacy/                       original code, untouched
 ```
 
----
+## 1. Setup
 
-## 🚀 Quick Start
+Python 3.11 is recommended. A GPU is optional: CUDA and Apple MPS are detected automatically and smoke-tested, with
+CPU as the fallback.
 
-### 1. Install Dependencies
+**Windows (PowerShell)**
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+# NVIDIA GPU: first install the CUDA build of torch from https://pytorch.org/get-started/locally/
+python -m pip install -r requirements.txt
+```
+
+**macOS / Linux (bash)**
 ```bash
-pip install -r requirements.txt
+python3.11 -m venv .venv && source .venv/bin/activate
+python -m pip install -r requirements.txt        # or: uv venv --python 3.11 && uv pip install -r requirements.txt
 ```
 
-### 2. Open the Notebook
-```bash
-jupyter notebook SACENet_Research_Notebook.ipynb
+No API keys, Kaggle account or credentials are needed (`.env.example` lists the optional variables).
+
+## 2. Data
+
+```powershell
+python scripts/download_datasets.py --user-dir ..   # public sources; --user-dir only for the two user-supplied CSVs
+python scripts/verify_datasets.py                    # SHA-256 + counts vs data/dataset_manifest.json
+python scripts/prepare_data.py                       # clean, de-duplicate, split, leakage report
 ```
+See `data/README.md` for sources, licences and the manual steps that HASOC/TRAC would need.
 
-### 3. (Optional) Set API Key for LLM Sarcasm Detection
-In **Section 2** of the notebook, paste your API key:
-```python
-GEMINI_KEY = 'your-gemini-api-key'   # Free tier available
-# OR
-OPENAI_KEY = 'your-openai-api-key'
+## 3. Models and experiments
+
+```powershell
+python scripts/download_models.py                    # pretrained encoders at pinned revisions (~3.5 GB)
+python -m pytest -q                                  # tests (data, metrics, early detection, inference, SHAP, app)
+python scripts/run_experiments.py --smoke            # 1-epoch end-to-end sanity run (not a result)
+python scripts/run_experiments.py --list             # all experiment ids
+python scripts/run_experiments.py --group baselines
+python scripts/run_experiments.py --group sarcasm_component
+python scripts/run_experiments.py --group mc7_backbones
+python scripts/run_experiments.py --group mc7_sarcasm
+python scripts/run_experiments.py --group early_conda
+python scripts/run_experiments.py --group mc2_models
+python scripts/run_early_detection.py                # conversation-level early-warning evaluation (proxy)
 ```
-If no key is set, the system automatically falls back to the **local BERT sarcasm model** (no API needed).
+On macOS/Linux, `scripts/run_all_isolated.sh` runs all training groups in sequence, one process per run (recommended:
+this returns GPU memory to the OS between runs). Completed runs are skipped
+when re-run. Every run is logged in `results/experiment_registry.{jsonl,csv}` with its config, seed, device, timing,
+metrics and output folder.
 
----
+Approximate cost on an Apple M1 Pro (MPS): ~10–14 min per MuRIL/XLM-R run on MC7 (batch 32, ≤ 5 epochs); the full
+plan took ~13 h including re-runs. Memory: multitask runs pushed a 16 GB Mac to memory-pressure "warning", and an
+unfrozen-embedding run was infeasible. On 8 GB machines (untested), try `batch_size: 16` with `grad_accum: 2` per experiment,
+and run `scripts/resource_watchdog.py` alongside training.
 
-## 🔑 Key Innovations
+## 4. Analysis, explainability, figures, tables, paper
 
-| Feature | Description |
-|---------|-------------|
-| **LLM Sarcasm Detection** | Uses Gemini/GPT with structured JSON prompts to identify sarcastic cyberbullying that evades traditional classifiers |
-| **Score Fusion** | Dynamically boosts cyberbullying probability when sarcasm is detected — captures *covert bullying* |
-| **SHAP Explainability** | Token-level Shapley values explain **why** each prediction was made — satisfies IEEE XAI requirements |
-| **Early Detection** | Analyses first-K messages of a conversation before full escalation |
-| **Multi-Platform** | Trained and evaluated on Twitter, Instagram, Formspring, YouTube, Reddit |
-
----
-
-## 📊 Datasets Supported
-
-| Dataset | Platform | Access |
-|---------|----------|--------|
-| HatEval (SemEval-2019) | Twitter | `datasets.load_dataset("valeriobasile/HatEval")` |
-| Founta et al. (ICWSM-2018) | Twitter | [GitHub](https://github.com/ENCASEH2020/hatespeech-twitter) |
-| Formspring Cyberbullying | Formspring | Kaggle / Mendeley |
-| Custom multi-platform | All | Built-in sample corpus (auto-augmented) |
-
-**To add your own dataset:** Place a CSV file in `./data/` with columns: `text, label (0/1), platform, sarcastic (0/1 optional)`, then update `config.py`.
-
----
-
-## 📈 Expected Results (from sample corpus)
-
-| Model | Accuracy | F1 | Precision | Recall |
-|-------|----------|----|-----------|----|
-| TF-IDF + SVM (Baseline) | ~0.72 | ~0.69 | ~0.71 | ~0.67 |
-| RoBERTa (No Sarcasm) | ~0.81 | ~0.79 | ~0.80 | ~0.78 |
-| **SACENet (Proposed)** | **~0.87** | **~0.85** | **~0.84** | **~0.86** |
-
-> ⚠️ *These are indicative values on the sample corpus. Real dataset performance will differ. Run the full evaluation pipeline (Section 8) on your target dataset.*
-
----
-
-## 🎯 Sarcasm-Aware Detection: The Key Contribution
-
-Traditional models fail on sarcastic cyberbullying because:
-- Surface sentiment appears positive/neutral
-- No indicator of hostile intent in individual tokens
-
-SACENet solves this via:
-1. **LLM prompt** that identifies exaggerated praise, mock-congratulation, ironic tone
-2. **Sarcasm score boost** that raises the final cyberbullying probability by up to `SARCASM_BOOST` (default: 0.18)
-3. **SHAP narrative** that explains *which sarcastic cues* triggered the boost
-
+```powershell
+python scripts/analyze_results.py                    # aggregates seeds; recomputes metrics from predictions
+python scripts/run_explainability.py --device cpu    # SHAP + faithfulness + stability (needs the MC7 MuRIL s13 checkpoint)
+python scripts/benchmark_inference.py                # latency / size (run when the GPU is idle)
+python scripts/generate_paper_assets.py              # results/figures/**, results/tables/*, caption files
+python scripts/build_paper.py                        # paper/*.md + *.tex (+ PDF if tectonic/pdflatex is installed)
+python scripts/verify_results.py                     # end-to-end consistency checks
 ```
-Example:
-  Text    : "Oh wow, you're SO smart! Only took 3 days to figure out 2+2."
-  Base P  : 0.38  ← would be classified as BENIGN without sarcasm module
-  Sarcasm : 0.91  (LLM detects: "ALL-CAPS", "mock-praise", exaggerated tone)
-  Fused P : 0.38 + 0.91×0.18 = 0.54 → CYBERBULLYING ✓
+To compile the PDF on Windows, install Tectonic (`scoop install tectonic` or `choco install tectonic`) or MiKTeX.
+
+## 5. Demo app
+
+```powershell
+streamlit run app/streamlit_app.py
 ```
+The app uses the trained MC7 MuRIL checkpoint (and the sarcasm checkpoint for an informational score). It shows
+calibrated probabilities, optional SHAP attributions, and a clearly labelled conversation *prototype*. It does not store
+submitted text, and it shows an error, never fabricated output, if a checkpoint is missing.
 
----
+## Limitations (read before use)
 
-## 📝 Citation (BibTeX for Your Paper)
+* MC-Hinglish1.0 is small (8.4k), Roman-script Twitter text with no reported inter-annotator agreement; 18% of its
+  official test items have near-duplicates in the training split.
+* Sarcasm supervision comes from a different corpus (2017 tweets). MC-Hinglish has no gold sarcasm labels.
+* Early detection is validated only on a proxy (English in-game chat), so it is not validated for Hinglish cyberbullying.
+* Hyperparameters are shared across models, not tuned per model; the token-embedding table is frozen for compute reasons.
+* Models can reproduce biases about religion, gender and dialect. They are research artefacts to *assist* human
+  moderators, not to make automated decisions about people.
 
-```bibtex
-@inproceedings{sacenet2025,
-  title     = {Sarcasm-Aware Explainable Early Detection of Cyberbullying
-               Using LLM-Enhanced Multi-Platform Analysis},
-  author    = {[Your Name]},
-  booktitle = {Proceedings of the IEEE International Conference on ...},
-  year      = {2025},
-  pages     = {XX--XX},
-  doi       = {10.1109/...}
-}
-```
+## Licences and data use
 
----
+Code: licence to be chosen by the repository owner. Data are **not redistributed**: MC-Hinglish1.0
+(CC-BY-NC-SA-4.0, non-commercial), Swami et al. (GPL-3.0), CONDA (no licence stated), TweetEval/OLID (OLID terms).
+The provenance of the two user-supplied sarcasm CSVs is undocumented. They are used only in a supplementary test
+and should not be published without clarifying their origin.
 
-## 🔧 Configuration Reference
+## Citation
 
-Key settings in [`config.py`](./config.py):
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `LLM_PROVIDER` | `"gemini"` | Sarcasm engine: `"gemini"`, `"openai"`, `"local"` |
-| `CYBERBULLYING_THRESHOLD` | `0.55` | Decision boundary |
-| `SARCASM_THRESHOLD` | `0.45` | Sarcasm detection cutoff |
-| `SARCASM_BOOST` | `0.18` | Maximum probability boost for sarcasm |
-| `EARLY_DETECTION_K` | `3` | First-K messages for early detection |
-| `SHAP_MAX_EVALS` | `500` | SHAP evaluation budget (higher = more accurate) |
-
----
-
-*Built for IEEE Publication — SACENet v1.0*
+If you use this code, cite the datasets and models listed in `paper/references.bib`, in particular
+Rahman-Laskar et al. (2024) for MC-Hinglish1.0 and Swami et al. (2018) for the sarcasm corpus.

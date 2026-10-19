@@ -1,0 +1,90 @@
+{
+  "conda__distilroberta__base__s13": {
+    "f1": 0.9127686472819218,
+    "precision": 0.916243654822335,
+    "recall": 0.9093198992443325,
+    "false_alarm_rate": 0.05104408352668213,
+    "delay_mean": 0.009695290858725761,
+    "delay_median": 0.0,
+    "erde_3": 0.16128875668915277,
+    "erde_5": 0.09668574270133556,
+    "alarms_before_onset": 35
+  },
+  "conda__distilroberta__base__s42": {
+    "f1": 0.9099099099099098,
+    "precision": 0.9302631578947368,
+    "recall": 0.8904282115869018,
+    "false_alarm_rate": 0.040989945862335654,
+    "delay_mean": 0.07072135785007072,
+    "delay_median": 0.0,
+    "erde_3": 0.16540270145752964,
+    "erde_5": 0.1014222636606059,
+    "alarms_before_onset": 26
+  },
+  "conda__distilroberta__base__s87": {
+    "f1": 0.9140328697850821,
+    "precision": 0.9175126903553299,
+    "recall": 0.9105793450881612,
+    "false_alarm_rate": 0.050270688321732405,
+    "delay_mean": 0.008298755186721992,
+    "delay_median": 0.0,
+    "erde_3": 0.16139564149159108,
+    "erde_5": 0.09602626242938324,
+    "alarms_before_onset": 29
+  },
+  "conda__tfidf_lr": {
+    "f1": 0.9122357463164639,
+    "precision": 0.9282920469361148,
+    "recall": 0.8967254408060453,
+    "false_alarm_rate": 0.042536736272235115,
+    "delay_mean": 0.02247191011235955,
+    "delay_median": 0.0,
+    "erde_3": 0.1645154728552457,
+    "erde_5": 0.09839950498776234,
+    "alarms_before_onset": 27
+  },
+  "conda_ctx__distilroberta__base__s13": {
+    "f1": 0.9059829059829059,
+    "precision": 0.9477303988995873,
+    "recall": 0.8677581863979849,
+    "false_alarm_rate": 0.029389017788089715,
+    "delay_mean": 0.14804063860667635,
+    "delay_median": 0.0,
+    "erde_3": 0.17136802000312,
+    "erde_5": 0.10913530267511017,
+    "alarms_before_onset": 16
+  },
+  "conda_ctx__distilroberta__base__s42": {
+    "f1": 0.9096732863549006,
+    "precision": 0.9256844850065189,
+    "recall": 0.8942065491183879,
+    "false_alarm_rate": 0.04408352668213457,
+    "delay_mean": 0.07042253521126761,
+    "delay_median": 0.0,
+    "erde_3": 0.1653722190329301,
+    "erde_5": 0.10118130830719556,
+    "alarms_before_onset": 25
+  },
+  "conda_ctx__distilroberta__base__s87": {
+    "f1": 0.9102564102564104,
+    "precision": 0.9268929503916449,
+    "recall": 0.8942065491183879,
+    "false_alarm_rate": 0.04331013147718484,
+    "delay_mean": 0.057746478873239436,
+    "delay_median": 0.0,
+    "erde_3": 0.1648645245611683,
+    "erde_5": 0.1005254421279653,
+    "alarms_before_onset": 27
+  },
+  "conda_ctx__tfidf_lr": {
+    "f1": 0.8529769137302553,
+    "precision": 0.823943661971831,
+    "recall": 0.8841309823677582,
+    "false_alarm_rate": 0.11600928074245939,
+    "delay_mean": -0.04415954415954416,
+    "delay_median": 0.0,
+    "erde_3": 0.178529004659963,
+    "erde_5": 0.11812611904207888,
+    "alarms_before_onset": 64
+  }
+}

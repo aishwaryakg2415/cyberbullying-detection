@@ -1,0 +1,1987 @@
+{
+  "checks": [
+    {
+      "check": "dataset hashes and counts match manifest",
+      "ok": true,
+      "detail": "VERIFIED"
+    },
+    {
+      "check": "conda__distilroberta__base__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "3495 vs 3495"
+    },
+    {
+      "check": "conda__distilroberta__base__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda__distilroberta__base__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.898467 vs 0.898467"
+    },
+    {
+      "check": "conda__distilroberta__base__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "7059 vs 7059"
+    },
+    {
+      "check": "conda__distilroberta__base__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda__distilroberta__base__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.900834 vs 0.900834"
+    },
+    {
+      "check": "conda__distilroberta__base__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "conda__distilroberta__base__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "3495 vs 3495"
+    },
+    {
+      "check": "conda__distilroberta__base__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda__distilroberta__base__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.898109 vs 0.898109"
+    },
+    {
+      "check": "conda__distilroberta__base__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "7059 vs 7059"
+    },
+    {
+      "check": "conda__distilroberta__base__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda__distilroberta__base__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.898206 vs 0.898206"
+    },
+    {
+      "check": "conda__distilroberta__base__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "conda__distilroberta__base__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "3495 vs 3495"
+    },
+    {
+      "check": "conda__distilroberta__base__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda__distilroberta__base__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.900890 vs 0.900890"
+    },
+    {
+      "check": "conda__distilroberta__base__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "7059 vs 7059"
+    },
+    {
+      "check": "conda__distilroberta__base__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda__distilroberta__base__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.901424 vs 0.901424"
+    },
+    {
+      "check": "conda__distilroberta__base__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "conda__tfidf_lr/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "3495 vs 3495"
+    },
+    {
+      "check": "conda__tfidf_lr/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda__tfidf_lr/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.892822 vs 0.892822"
+    },
+    {
+      "check": "conda__tfidf_lr/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "7059 vs 7059"
+    },
+    {
+      "check": "conda__tfidf_lr/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda__tfidf_lr/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.903333 vs 0.903333"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "3495 vs 3495"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.890635 vs 0.890635"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "7059 vs 7059"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.897272 vs 0.897272"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "3495 vs 3495"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.894471 vs 0.894471"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "7059 vs 7059"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.900483 vs 0.900483"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "3495 vs 3495"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.901426 vs 0.901426"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "7059 vs 7059"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.906749 vs 0.906749"
+    },
+    {
+      "check": "conda_ctx__distilroberta__base__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "conda_ctx__tfidf_lr/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "3495 vs 3495"
+    },
+    {
+      "check": "conda_ctx__tfidf_lr/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda_ctx__tfidf_lr/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.793978 vs 0.793978"
+    },
+    {
+      "check": "conda_ctx__tfidf_lr/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "7059 vs 7059"
+    },
+    {
+      "check": "conda_ctx__tfidf_lr/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "conda_ctx__tfidf_lr/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.784116 vs 0.784116"
+    },
+    {
+      "check": "mc2__majority/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__majority/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__majority/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.444111 vs 0.444111"
+    },
+    {
+      "check": "mc2__majority/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__majority/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__majority/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.444444 vs 0.444444"
+    },
+    {
+      "check": "mc2__muril__base__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__muril__base__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__base__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.913677 vs 0.913677"
+    },
+    {
+      "check": "mc2__muril__base__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__muril__base__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__base__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.853673 vs 0.853673"
+    },
+    {
+      "check": "mc2__muril__base__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc2__muril__base__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__muril__base__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__base__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.923253 vs 0.923253"
+    },
+    {
+      "check": "mc2__muril__base__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__muril__base__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__base__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.859115 vs 0.859115"
+    },
+    {
+      "check": "mc2__muril__base__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc2__muril__base__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__muril__base__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__base__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.934893 vs 0.934893"
+    },
+    {
+      "check": "mc2__muril__base__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__muril__base__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__base__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.865539 vs 0.865539"
+    },
+    {
+      "check": "mc2__muril__base__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc2__muril__fusion__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__muril__fusion__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__fusion__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.929445 vs 0.929445"
+    },
+    {
+      "check": "mc2__muril__fusion__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__muril__fusion__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__fusion__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.868750 vs 0.868750"
+    },
+    {
+      "check": "mc2__muril__fusion__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc2__muril__fusion__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__muril__fusion__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__fusion__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.919791 vs 0.919791"
+    },
+    {
+      "check": "mc2__muril__fusion__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__muril__fusion__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__fusion__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.867598 vs 0.867598"
+    },
+    {
+      "check": "mc2__muril__fusion__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc2__muril__fusion__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__muril__fusion__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__fusion__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.919857 vs 0.919857"
+    },
+    {
+      "check": "mc2__muril__fusion__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__muril__fusion__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__fusion__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.880003 vs 0.880003"
+    },
+    {
+      "check": "mc2__muril__fusion__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc2__muril__mtl__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__muril__mtl__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__mtl__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.932665 vs 0.932665"
+    },
+    {
+      "check": "mc2__muril__mtl__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__muril__mtl__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__mtl__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.852571 vs 0.852571"
+    },
+    {
+      "check": "mc2__muril__mtl__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc2__muril__mtl__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__muril__mtl__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__mtl__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.910367 vs 0.910367"
+    },
+    {
+      "check": "mc2__muril__mtl__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__muril__mtl__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__mtl__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.836508 vs 0.836508"
+    },
+    {
+      "check": "mc2__muril__mtl__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc2__muril__mtl__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__muril__mtl__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__mtl__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.927495 vs 0.927495"
+    },
+    {
+      "check": "mc2__muril__mtl__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__muril__mtl__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__muril__mtl__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.869375 vs 0.869375"
+    },
+    {
+      "check": "mc2__muril__mtl__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc2__tfidf_lr/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__tfidf_lr/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__tfidf_lr/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.923624 vs 0.923624"
+    },
+    {
+      "check": "mc2__tfidf_lr/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__tfidf_lr/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__tfidf_lr/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.879378 vs 0.879378"
+    },
+    {
+      "check": "mc2__tfidf_svm/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__tfidf_svm/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__tfidf_svm/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.935011 vs 0.935011"
+    },
+    {
+      "check": "mc2__tfidf_svm/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__tfidf_svm/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__tfidf_svm/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.886704 vs 0.886704"
+    },
+    {
+      "check": "mc2__xlmr__base__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__xlmr__base__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__xlmr__base__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.929445 vs 0.929445"
+    },
+    {
+      "check": "mc2__xlmr__base__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__xlmr__base__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__xlmr__base__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.881237 vs 0.881237"
+    },
+    {
+      "check": "mc2__xlmr__base__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc2__xlmr__base__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__xlmr__base__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__xlmr__base__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.931405 vs 0.931405"
+    },
+    {
+      "check": "mc2__xlmr__base__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__xlmr__base__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__xlmr__base__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.858614 vs 0.858614"
+    },
+    {
+      "check": "mc2__xlmr__base__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc2__xlmr__base__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc2__xlmr__base__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__xlmr__base__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.931405 vs 0.931405"
+    },
+    {
+      "check": "mc2__xlmr__base__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc2__xlmr__base__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc2__xlmr__base__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.848242 vs 0.848242"
+    },
+    {
+      "check": "mc2__xlmr__base__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__hingroberta__base__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__hingroberta__base__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__hingroberta__base__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.795111 vs 0.795111"
+    },
+    {
+      "check": "mc7__hingroberta__base__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__hingroberta__base__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__hingroberta__base__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.718075 vs 0.718075"
+    },
+    {
+      "check": "mc7__hingroberta__base__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__hingroberta__base__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__hingroberta__base__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__hingroberta__base__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.799679 vs 0.799679"
+    },
+    {
+      "check": "mc7__hingroberta__base__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__hingroberta__base__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__hingroberta__base__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.682613 vs 0.682613"
+    },
+    {
+      "check": "mc7__hingroberta__base__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__hingroberta__base__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__hingroberta__base__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__hingroberta__base__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.784088 vs 0.784088"
+    },
+    {
+      "check": "mc7__hingroberta__base__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__hingroberta__base__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__hingroberta__base__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.761623 vs 0.761623"
+    },
+    {
+      "check": "mc7__hingroberta__base__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__majority/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__majority/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__majority/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.047833 vs 0.047833"
+    },
+    {
+      "check": "mc7__majority/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__majority/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__majority/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.047619 vs 0.047619"
+    },
+    {
+      "check": "mc7__muril__base__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__base__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__base__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.760375 vs 0.760375"
+    },
+    {
+      "check": "mc7__muril__base__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__base__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__base__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.614328 vs 0.614328"
+    },
+    {
+      "check": "mc7__muril__base__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__base__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__base__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__base__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.757645 vs 0.757645"
+    },
+    {
+      "check": "mc7__muril__base__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__base__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__base__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.641312 vs 0.641312"
+    },
+    {
+      "check": "mc7__muril__base__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__base__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__base__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__base__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.764873 vs 0.764873"
+    },
+    {
+      "check": "mc7__muril__base__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__base__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__base__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.641065 vs 0.641065"
+    },
+    {
+      "check": "mc7__muril__base__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__fusion__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__fusion__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__fusion__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.750133 vs 0.750133"
+    },
+    {
+      "check": "mc7__muril__fusion__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__fusion__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__fusion__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.662778 vs 0.662778"
+    },
+    {
+      "check": "mc7__muril__fusion__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__fusion__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__fusion__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__fusion__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.758727 vs 0.758727"
+    },
+    {
+      "check": "mc7__muril__fusion__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__fusion__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__fusion__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.645554 vs 0.645554"
+    },
+    {
+      "check": "mc7__muril__fusion__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__fusion__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__fusion__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__fusion__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.756619 vs 0.756619"
+    },
+    {
+      "check": "mc7__muril__fusion__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__fusion__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__fusion__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.652064 vs 0.652064"
+    },
+    {
+      "check": "mc7__muril__fusion__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.756001 vs 0.756001"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.651125 vs 0.651125"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.751183 vs 0.751183"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.651527 vs 0.651527"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.749595 vs 0.749595"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.642049 vs 0.642049"
+    },
+    {
+      "check": "mc7__muril__fusion_shuffled__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__mtl__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__mtl__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__mtl__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.760485 vs 0.760485"
+    },
+    {
+      "check": "mc7__muril__mtl__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__mtl__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__mtl__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.627809 vs 0.627809"
+    },
+    {
+      "check": "mc7__muril__mtl__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__mtl__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__mtl__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__mtl__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.750414 vs 0.750414"
+    },
+    {
+      "check": "mc7__muril__mtl__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__mtl__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__mtl__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.623222 vs 0.623222"
+    },
+    {
+      "check": "mc7__muril__mtl__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__mtl__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__mtl__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__mtl__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.751102 vs 0.751102"
+    },
+    {
+      "check": "mc7__muril__mtl__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__mtl__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__mtl__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.641114 vs 0.641114"
+    },
+    {
+      "check": "mc7__muril__mtl__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.749279 vs 0.749279"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.621582 vs 0.621582"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.759118 vs 0.759118"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.652731 vs 0.652731"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.753635 vs 0.753635"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.659494 vs 0.659494"
+    },
+    {
+      "check": "mc7__muril__mtl_shuffled__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__pilot_enc3e-5_head1e-3__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__pilot_enc3e-5_head1e-3__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__pilot_enc3e-5_head1e-3__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.758166 vs 0.758166"
+    },
+    {
+      "check": "mc7__muril__pilot_enc3e-5_head1e-3__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__muril__pilot_enc5e-5_head1e-3__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__muril__pilot_enc5e-5_head1e-3__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__muril__pilot_enc5e-5_head1e-3__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.781359 vs 0.781359"
+    },
+    {
+      "check": "mc7__muril__pilot_enc5e-5_head1e-3__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__tfidf_lr/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__tfidf_lr/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__tfidf_lr/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.772613 vs 0.772613"
+    },
+    {
+      "check": "mc7__tfidf_lr/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__tfidf_lr/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__tfidf_lr/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.727094 vs 0.727094"
+    },
+    {
+      "check": "mc7__tfidf_svm/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__tfidf_svm/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__tfidf_svm/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.762569 vs 0.762569"
+    },
+    {
+      "check": "mc7__tfidf_svm/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__tfidf_svm/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__tfidf_svm/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.743474 vs 0.743474"
+    },
+    {
+      "check": "mc7__xlmr__base__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__xlmr__base__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__xlmr__base__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.762045 vs 0.762045"
+    },
+    {
+      "check": "mc7__xlmr__base__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__xlmr__base__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__xlmr__base__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.646649 vs 0.646649"
+    },
+    {
+      "check": "mc7__xlmr__base__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__xlmr__base__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__xlmr__base__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__xlmr__base__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.771089 vs 0.771089"
+    },
+    {
+      "check": "mc7__xlmr__base__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__xlmr__base__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__xlmr__base__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.610636 vs 0.610636"
+    },
+    {
+      "check": "mc7__xlmr__base__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "mc7__xlmr__base__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "741 vs 741"
+    },
+    {
+      "check": "mc7__xlmr__base__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__xlmr__base__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.774856 vs 0.774856"
+    },
+    {
+      "check": "mc7__xlmr__base__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1000 vs 1000"
+    },
+    {
+      "check": "mc7__xlmr__base__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "mc7__xlmr__base__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.631659 vs 0.631659"
+    },
+    {
+      "check": "mc7__xlmr__base__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "sarcasm__majority/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "525 vs 525"
+    },
+    {
+      "check": "sarcasm__majority/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__majority/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.475000 vs 0.475000"
+    },
+    {
+      "check": "sarcasm__majority/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1050 vs 1050"
+    },
+    {
+      "check": "sarcasm__majority/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__majority/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.474737 vs 0.474737"
+    },
+    {
+      "check": "sarcasm__muril__base__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "525 vs 525"
+    },
+    {
+      "check": "sarcasm__muril__base__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__muril__base__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.783513 vs 0.783513"
+    },
+    {
+      "check": "sarcasm__muril__base__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1050 vs 1050"
+    },
+    {
+      "check": "sarcasm__muril__base__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__muril__base__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.779779 vs 0.779779"
+    },
+    {
+      "check": "sarcasm__muril__base__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "sarcasm__muril__base__s42/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "525 vs 525"
+    },
+    {
+      "check": "sarcasm__muril__base__s42/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__muril__base__s42/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.771980 vs 0.771980"
+    },
+    {
+      "check": "sarcasm__muril__base__s42/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1050 vs 1050"
+    },
+    {
+      "check": "sarcasm__muril__base__s42/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__muril__base__s42/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.778957 vs 0.778957"
+    },
+    {
+      "check": "sarcasm__muril__base__s42: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "sarcasm__muril__base__s87/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "525 vs 525"
+    },
+    {
+      "check": "sarcasm__muril__base__s87/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__muril__base__s87/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.793195 vs 0.793195"
+    },
+    {
+      "check": "sarcasm__muril__base__s87/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1050 vs 1050"
+    },
+    {
+      "check": "sarcasm__muril__base__s87/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__muril__base__s87/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.783513 vs 0.783513"
+    },
+    {
+      "check": "sarcasm__muril__base__s87: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "sarcasm__muril__pilot_enc3e-5_head1e-3__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "525 vs 525"
+    },
+    {
+      "check": "sarcasm__muril__pilot_enc3e-5_head1e-3__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__muril__pilot_enc3e-5_head1e-3__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.760477 vs 0.760477"
+    },
+    {
+      "check": "sarcasm__muril__pilot_enc3e-5_head1e-3__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "sarcasm__muril__shuffled_labels__s13/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "525 vs 525"
+    },
+    {
+      "check": "sarcasm__muril__shuffled_labels__s13/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__muril__shuffled_labels__s13/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.475000 vs 0.475000"
+    },
+    {
+      "check": "sarcasm__muril__shuffled_labels__s13/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1050 vs 1050"
+    },
+    {
+      "check": "sarcasm__muril__shuffled_labels__s13/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__muril__shuffled_labels__s13/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.474737 vs 0.474737"
+    },
+    {
+      "check": "sarcasm__muril__shuffled_labels__s13: device recorded",
+      "ok": true,
+      "detail": "mps / mps"
+    },
+    {
+      "check": "sarcasm__tfidf_lr/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "525 vs 525"
+    },
+    {
+      "check": "sarcasm__tfidf_lr/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__tfidf_lr/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.744432 vs 0.744432"
+    },
+    {
+      "check": "sarcasm__tfidf_lr/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1050 vs 1050"
+    },
+    {
+      "check": "sarcasm__tfidf_lr/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__tfidf_lr/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.738752 vs 0.738752"
+    },
+    {
+      "check": "sarcasm__tfidf_svm/val: prediction ids == split ids",
+      "ok": true,
+      "detail": "525 vs 525"
+    },
+    {
+      "check": "sarcasm__tfidf_svm/val: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__tfidf_svm/val: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.728261 vs 0.728261"
+    },
+    {
+      "check": "sarcasm__tfidf_svm/test: prediction ids == split ids",
+      "ok": true,
+      "detail": "1050 vs 1050"
+    },
+    {
+      "check": "sarcasm__tfidf_svm/test: gold labels match processed data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "sarcasm__tfidf_svm/test: metrics recomputed from predictions",
+      "ok": true,
+      "detail": "0.723778 vs 0.723778"
+    },
+    {
+      "check": "figure data present: results/figures/calibration/fig19_calibration_mc7.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "figure data present: results/figures/training/fig09_training_curves_mc7.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "figure data present: results/figures/runtime/fig18_runtime_size.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "figure data present: results/figures/early_detection/fig20_early_detection_proxy.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "figure data present: results/figures/explainability/fig16b_shap_faithfulness.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "figure data present: results/figures/explainability/fig16_shap_token_attributions.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "figure data present: results/figures/error_analysis/fig17_error_slices.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "figure data present: results/figures/ablation/fig15_ablation_sarcasm.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "figure data present: results/figures/evaluation/fig11_confusion_mc7.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "figure data present: results/figures/evaluation/fig12_roc_pr.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "figure data present: results/figures/comparison/fig14_model_comparison_mc7.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "figure data present: results/figures/data/fig08_language_distribution.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "figure data present: results/figures/data/fig07_dataset_distributions.png",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "paper rendered after latest analysis",
+      "ok": true,
+      "detail": "re-run scripts/build_paper.py"
+    },
+    {
+      "check": "paper has no PENDING markers",
+      "ok": true,
+      "detail": "0 remaining"
+    },
+    {
+      "check": "paper contains MuRIL MC7 macro-F1 from analysis",
+      "ok": true,
+      "detail": "0.632"
+    }
+  ],
+  "failures": [],
+  "n_runs": 57,
+  "paper_pending_markers": 0
+}

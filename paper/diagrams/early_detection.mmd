@@ -1,0 +1,5 @@
+flowchart LR
+  u1[turn 1] --> p1[p1=f(u<=1)]
+  u2[turn 2] --> p2[p2=f(u<=2)]
+  ut[turn t] --> pt[pt=f(u<=t)]
+  p1 & p2 & pt --> a[a_t = running max] --> al{a_t >= tau_val?} -->|yes| alarm[alarm at t]

@@ -1,0 +1,33 @@
+{
+  "device": {
+    "selected": "mps",
+    "cuda_available": false,
+    "cuda_device_name": null,
+    "cuda_total_memory_gb": null,
+    "cuda_version": null,
+    "mps_built": true,
+    "mps_available": true,
+    "amp_dtype": null,
+    "smoke_test_ms": 257.23,
+    "torch_version": "2.14.1",
+    "machine": "arm64",
+    "errors": []
+  },
+  "packages": {
+    "python": "3.11.16",
+    "platform": "macOS-27.0.1-arm64-arm-64bit",
+    "torch": "2.14.1",
+    "transformers": "5.20.1",
+    "tokenizers": "0.23.3",
+    "datasets": "5.1.0",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "scipy": "1.17.1",
+    "shap": "0.51.0",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "streamlit": "1.66.0",
+    "accelerate": "1.15.0"
+  }
+}

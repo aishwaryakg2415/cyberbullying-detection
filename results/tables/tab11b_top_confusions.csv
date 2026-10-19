@@ -1,0 +1,13 @@
+Gold,Predicted,Count
+offensive,gender,38
+mockery,not_cyberbullying,31
+mockery,offensive,27
+offensive,mockery,24
+abusive,offensive,23
+abusive,gender,22
+mockery,gender,19
+abusive,religion,15
+gender,mockery,14
+mockery,abusive,14
+not_cyberbullying,mockery,12
+not_cyberbullying,gender,7

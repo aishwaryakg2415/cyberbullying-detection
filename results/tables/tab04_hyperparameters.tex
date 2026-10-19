@@ -1,0 +1,35 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Model configurations and hyperparameters (shared across models).}
+\label{tab:tab04_hyperparameters}
+\begin{tabular}{lr}
+\toprule
+Setting & Value \\
+\midrule
+max\_len & 128 \\
+batch\_size & 32 \\
+freeze\_word\_embeddings & True \\
+lr & 3e-05 \\
+head\_lr & 0.001 \\
+epochs & 5 \\
+patience & 2 \\
+warmup & 0.1 \\
+weight\_decay & 0.01 \\
+clip & 1.0 \\
+dropout & 0.1 \\
+class\_weighting & True \\
+amp & False \\
+optimiser & AdamW (fused), linear warm-up/decay \\
+seeds & 13, 42, 87 \\
+MTL lambda & 0.5 \\
+model selection & best validation macro-F1 epoch \\
+TF-IDF features & word 1-2-grams + char\_wb 2-5-grams, sublinear TF \\
+TF-IDF C grid (val-selected) & 0.1, 0.3, 1, 3, 10 \\
+encoder: muril & google/muril-base-cased @ afd9f36c \\
+encoder: xlmr & FacebookAI/xlm-roberta-base @ e73636d4 \\
+encoder: hingroberta & l3cube-pune/hing-roberta @ f714c4bd \\
+encoder: distilroberta & distilbert/distilroberta-base @ fb53ab88 \\
+\bottomrule
+\end{tabular}
+\end{table}

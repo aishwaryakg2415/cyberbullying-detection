@@ -1,0 +1,9 @@
+Measure,Value
+"deletion drop, top-1 vs random","0.421 vs 0.092 (diff +0.329, 95% CI [+0.272, +0.385]; n=100)"
+"deletion drop, top-2 vs random","0.527 vs 0.164 (diff +0.363, 95% CI [+0.301, +0.425]; n=100)"
+"deletion drop, top-3 vs random","0.558 vs 0.209 (diff +0.349, 95% CI [+0.295, +0.403]; n=100)"
+rank stability: budget 100 vs 1000,Spearman 0.950; top-3 overlap 0.83 (n=12)
+rank stability: budget 250 vs 1000,Spearman 0.986; top-3 overlap 0.94 (n=12)
+rank stability: budget 500 vs 1000,Spearman 0.997; top-3 overlap 0.97 (n=12)
+SHAP vs leave-one-word-out occlusion,Spearman 0.273; top-3 overlap 0.57 (n=23)
+"time per explanation (cpu, 500 evals)",0.87 s vs 23 ms inference (x38)

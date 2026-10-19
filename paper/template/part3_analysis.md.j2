@@ -1,0 +1,185 @@
+## 10. Baseline Comparisons
+
+Three observations follow from Tables \ref{tab:mc7}–\ref{tab:subsets} and the paired tests in Table \ref{tab:paired}.
+First, the classical character-n-gram models are strong on this dataset. Our TF-IDF SVM
+({{ v.mc7_test.mc7_tfidf_svm.macro_f1 }} macro-F1) is well above the 0.5475 F1 that \citet{laskar2024mchinglish} report for
+their SVM. The difference most plausibly comes from feature design (character 2–5-grams, class weighting, a tuned $C$); we
+did not re-run their pipeline, so we make no stronger claim. Relative to MuRIL, the TF-IDF SVM is ahead by
+{{ v.pt.mc7_tfidf_svm_vs_mc7_muril_base.delta }} macro-F1 (95% CI [{{ v.pt.mc7_tfidf_svm_vs_mc7_muril_base.lo }},
+{{ v.pt.mc7_tfidf_svm_vs_mc7_muril_base.hi }}]). Second, the Hinglish-pretrained HingRoBERTa is the only transformer that
+roughly matches the TF-IDF models on the official test split (ahead of MuRIL by
+{{ v.pt.mc7_hingroberta_base_vs_mc7_muril_base.delta }}, 95% CI [{{ v.pt.mc7_hingroberta_base_vs_mc7_muril_base.lo }},
+{{ v.pt.mc7_hingroberta_base_vs_mc7_muril_base.hi }}]), and it has the largest seed variance (s.d.
+{{ v.mc7_test.mc7_hingroberta_base.macro_f1_sd }}). Third, MuRIL and XLM-R are indistinguishable (Δ =
+{{ v.pt.mc7_xlmr_base_vs_mc7_muril_base.delta }}, 95% CI [{{ v.pt.mc7_xlmr_base_vs_mc7_muril_base.lo }},
+{{ v.pt.mc7_xlmr_base_vs_mc7_muril_base.hi }}]).
+
+[[TAB:tab07_paired_tests|tab:paired]]
+
+## 11. Ablation Studies (RQ2)
+
+[[FIG:results/figures/ablation/fig15_ablation_sarcasm|Ablation of sarcasm components on MC7 (MuRIL). Dots are individual seeds. The shuffled-label control receives the same auxiliary texts and loss as MTL, but with permuted sarcasm labels.|fig:ablation]]
+
+**Multitask learning.** MuRIL with an auxiliary sarcasm head reaches {{ v.mc7_test.mc7_muril_mtl.macro_f1 }} ±
+{{ v.mc7_test.mc7_muril_mtl.macro_f1_sd }}, against {{ v.mc7_test.mc7_muril_base.macro_f1 }} ±
+{{ v.mc7_test.mc7_muril_base.macro_f1_sd }} without it (seed-ensemble Δ = {{ v.pt.mc7_muril_mtl_vs_mc7_muril_base.delta }},
+95% CI [{{ v.pt.mc7_muril_mtl_vs_mc7_muril_base.lo }}, {{ v.pt.mc7_muril_mtl_vs_mc7_muril_base.hi }}]). The shuffled-label
+control, which receives identical auxiliary texts with permuted labels, scores {{ v.mc7_test.mc7_muril_mtl_shuffled.macro_f1 }}
+± {{ v.mc7_test.mc7_muril_mtl_shuffled.macro_f1_sd }}. Real minus shuffled labels: Δ =
+{{ v.pt.mc7_muril_mtl_vs_mc7_muril_mtl_shuffled.delta }}, 95% CI [{{ v.pt.mc7_muril_mtl_vs_mc7_muril_mtl_shuffled.lo }},
+{{ v.pt.mc7_muril_mtl_vs_mc7_muril_mtl_shuffled.hi }}]. The sarcasm labels therefore add nothing measurable. As a sanity
+check, the auxiliary heads do learn sarcasm: on the Swami test split they reach macro-F1 {{ v.text.aux_head_range }} with
+real labels, versus {{ v.text.aux_head_shuffled_range }} for the shuffled control, which is chance level as expected. The
+sarcasm knowledge is acquired, but it does not transfer to cyberbullying-type decisions.
+
+**Feature fusion.** Concatenating features from the separately trained sarcasm model gives
+{{ v.mc7_test.mc7_muril_fusion.macro_f1 }} ± {{ v.mc7_test.mc7_muril_fusion.macro_f1_sd }}. The per-seed means are higher
+than the base model in {{ v.pt.mc7_muril_fusion_vs_mc7_muril_base.seeds_pos }} seeds, but the seed-ensemble difference is
+small and its interval includes zero (Δ = {{ v.pt.mc7_muril_fusion_vs_mc7_muril_base.delta }}, 95% CI
+[{{ v.pt.mc7_muril_fusion_vs_mc7_muril_base.lo }}, {{ v.pt.mc7_muril_fusion_vs_mc7_muril_base.hi }}]). {{ v.text.fusion_control }}
+
+**Mockery.** The class most associated with sarcasm stays the hardest under every variant (Figure \ref{fig:ablation},
+right panel). Ensemble F1 on `mockery` is {{ v.mc7_test.mc7_muril_base.per_class.mockery.f1 }} for the base model,
+{{ v.mc7_test.mc7_muril_mtl.per_class.mockery.f1 }} with MTL and {{ v.mc7_test.mc7_muril_fusion.per_class.mockery.f1 }}
+with fusion.
+
+**The prototype's boost rule.** We re-evaluated the additive boost on MC2 using the trained sarcasm detector (Table
+\ref{tab:boost}). Mean macro-F1 is {{ v.boost.base_050.macro_f1 }} for the unboosted classifier at threshold 0.50,
+{{ v.boost.base_055.macro_f1 }} at the prototype's threshold of 0.55, and {{ v.boost.boost_055.macro_f1 }} with the boost.
+Recall of the cyberbullying class is {{ v.boost.base_055.recall_cb }} → {{ v.boost.boost_055.recall_cb }}, and the
+false-positive rate {{ v.boost.base_055.fpr }} → {{ v.boost.boost_055.fpr }}. {{ v.boost.share_ge }} of MC test comments
+reach the rule's 0.45 sarcasm threshold.
+
+[[TAB:tab09_legacy_boost|tab:boost]]
+
+## 12. Explainability and Qualitative Analysis (RQ3)
+
+[[FIG:results/figures/explainability/fig16_shap_token_attributions|Word-level SHAP attributions for MC7 test comments, explained with respect to the predicted class (red: toward; blue: away). Attributions describe model sensitivity, not author intent. Texts are shown as distributed.|fig:shap]]
+
+**Faithfulness.** Deleting the single word with the highest SHAP value lowers the predicted-class probability by
+{{ v.xai.faith.k1.mean_drop_top }} on average, against {{ v.xai.faith.k1.mean_drop_random }} for a random word (100 random
+test comments). The difference is {{ v.xai.faith.k1.mean_diff }}, with 95% CI [{{ v.xai.faith.k1.diff_ci95[0] | round(3) }},
+{{ v.xai.faith.k1.diff_ci95[1] | round(3) }}]. The top word beats a random one in a share of {{ v.xai.faith.k1.share_top_gt_random }}
+of the comments, and the gap persists for $k=2,3$ (Figure \ref{fig:faith}, Table \ref{tab:xai}). By this deletion criterion,
+the attributions identify words the model relies on.
+
+[[FIG:results/figures/explainability/fig16b_shap_faithfulness|Deletion test: drop in predicted-class probability after deleting the top-k SHAP words vs. k random words.|fig:faith]]
+
+[[TAB:tab15_explainability|tab:xai]]
+
+**Stability and agreement.** Word rankings at 100 and 250 evaluations agree closely with a 1,000-evaluation reference
+(Spearman {{ v.xai.stab.budget_100_vs_1000.spearman_mean }} and {{ v.xai.stab.budget_250_vs_1000.spearman_mean }}). On these
+short texts the explainer stops before 1,000 evaluations (525 were used for a 25-token comment), so the 500-vs-1,000
+agreement is uninformative and not used as evidence. SHAP agrees only weakly with leave-one-word-out occlusion (Spearman
+{{ v.xai.occ.spearman_mean }}, top-3 overlap {{ v.xai.occ.top3_overlap_mean }}). Single-word deletion ignores the
+interactions that SHAP's coalitions capture, so the two methods answer different questions. No single attribution method
+should be treated as ground truth.
+
+**Qualitative pattern.** In the examples of Figure \ref{fig:shap}, identity and target terms receive the largest
+attributions, including in errors. "hindu" dominates a *religion* prediction for a comment annotated *abusive*, and "didi"
+(elder sister) drives a *gender* false positive on a harmless comment. This is consistent with reliance on identity terms,
+a known source of bias in abuse classifiers \cite{sap2019racial}. It is an observation from selected examples, not a
+measured rate.
+
+**Cost.** One explanation takes {{ v.xai.sec }} s on CPU versus {{ v.xai.inf_ms }} ms for a prediction (×{{ v.xai.factor }}).
+That is acceptable for on-demand moderator review, but not for explaining every message in a stream.
+
+**Error analysis.** Table \ref{tab:errors} breaks MuRIL's accuracy down by heuristic slice.
+
+[[TAB:tab11_error_slices|tab:errors]]
+
+The clearest effects are length and the sarcasm model's prediction. Accuracy is
+{{ v.ea.slices.short_8_words.acc }} for comments of at most 8 words, {{ v.ea.slices.medium_9_20_words.acc }} for 9–20
+words, and {{ v.ea.slices.long_20_words.acc }} for the {{ v.ea.slices.long_20_words.n }} comments longer than 20 words. Comments
+the sarcasm model flags (P ≥ 0.5; n = {{ v.ea.slices.sarcasm_model_p_0_5_model_inferred_not_gold.n }}) are classified less
+accurately ({{ v.ea.slices.sarcasm_model_p_0_5_model_inferred_not_gold.acc }}) than the rest
+({{ v.ea.slices.sarcasm_model_p_0_5.acc }}). This is consistent with indirect phrasing being harder, but the flag comes from
+another model, not from gold labels. Out-of-vocabulary spelling shows no clear effect: accuracy is
+{{ v.ea.slices.oov_rate_30_spelling_transliteration_variation.acc }} for the
+{{ v.ea.slices.oov_rate_30_spelling_transliteration_variation.n }} comments with at least 30% unseen word forms, versus
+{{ v.ea.slices.no_oov_words_vs_train_vocabulary.acc }} with none, but the slice is small. Only
+{{ v.ea.fp.not_cb_with_profanity }} non-bullying test comments contain a profane term, far too few to assess "friendly
+profanity" false positives.
+
+[[FIG:results/figures/error_analysis/fig17_error_slices|Accuracy by heuristic slice (MuRIL seed ensemble, MC7 test).|fig:slices]]
+
+## 13. External Evaluation
+
+[[TAB:tab10_external|tab:external]]
+
+Without re-training, the binary MC models transfer poorly to English offensive-language detection (TweetEval/OLID:
+MuRIL macro-F1 {{ v.ext.olid_ext__mc2_muril_base.f1 }}, ROC-AUC {{ v.ext.olid_ext__mc2_muril_base.auc }}; TF-IDF SVM
+{{ v.ext.olid_ext__mc2_tfidf_svm.f1 }}). This is expected: both the language and the label construct differ. The
+Swami-trained sarcasm models reach macro-F1 {{ v.ext.usr_sarcasm__sarcasm_muril_base.f1 }} (ROC-AUC
+{{ v.ext.usr_sarcasm__sarcasm_muril_base.auc }}) on the user-supplied, human-labelled sarcasm comments, close to chance.
+The two sarcasm corpora therefore do not share a transferable notion of sarcasm, which is another reason the Swami-based
+sarcasm signal may not help MC-Hinglish. The user corpus is reported only as a supplementary signal, because its provenance
+is undocumented.
+
+## 14. Early-Detection Evaluation (RQ4, proxy)
+
+[[TAB:tab13_early_detection|tab:early]]
+
+On CONDA test conversations, a running-max alarm over DistilRoBERTa turn scores reaches alarm F1
+{{ v.early.conda__distilroberta__base__s13.f1 }} with a false-alarm rate of
+{{ v.early.conda__distilroberta__base__s13.false_alarm_rate }} (seed 13; threshold chosen on validation). The mean delay is
+{{ v.early.conda__distilroberta__base__s13.delay_mean }} turns after the first toxic turn; 651 of the 722 correct alarms have
+zero delay. The procedure therefore detects toxicity **as it appears**, not before. Adding the two preceding turns as
+context does not improve alarm quality for DistilRoBERTa, and it hurts TF-IDF (F1 {{ v.early.conda_ctx__tfidf_lr.f1 }},
+false-alarm rate {{ v.early.conda_ctx__tfidf_lr.false_alarm_rate }}). After seeing only the first turn,
+{{ v.early.conda__distilroberta__base__s13.k1_recall }} of the eventually toxic conversations are already flagged, largely
+because many conversations open with a toxic turn. These results concern English in-game chat. They show that the causal
+evaluation machinery works on real sequential data, and they **do not validate early detection of Hinglish
+cyberbullying**.
+
+[[FIG:results/figures/early_detection/fig20_early_detection_proxy|Early-warning proxy on CONDA: prefix decisions vs. eventual label, and delay of correct alarms.|fig:early]]
+
+## 15. Discussion
+
+**Why do transformers lose to TF-IDF on the official test split?** The domain classifier shows a strong shift between the
+official training and test splits. Character n-grams generalise across spelling and transliteration variants by
+construction. The fine-tuned encoders match the linear models in-distribution (validation) but lose about ten points on test.
+HingRoBERTa, pretrained on Hinglish, narrows the gap, which suggests that the romanised-Hindi subword coverage of MuRIL and
+XLM-R is part of the problem. Our compute-motivated choice to freeze the token-embedding table may also matter.
+{{ v.text.full_ft }} We cannot fully separate these explanations.
+
+**Is sarcasm-awareness useful?** On this dataset, as operationalised here, sarcasm supervision from the Swami corpus does
+not improve cyberbullying-type classification, even though the models demonstrably learn sarcasm. Plausible reasons are the
+gap between the sarcasm corpus (2017 tweets on a few topics, collected via hashtags) and MC-Hinglish, and the fact that
+MC-Hinglish's `mockery` is a different construct from sarcasm. A fair test of the hypothesis requires sarcasm labels on the
+cyberbullying data itself.
+
+**Practical implications.** A calibrated, well-regularised linear model is a strong and cheap baseline that should be
+reported alongside transformers for Hinglish abuse detection. Validation splits carved from training data can be misleading
+when the official test split is shifted, so published comparisons on MC-Hinglish should report both.
+
+## 16. Limitations and Ethical Considerations
+
+- **Data.** MC-Hinglish is small, comes from a single platform, and reports no inter-annotator agreement. Its label set mixes
+  target-, language- and style-based categories. The official test split is distribution-shifted and partly near-duplicated.
+- **Tuning disclosure.** The learning-rate change described in Section 7 was triggered by an observed test result. The final
+  hyperparameters are shared across models rather than tuned per model.
+- **Compute.** The token-embedding table was frozen for all models; an unfrozen diagnostic exceeded the available memory
+  (16 GB). Three seeds per configuration limit statistical power, and p-values are uncorrected and descriptive.
+- **Sarcasm data.** The sarcasm corpus differs in period and topics from MC-Hinglish, and its retrieval hashtags had to be
+  removed.
+- **Early detection** was evaluated only on a proxy corpus with short, partially incomplete conversations.
+- **Explanations** show model sensitivity, not intent or causation. Deletion-based faithfulness is one criterion among
+  several, and SHAP and occlusion disagree substantially.
+- **Ethics.** Cyberbullying classifiers can reproduce annotation and dialect biases \cite{sap2019racial}. Errors on
+  religion- and gender-related content can harm the communities involved. We recommend use only as decision support for
+  trained moderators, with human review, no automated sanctions, and no profiling of individuals. The demo app does not
+  store user text. Datasets are used under their licences and are not redistributed. Quoted examples are short and contain
+  no user identifiers.
+
+## 17. Conclusion and Future Work
+
+We rebuilt SACENet as a reproducible, leakage-audited study of Hinglish cyberbullying-type detection. The evidence does not
+support the prototype's central premise. Sarcasm supervision from a separate corpus does not improve detection, and a
+shuffled-label control shows that what little the auxiliary task contributes is not sarcasm-specific. The strongest systems on
+the official test split are character-n-gram linear models and a Hinglish-pretrained transformer. That split is measurably
+shifted from the training data, which makes validation-based model comparisons unreliable. SHAP attributions are faithful
+under a deletion test but disagree with occlusion. Early warning was only shown to detect toxicity at onset, and only on an
+English proxy corpus. Future work should (i) annotate sarcasm and targets directly on Hinglish cyberbullying data, (ii) build
+or obtain conversation-level Hinglish data with turn-level labels, (iii) study robustness to collection shift explicitly, and
+(iv) evaluate how useful explanations are to moderators.

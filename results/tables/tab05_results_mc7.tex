@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\small
+\caption{MC7 (7-way cyberbullying type): test-set results (mean $\pm$ s.d. over seeds; ensemble = mean of seed probabilities with bootstrap 95\% CI; dedup = test items without near-duplicates in training).}
+\label{tab:tab05_results_mc7}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Model & Seeds & Accuracy & Macro-F1 & Weighted-F1 & ROC-AUC (macro OvR) & Macro-F1 (dedup test) & Ens. macro-F1 [95\% CI] & ECE \\
+\midrule
+HingRoBERTa & 3 & 0.741 $\pm$ 0.039 & 0.721 $\pm$ 0.040 & 0.733 $\pm$ 0.037 & 0.936 $\pm$ 0.009 & 0.708 $\pm$ 0.048 & 0.734 [0.708, 0.758] & 0.112 $\pm$ 0.028 \\
+Majority class & 1 & 0.200 & 0.048 & 0.067 & 0.500 & 0.050 & 0.048 [0.043, 0.052] & 0.002 \\
+MuRIL & 3 & 0.660 $\pm$ 0.010 & 0.632 $\pm$ 0.016 & 0.646 $\pm$ 0.015 & 0.899 $\pm$ 0.006 & 0.628 $\pm$ 0.017 & 0.642 [0.615, 0.669] & 0.094 $\pm$ 0.005 \\
+MuRIL + sarcasm fusion & 3 & 0.676 $\pm$ 0.009 & 0.653 $\pm$ 0.009 & 0.666 $\pm$ 0.007 & 0.902 $\pm$ 0.004 & 0.650 $\pm$ 0.007 & 0.649 [0.621, 0.674] & 0.071 $\pm$ 0.001 \\
+MuRIL + fusion (shuffled-sarcasm features) & 3 & 0.672 $\pm$ 0.006 & 0.648 $\pm$ 0.005 & 0.661 $\pm$ 0.006 & 0.901 $\pm$ 0.005 & 0.640 $\pm$ 0.002 & 0.651 [0.623, 0.676] & 0.082 $\pm$ 0.006 \\
+MuRIL + sarcasm MTL & 3 & 0.653 $\pm$ 0.007 & 0.631 $\pm$ 0.009 & 0.643 $\pm$ 0.007 & 0.898 $\pm$ 0.003 & 0.632 $\pm$ 0.009 & 0.648 [0.620, 0.675] & 0.063 $\pm$ 0.027 \\
+MuRIL + shuffled-sarcasm MTL & 3 & 0.666 $\pm$ 0.016 & 0.645 $\pm$ 0.020 & 0.657 $\pm$ 0.020 & 0.899 $\pm$ 0.003 & 0.643 $\pm$ 0.035 & 0.651 [0.623, 0.677] & 0.070 $\pm$ 0.026 \\
+TF-IDF + LR & 1 & 0.743 & 0.727 & 0.735 & 0.925 & 0.703 & 0.727 [0.699, 0.754] & 0.057 \\
+TF-IDF + SVM & 1 & 0.762 & 0.743 & 0.751 & 0.923 & 0.722 & 0.743 [0.717, 0.771] & 0.145 \\
+XLM-R base & 3 & 0.649 $\pm$ 0.016 & 0.630 $\pm$ 0.018 & 0.638 $\pm$ 0.015 & 0.893 $\pm$ 0.019 & 0.628 $\pm$ 0.018 & 0.653 [0.626, 0.678] & 0.152 $\pm$ 0.009 \\
+\bottomrule
+\end{tabular}
+\end{table}

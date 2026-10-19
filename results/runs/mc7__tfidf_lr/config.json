@@ -1,0 +1,9 @@
+{
+  "exp_id": "mc7__tfidf_lr",
+  "kind": "baseline",
+  "task": "mc7",
+  "model": "tfidf_lr",
+  "seed": 0,
+  "extra_eval": [],
+  "group": "baselines"
+}

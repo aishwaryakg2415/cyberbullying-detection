@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\small
+\caption{MC2 (binary cyberbullying): test-set results (mean $\pm$ s.d. over seeds; ensemble = mean of seed probabilities with bootstrap 95\% CI; dedup = test items without near-duplicates in training).}
+\label{tab:tab08_results_mc2}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Model & Seeds & Accuracy & Macro-F1 & Weighted-F1 & ROC-AUC & Macro-F1 (dedup test) & Ens. macro-F1 [95\% CI] & ECE \\
+\midrule
+Majority class & 1 & 0.800 & 0.444 & 0.711 & 0.500 & 0.441 & 0.444 [0.437, 0.452] & 0.002 \\
+MuRIL & 3 & 0.912 $\pm$ 0.009 & 0.859 $\pm$ 0.006 & 0.911 $\pm$ 0.006 & 0.947 $\pm$ 0.006 & 0.867 $\pm$ 0.005 & 0.858 [0.830, 0.885] & 0.061 $\pm$ 0.017 \\
+MuRIL + sarcasm fusion & 3 & 0.920 $\pm$ 0.008 & 0.872 $\pm$ 0.007 & 0.919 $\pm$ 0.006 & 0.939 $\pm$ 0.009 & 0.884 $\pm$ 0.009 & 0.873 [0.845, 0.898] & 0.053 $\pm$ 0.022 \\
+MuRIL + sarcasm MTL & 3 & 0.904 $\pm$ 0.013 & 0.853 $\pm$ 0.016 & 0.905 $\pm$ 0.012 & 0.934 $\pm$ 0.009 & 0.860 $\pm$ 0.018 & 0.857 [0.828, 0.882] & 0.075 $\pm$ 0.011 \\
+TF-IDF + LR & 1 & 0.925 & 0.879 & 0.924 & 0.960 & 0.876 & 0.879 [0.852, 0.904] & 0.025 \\
+TF-IDF + SVM & 1 & 0.929 & 0.887 & 0.928 & 0.965 & 0.885 & 0.887 [0.859, 0.912] & 0.031 \\
+XLM-R base & 3 & 0.910 $\pm$ 0.012 & 0.863 $\pm$ 0.017 & 0.911 $\pm$ 0.011 & 0.941 $\pm$ 0.006 & 0.871 $\pm$ 0.015 & 0.876 [0.850, 0.900] & 0.073 $\pm$ 0.009 \\
+\bottomrule
+\end{tabular}
+\end{table}

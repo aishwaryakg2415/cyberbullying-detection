@@ -1,0 +1,11 @@
+{
+  "exp_id": "sarcasm__majority",
+  "kind": "baseline",
+  "task": "sarcasm",
+  "model": "majority",
+  "seed": 0,
+  "extra_eval": [
+    "usr_sarcasm"
+  ],
+  "group": "baselines"
+}

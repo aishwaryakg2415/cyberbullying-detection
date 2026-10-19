@@ -1,0 +1,54 @@
+## ============================================================
+## Requirements for: Sarcasm-Aware Explainable Early Detection
+## of Cyberbullying (IEEE Research Paper Implementation)
+## ============================================================
+
+# Core Deep Learning
+torch>=2.1.0
+torchvision>=0.16.0
+
+# Transformers & NLP
+transformers>=4.40.0
+datasets>=2.18.0
+tokenizers>=0.19.0
+accelerate>=0.28.0
+sentencepiece>=0.2.0
+protobuf>=4.25.0
+
+# LLM API (for sarcasm detection via LLM)
+openai>=1.30.0
+google-generativeai>=0.7.0
+anthropic>=0.28.0
+
+# Explainability
+shap>=0.45.0
+lime>=0.2.0.1
+
+# Data Processing & ML
+scikit-learn>=1.4.0
+pandas>=2.2.0
+numpy>=1.26.0
+scipy>=1.13.0
+imbalanced-learn>=0.12.0
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.20.0
+wordcloud>=1.9.3
+
+# Evaluation
+evaluate>=0.4.1
+rouge-score>=0.1.2
+
+# Utilities
+tqdm>=4.66.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+huggingface_hub>=0.22.0
+
+# Jupyter (for notebook execution)
+jupyter>=1.0.0
+ipywidgets>=8.1.0
+nbformat>=5.9.0

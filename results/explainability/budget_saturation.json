@@ -1,0 +1,8 @@
+{
+ "measured": "2026-10-18, MuRIL MC7 seed 13 checkpoint, CPU, first qualitative example (25 SHAP tokens)",
+ "requested_max_evals": {
+  "500": 501,
+  "1000": 525
+ },
+ "interpretation": "For a 25-token text, requesting 1000 evaluations used only 525 (500 -> 501): the Partition explainer stops before the budget is reached on short texts. Agreement between the 500- and 1000-evaluation budgets (Spearman 0.997 on the current 12-text stability set) is therefore largely uninformative; stability is assessed with the 100 and 250 budgets."
+}

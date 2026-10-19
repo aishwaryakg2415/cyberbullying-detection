@@ -1,0 +1,16 @@
+{
+ "experiment": "mc7__muril__full_ft__s13 (MuRIL with token-embedding table unfrozen)",
+ "status": "not feasible on this hardware",
+ "attempts": [
+  {
+   "config": "batch 32",
+   "outcome": "macOS memory pressure CRITICAL (0.7 GB available) at 10:00:34; stopped"
+  },
+  {
+   "config": "batch 16 x grad_accum 2",
+   "outcome": "macOS memory pressure CRITICAL (0.4 GB available) at 10:35:38; stopped"
+  }
+ ],
+ "reason": "optimizer state + gradients for all 237M parameters (~2.8 GB extra) on 16 GB unified memory alongside the OS and user apps",
+ "what_would_be_needed": "a CUDA GPU with >= 12 GB memory, or a machine with more unified memory"
+}

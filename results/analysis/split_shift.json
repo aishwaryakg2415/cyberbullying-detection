@@ -1,0 +1,42 @@
+{
+  "note": "ROC-AUC of a TF-IDF LR domain classifier, 5-fold CV. 0.5 = splits indistinguishable.",
+  "train_vs_test": 0.8844105000000001,
+  "train_vs_val (control)": 0.5779548008399489,
+  "per_class": {
+    "abusive": {
+      "train_vs_test": 0.9414604638422206,
+      "n_test": 148,
+      "train_vs_val": 0.578971533516988
+    },
+    "age": {
+      "train_vs_test": 0.9214815816357189,
+      "n_test": 129,
+      "train_vs_val": 0.6894262807163681
+    },
+    "gender": {
+      "train_vs_test": 0.9229918012172427,
+      "n_test": 141,
+      "train_vs_val": 0.636971865503382
+    },
+    "mockery": {
+      "train_vs_test": 0.8790610081220163,
+      "n_test": 127,
+      "train_vs_val": 0.5607299042065805
+    },
+    "not_cyberbullying": {
+      "train_vs_test": 0.96,
+      "n_test": 200,
+      "train_vs_val": 0.5386919508130265
+    },
+    "offensive": {
+      "train_vs_test": 0.9113960067637878,
+      "n_test": 124,
+      "train_vs_val": 0.6414254477301125
+    },
+    "religion": {
+      "train_vs_test": 0.9282384476429113,
+      "n_test": 131,
+      "train_vs_val": 0.6988494377342774
+    }
+  }
+}

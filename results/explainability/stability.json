@@ -1,0 +1,206 @@
+{
+  "budget_vs_1000": {
+    "budget_100_vs_1000": {
+      "spearman_mean": 0.95043578343896,
+      "top3_overlap_mean": 0.8333333333333331,
+      "n": 12
+    },
+    "budget_250_vs_1000": {
+      "spearman_mean": 0.9856349124731477,
+      "top3_overlap_mean": 0.9444444444444443,
+      "n": 12
+    },
+    "budget_500_vs_1000": {
+      "spearman_mean": 0.996911421911422,
+      "top3_overlap_mean": 0.9722222222222222,
+      "n": 12
+    }
+  },
+  "rows": [
+    {
+      "text_len_words": 8,
+      "budget_100": {
+        "spearman": 0.8434347122457899,
+        "top3_overlap": 0.6666666666666666
+      },
+      "budget_250": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      },
+      "budget_500": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      }
+    },
+    {
+      "text_len_words": 6,
+      "budget_100": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      },
+      "budget_250": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      },
+      "budget_500": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      }
+    },
+    {
+      "text_len_words": 5,
+      "budget_100": {
+        "spearman": 0.9999999999999999,
+        "top3_overlap": 1.0
+      },
+      "budget_250": {
+        "spearman": 0.9999999999999999,
+        "top3_overlap": 1.0
+      },
+      "budget_500": {
+        "spearman": 0.9999999999999999,
+        "top3_overlap": 1.0
+      }
+    },
+    {
+      "text_len_words": 12,
+      "budget_100": {
+        "spearman": 0.8014171144828386,
+        "top3_overlap": 0.3333333333333333
+      },
+      "budget_250": {
+        "spearman": 0.8391608391608393,
+        "top3_overlap": 0.3333333333333333
+      },
+      "budget_500": {
+        "spearman": 0.9720279720279721,
+        "top3_overlap": 0.6666666666666666
+      }
+    },
+    {
+      "text_len_words": 11,
+      "budget_100": {
+        "spearman": 0.9020524542048464,
+        "top3_overlap": 0.6666666666666666
+      },
+      "budget_250": {
+        "spearman": 0.990909090909091,
+        "top3_overlap": 1.0
+      },
+      "budget_500": {
+        "spearman": 0.990909090909091,
+        "top3_overlap": 1.0
+      }
+    },
+    {
+      "text_len_words": 9,
+      "budget_100": {
+        "spearman": 0.9666666666666667,
+        "top3_overlap": 1.0
+      },
+      "budget_250": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      },
+      "budget_500": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      }
+    },
+    {
+      "text_len_words": 17,
+      "budget_100": {
+        "spearman": 0.915900877909802,
+        "top3_overlap": 0.6666666666666666
+      },
+      "budget_250": {
+        "spearman": 0.9975490196078433,
+        "top3_overlap": 1.0
+      },
+      "budget_500": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      }
+    },
+    {
+      "text_len_words": 6,
+      "budget_100": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      },
+      "budget_250": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      },
+      "budget_500": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      }
+    },
+    {
+      "text_len_words": 2,
+      "budget_100": {
+        "spearman": 0.9999999999999999,
+        "top3_overlap": 1.0
+      },
+      "budget_250": {
+        "spearman": 0.9999999999999999,
+        "top3_overlap": 1.0
+      },
+      "budget_500": {
+        "spearman": 0.9999999999999999,
+        "top3_overlap": 1.0
+      }
+    },
+    {
+      "text_len_words": 5,
+      "budget_100": {
+        "spearman": 0.9999999999999999,
+        "top3_overlap": 1.0
+      },
+      "budget_250": {
+        "spearman": 0.9999999999999999,
+        "top3_overlap": 1.0
+      },
+      "budget_500": {
+        "spearman": 0.9999999999999999,
+        "top3_overlap": 1.0
+      }
+    },
+    {
+      "text_len_words": 10,
+      "budget_100": {
+        "spearman": 0.9757575757575757,
+        "top3_overlap": 0.6666666666666666
+      },
+      "budget_250": {
+        "spearman": 0.9999999999999999,
+        "top3_overlap": 1.0
+      },
+      "budget_500": {
+        "spearman": 0.9999999999999999,
+        "top3_overlap": 1.0
+      }
+    },
+    {
+      "text_len_words": 7,
+      "budget_100": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      },
+      "budget_250": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      },
+      "budget_500": {
+        "spearman": 1.0,
+        "top3_overlap": 1.0
+      }
+    }
+  ],
+  "shap_vs_occlusion": {
+    "spearman_mean": 0.27348095831525593,
+    "top3_overlap_mean": 0.5652173913043478,
+    "n": 23
+  }
+}
